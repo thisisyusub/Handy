@@ -28,6 +28,27 @@ class AppTextStyles {
     fontWeight: FontWeight.w700,
   );
 
+  static final fontSize16WithColorStyle = TextStyle(
+    fontSize: SizeConfig.textMultiplier * 2.5,
+    color: AppColors.pageViewControllerTextColor,
+    fontWeight: FontWeight.w700,
+  );
+
+  static final fontSize24BoldStyle = TextStyle(
+    fontSize: SizeConfig.textMultiplier * 3.75,
+    color: AppColors.pageViewTitleColor,
+    fontWeight: FontWeight.bold,
+  );
+
+  static final fontSize10Style = TextStyle(
+    fontSize: SizeConfig.textMultiplier * 1.5625,
+    color: AppColors.pageViewSubtitleColor,
+  );
+
+  static final fontSize12Style = TextStyle(
+    fontSize: SizeConfig.textMultiplier * 1.875,
+    color: AppColors.multiSelectionButtonTextColor,
+  );
   // new part
 
   static final mediumTextStyle = TextStyle(

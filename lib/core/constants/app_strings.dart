@@ -19,4 +19,8 @@ class AppStrings {
   static const String signUp = 'Sign up';
   static const String haveAnAccount = 'I have an account, ';
   static const String logIn = 'log in.';
+  static const String skip = 'Skip';
+  static const String next = 'Next';
+  static const String previous = 'Previous';
+  static const String start = 'Start';
 }

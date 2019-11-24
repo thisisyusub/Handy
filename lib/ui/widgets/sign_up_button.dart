@@ -10,7 +10,7 @@ class SignUpButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, Routes.Home);
+        Navigator.pushNamed(context, Routes.SignUp);
       },
       child: Container(
         width: SizeConfig.blockWidth * 47.222 * SizeConfig.textScaleFactor,
