@@ -14,4 +14,10 @@ class AppColors {
   static const glassColor = Color.fromRGBO(178, 228, 252, 1);
   static const moonColor = Color.fromRGBO(209, 162, 243, 1);
   static const starColor = Color.fromRGBO(255, 229, 100, 1);
+
+  // new part
+  static const welcomeMessageTextColor = Color.fromRGBO(112, 112, 112, 1);
+  static const signUpButtonColor = Color.fromRGBO(120, 161, 255, 1);
+  static const signUpButtonSplashColor = Color.fromRGBO(120, 161, 255, 0.5);
+  static const signUpButtonTextColor = Color.fromRGBO(55, 55, 55, 1);
 }

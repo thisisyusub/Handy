@@ -23,7 +23,7 @@ class TopBarTopHalf extends StatelessWidget {
                     textAlign: TextAlign.start,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
-                    style: AppTextStyles.bigTextStyle,
+                    style: AppTextStyles.fontSize16BoldStyle,
                   ),
                 ),
                 FittedBox(
@@ -32,7 +32,7 @@ class TopBarTopHalf extends StatelessWidget {
                     textAlign: TextAlign.start,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
-                    style: AppTextStyles.bigTextStyle,
+                    style: AppTextStyles.fontSize16BoldStyle,
                   ),
                 ),
               ],

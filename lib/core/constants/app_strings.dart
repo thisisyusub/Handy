@@ -15,4 +15,8 @@ class AppStrings {
   static const String sleep = 'Sleep';
   static const String addFood = 'Add food';
   static const String addRecord = 'Add record';
+  static const String welcomeToHealth = 'Welcome to\nHealth';
+  static const String signUp = 'Sign up';
+  static const String haveAnAccount = 'I have an account, ';
+  static const String logIn = 'log in.';
 }
