@@ -46,16 +46,6 @@ class ProgressBar extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(
-          height: SizeConfig.blockHeight * 1.09375,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Text('0'),
-            Text('1200'),
-          ],
-        ),
       ],
     );
   }

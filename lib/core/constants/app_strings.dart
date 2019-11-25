@@ -13,8 +13,6 @@ class AppStrings {
   static const String calorie = 'Calorie';
   static const String water = 'Water';
   static const String sleep = 'Sleep';
-  static const String addFood = 'Add food';
-  static const String addRecord = 'Add record';
   static const String welcomeToHealth = 'Welcome to\nHealth';
   static const String signUp = 'Sign up';
   static const String haveAnAccount = 'I have an account, ';
@@ -39,4 +37,5 @@ class AppStrings {
   static const String cm = 'cm';
   static const String kg = 'kg';
   static const String activityLevel = 'Activity Level';
+  static const String add = 'Add';
 }
