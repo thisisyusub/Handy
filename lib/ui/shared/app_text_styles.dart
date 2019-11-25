@@ -19,6 +19,12 @@ class AppTextStyles {
     color: AppColors.signUpButtonTextColor,
   );
 
+  static final fontSize20WithColorStyle = TextStyle(
+    fontSize: SizeConfig.textMultiplier * 3.125,
+    fontWeight: FontWeight.w700,
+    color: AppColors.welcomeMessageTextColor,
+  );
+
   static final fontSize16Style = TextStyle(
     fontSize: SizeConfig.textMultiplier * 2.5,
   );

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:heathier/core/constants/routes.dart';
 import 'package:heathier/ui/router.dart';
 import 'package:heathier/ui/shared/app_colors.dart';
 import 'package:heathier/ui/views/welcome_view.dart';
 
-void main() {
+import 'locator.dart';
+
+void main() async {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     systemNavigationBarColor: Colors.white, // navigation bar color
     statusBarColor: Colors.white, // status bar color
@@ -13,6 +14,11 @@ void main() {
     systemNavigationBarIconBrightness:
         Brightness.dark, //navigation bar icons' color
   ));
+
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
+  setupLocator();
   runApp(MyApp());
 }
 

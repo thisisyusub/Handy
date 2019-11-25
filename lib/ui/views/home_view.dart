@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:heathier/ui/shared/app_colors.dart';
 import 'package:heathier/ui/widgets/calorie_list_item.dart';
+import 'package:heathier/ui/widgets/custom_bottom_navigation_bar.dart';
+import 'package:heathier/ui/widgets/home_top_bar.dart';
 import 'package:heathier/ui/widgets/sleep_list_item.dart';
-import 'package:heathier/ui/widgets/top_bar.dart';
 import 'package:heathier/ui/widgets/water_list_item.dart';
 import 'package:heathier/utils/size_config.dart';
 
@@ -19,7 +20,7 @@ class HomeView extends StatelessWidget {
               body: SingleChildScrollView(
                 child: Column(
                   children: <Widget>[
-                    TopBar(),
+                    HomeTopBar(),
                     Padding(
                       padding: EdgeInsets.only(
                         left: SizeConfig.blockWidth * 8.8888,
@@ -36,6 +37,7 @@ class HomeView extends StatelessWidget {
                   ],
                 ),
               ),
+              bottomNavigationBar: CustomBottomNavigationBar(),
             );
           },
         );

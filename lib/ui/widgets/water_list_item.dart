@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:heathier/core/constants/app_strings.dart';
 import 'package:heathier/ui/shared/app_colors.dart';
+import 'package:heathier/ui/shared/app_icons.dart';
 import 'package:heathier/ui/shared/app_text_styles.dart';
 import 'package:heathier/utils/glass_painter.dart';
 import 'package:heathier/utils/size_config.dart';
@@ -42,12 +44,8 @@ class WaterListItem extends StatelessWidget {
         children: <Widget>[
           Row(
             children: <Widget>[
-              Container(
-                height: SizeConfig.blockHeight * 4,
-                width: SizeConfig.blockWidth * 7,
-                child: CustomPaint(
-                  painter: GlassPainter(),
-                ),
+              SvgPicture.asset(
+                AppIcons.waterDrop,
               ),
               SizedBox(
                 width: 5,

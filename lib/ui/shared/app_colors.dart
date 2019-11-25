@@ -25,4 +25,5 @@ class AppColors {
   static const pageViewSubtitleColor = Color.fromRGBO(123, 123, 123, 1);
   static const multiSelectionButtonColor = Color.fromRGBO(235, 241, 255, 1);
   static const multiSelectionButtonTextColor = Color.fromRGBO(46, 46, 46, 1);
+  static const bottomNavigationShadowColor = Color.fromRGBO(239, 242, 249, 0.72);
 }

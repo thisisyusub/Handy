@@ -8,11 +8,13 @@ class SignUpMultiSelection extends StatefulWidget {
   final String title;
   final String subTitle;
   final List<MultiSelection> elements;
+  final bool enableMultiSelection;
 
   SignUpMultiSelection({
     @required this.title,
     @required this.subTitle,
-    this.elements,
+    @required this.elements,
+    this.enableMultiSelection = false,
   });
 
   @override
@@ -22,7 +24,7 @@ class SignUpMultiSelection extends StatefulWidget {
 class _SignUpMultiSelectionState extends State<SignUpMultiSelection> {
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -40,7 +42,9 @@ class _SignUpMultiSelectionState extends State<SignUpMultiSelection> {
                   (element) => MultiSelectionButton(
                     element.title,
                     element.isSelected,
-                    onItemSelected,
+                    widget.enableMultiSelection
+                        ? onMultiSelectionEnabled
+                        : onItemSelected,
                   ),
                 )
                 .toList(),
@@ -48,6 +52,16 @@ class _SignUpMultiSelectionState extends State<SignUpMultiSelection> {
         ],
       ),
     );
+  }
+
+  void onMultiSelectionEnabled(String title) {
+    setState(() {
+      widget.elements.forEach((element) {
+        if (element.title == title) {
+          element.isSelected = !element.isSelected;
+        }
+      });
+    });
   }
 
   void onItemSelected(String title) {

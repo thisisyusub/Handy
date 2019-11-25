@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:heathier/core/constants/app_strings.dart';
 import 'package:heathier/ui/shared/app_colors.dart';
+import 'package:heathier/ui/shared/app_icons.dart';
 import 'package:heathier/ui/shared/app_text_styles.dart';
 import 'package:heathier/ui/widgets/rating_bar.dart';
-import 'package:heathier/utils/moon_painter.dart';
 import 'package:heathier/utils/size_config.dart';
 
 class SleepListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    print('TextScaleFactor: ${SizeConfig.textScaleFactor}');
-    print('TextMultiplier: ${SizeConfig.textMultiplier}');
-    print('BlockWidth: ${SizeConfig.blockWidth}');
-    print('Multiply: ${SizeConfig.blockWidth * SizeConfig.textMultiplier * SizeConfig.textScaleFactor}');
-
     return Container(
       padding: EdgeInsets.symmetric(
         vertical: SizeConfig.blockHeight * 2.34375,
@@ -51,12 +47,8 @@ class SleepListItem extends StatelessWidget {
             children: <Widget>[
               Row(
                 children: <Widget>[
-                  Container(
-                    height: SizeConfig.blockHeight * 4,
-                    width: SizeConfig.blockWidth * 7,
-                    child: CustomPaint(
-                      painter: MoonPainter(),
-                    ),
+                  SvgPicture.asset(
+                    AppIcons.moon,
                   ),
                   SizedBox(
                     width: 5,
@@ -77,8 +69,14 @@ class SleepListItem extends StatelessWidget {
                   );
                 },
                 child: Container(
-                  width: SizeConfig.blockWidth * SizeConfig.textMultiplier * SizeConfig.textScaleFactor * 4,
-                  height: SizeConfig.blockHeight * SizeConfig.textMultiplier * SizeConfig.textScaleFactor / 2,
+                  width: SizeConfig.blockWidth *
+                      SizeConfig.textMultiplier *
+                      SizeConfig.textScaleFactor *
+                      4,
+                  height: SizeConfig.blockHeight *
+                      SizeConfig.textMultiplier *
+                      SizeConfig.textScaleFactor /
+                      2,
                   padding: EdgeInsets.fromLTRB(
                       SizeConfig.blockWidth * 4.444,
                       SizeConfig.blockWidth * 0.625,

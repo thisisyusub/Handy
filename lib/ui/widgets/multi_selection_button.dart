@@ -8,7 +8,11 @@ class MultiSelectionButton extends StatelessWidget {
   final isSelected;
   final Function selectFunction;
 
-  MultiSelectionButton(this.title, this.isSelected, this.selectFunction,);
+  MultiSelectionButton(
+    this.title,
+    this.isSelected,
+    this.selectFunction,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +24,8 @@ class MultiSelectionButton extends StatelessWidget {
           GestureDetector(
             onTap: () => selectFunction(title),
             child: Container(
-              width: SizeConfig.blockWidth * 54.166 * SizeConfig.textScaleFactor,
+              width:
+                  SizeConfig.blockWidth * 54.166 * SizeConfig.textScaleFactor,
               height:
                   SizeConfig.blockHeight * 4.6875 * SizeConfig.textScaleFactor,
               decoration: BoxDecoration(

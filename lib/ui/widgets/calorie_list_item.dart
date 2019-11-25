@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:heathier/core/constants/app_strings.dart';
 import 'package:heathier/ui/shared/app_colors.dart';
+import 'package:heathier/ui/shared/app_icons.dart';
 import 'package:heathier/ui/shared/app_text_styles.dart';
 import 'package:heathier/ui/widgets/progress_bar.dart';
 import 'package:heathier/utils/size_config.dart';
@@ -46,9 +48,8 @@ class CalorieListItem extends StatelessWidget {
             children: <Widget>[
               Row(
                 children: <Widget>[
-                  Icon(
-                    Icons.favorite,
-                    color: AppColors.heartColor,
+                  SvgPicture.asset(
+                    AppIcons.calorie,
                   ),
                   SizedBox(
                     width: 5,
@@ -69,8 +70,14 @@ class CalorieListItem extends StatelessWidget {
                   );
                 },
                 child: Container(
-                  width: SizeConfig.blockWidth * SizeConfig.textMultiplier * SizeConfig.textScaleFactor * 3.7,
-                  height: SizeConfig.blockHeight * SizeConfig.textMultiplier * SizeConfig.textScaleFactor / 2,
+                  width: SizeConfig.blockWidth *
+                      SizeConfig.textMultiplier *
+                      SizeConfig.textScaleFactor *
+                      3.7,
+                  height: SizeConfig.blockHeight *
+                      SizeConfig.textMultiplier *
+                      SizeConfig.textScaleFactor /
+                      2,
                   padding: EdgeInsets.fromLTRB(
                       SizeConfig.blockWidth * 4.444,
                       SizeConfig.blockWidth * 0.625,
