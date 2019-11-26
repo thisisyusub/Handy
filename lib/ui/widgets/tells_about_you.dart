@@ -19,8 +19,8 @@ class TellsAboutYou extends StatelessWidget {
           SizedBox(
             height: SizeConfig.blockHeight * 13.4275,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+          Wrap(
+            runSpacing: 2,
             children: <Widget>[
               Text(
                 AppStrings.gender,
@@ -28,12 +28,12 @@ class TellsAboutYou extends StatelessWidget {
               ),
               ChipItem(
                 label: AppStrings.male,
-                width: SizeConfig.blockWidth * 22.222,
+                width: SizeConfig.blockWidth * 22,
                 height: SizeConfig.blockHeight * 3.75,
               ),
               ChipItem(
                 label: AppStrings.female,
-                width: SizeConfig.blockWidth * 22.222,
+                width: SizeConfig.blockWidth * 22,
                 height: SizeConfig.blockHeight * 3.75,
               ),
             ],

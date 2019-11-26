@@ -28,7 +28,7 @@ class HomeListItem extends StatelessWidget {
       children: <Widget>[
         Container(
           width: SizeConfig.blockWidth * 82.222,
-          height: SizeConfig.blockHeight * 18.875 * SizeConfig.textScaleFactor,
+          height: SizeConfig.blockHeight * 20 * SizeConfig.textScaleFactor,
           padding: EdgeInsets.only(
             left: SizeConfig.blockWidth * 4.444,
             right: SizeConfig.blockWidth * 8.8888,
@@ -55,8 +55,10 @@ class HomeListItem extends StatelessWidget {
             children: <Widget>[
               SvgPicture.asset(
                 iconPath,
-                height: SizeConfig.blockHeight * 2.5,
-                width: SizeConfig.blockWidth * 4.444,
+                height:
+                    SizeConfig.blockHeight * 2.5 * SizeConfig.textScaleFactor,
+                width:
+                    SizeConfig.blockWidth * 4.444 * SizeConfig.textScaleFactor,
               ),
               Expanded(
                 child: Padding(
@@ -88,20 +90,25 @@ class HomeListItem extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          Row(
-                            children: <Widget>[
-                              Text(
-                                indicator,
-                                style: AppTextStyles.fontSize14withColorStyle,
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                indicatorTitle,
-                                style: AppTextStyles.fontSize8withColorStyle,
-                              ),
-                            ],
+                          Expanded(
+                            child: Wrap(
+                              direction: Axis.horizontal,
+                              crossAxisAlignment: WrapCrossAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  indicator,
+                                  style: AppTextStyles.fontSize14withColorStyle,
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(
+                                  indicatorTitle,
+                                  style: AppTextStyles.fontSize8withColorStyle,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ],
+                            ),
                           ),
                           action,
                         ],

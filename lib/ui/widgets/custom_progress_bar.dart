@@ -10,8 +10,8 @@ class CustomProgressBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: SizeConfig.blockWidth * 14.722,
-      height: SizeConfig.blockHeight * 1.5625,
+      width: SizeConfig.blockWidth * 14.722 * SizeConfig.textScaleFactor,
+      height: SizeConfig.blockHeight * 1.5625 * SizeConfig.textScaleFactor,
       child: Stack(
         children: <Widget>[
           Container(

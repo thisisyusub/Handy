@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:heathier/core/constants/app_strings.dart';
+import 'package:heathier/core/models/selectable_item.dart';
 import 'package:heathier/ui/shared/app_text_styles.dart';
 import 'package:heathier/ui/widgets/chip_item.dart';
 import 'package:heathier/ui/widgets/multi_selection_button.dart';
 import 'package:heathier/utils/size_config.dart';
 
-class Activity extends StatelessWidget {
+class SignUpActivity extends StatelessWidget {
+  final List<SelectableItem> elements;
+
+  SignUpActivity({this.elements});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -75,33 +80,15 @@ class Activity extends StatelessWidget {
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              MultiSelectionButton(
-                'Sedentary',
-                false,
-                null,
-              ),
-              MultiSelectionButton(
-                'Lightly active',
-                false,
-                null,
-              ),
-              MultiSelectionButton(
-                'Moderately active',
-                false,
-                null,
-              ),
-              MultiSelectionButton(
-                'Very active',
-                false,
-                null,
-              ),
-              MultiSelectionButton(
-                'Extra active',
-                false,
-                null,
-              ),
-            ],
+            children: elements
+                .map(
+                  (element) => MultiSelectionButton(
+                    title: element.title,
+                    isSelected: element.isSelected,
+                    selectFunction: null,
+                  ),
+                )
+                .toList(),
           ),
         ],
       ),

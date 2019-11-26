@@ -18,7 +18,7 @@ class ChipItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(
-        horizontal: SizeConfig.blockWidth * 3,
+        horizontal: SizeConfig.blockWidth * 2,
         vertical: 0,
       ),
       width: width * SizeConfig.textScaleFactor,

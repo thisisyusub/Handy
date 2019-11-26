@@ -8,11 +8,11 @@ class MultiSelectionButton extends StatelessWidget {
   final isSelected;
   final Function selectFunction;
 
-  MultiSelectionButton(
+  MultiSelectionButton({
     this.title,
     this.isSelected,
     this.selectFunction,
-  );
+  });
 
   @override
   Widget build(BuildContext context) {

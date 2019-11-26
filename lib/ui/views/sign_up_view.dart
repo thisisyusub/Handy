@@ -4,6 +4,9 @@ import 'package:heathier/core/viewmodels/views/sign_up_view_model.dart';
 import 'package:heathier/locator.dart';
 import 'package:heathier/ui/base_widget.dart';
 import 'package:heathier/ui/shared/app_text_styles.dart';
+import 'package:heathier/ui/widgets/sign_up_activity.dart';
+import 'package:heathier/ui/widgets/sign_up_multi_selection.dart';
+import 'package:heathier/ui/widgets/tells_about_you.dart';
 import 'package:heathier/utils/size_config.dart';
 
 class SignUpView extends StatelessWidget {
@@ -28,7 +31,22 @@ class SignUpView extends StatelessWidget {
                 Expanded(
                   child: IndexedStack(
                     index: model.currentIndex,
-                    children: model.elements,
+                    children: [
+                      TellsAboutYou(),
+                      SignUpMultiSelection(
+                        multiSelection: model.elements[0],
+                      ),
+                      SignUpActivity(
+                        elements: model.elements[1].elements,
+                      ),
+                      SignUpMultiSelection(
+                        multiSelection: model.elements[2],
+                      ),
+                      SignUpMultiSelection(
+                        multiSelection: model.elements[3],
+                        enableMultiSelection: true,
+                      ),
+                    ],
                   ),
                 ),
                 Padding(
@@ -39,7 +57,7 @@ class SignUpView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       GestureDetector(
-                        onTap: model.onLeftButtonClicked,
+                        onTap: () => model.onLeftButtonClicked(context),
                         child: Text(
                           model.isSkipAvailable
                               ? AppStrings.skip

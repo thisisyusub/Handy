@@ -4,7 +4,7 @@ import 'package:heathier/ui/shared/app_colors.dart';
 import 'package:heathier/ui/shared/app_icons.dart';
 import 'package:heathier/ui/widgets/add_button.dart';
 import 'package:heathier/ui/widgets/custom_bottom_navigation_bar.dart';
-import 'package:heathier/ui/widgets/home_list_view.dart';
+import 'package:heathier/ui/widgets/home_list_item.dart';
 import 'package:heathier/ui/widgets/water_action_button.dart';
 import 'package:heathier/utils/size_config.dart';
 
@@ -22,7 +22,7 @@ class HomeView extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     SizedBox(
-                      height: SizeConfig.blockHeight * 33,
+                      height: SizeConfig.blockHeight * 20,
                     ),
                     Padding(
                       padding: EdgeInsets.only(

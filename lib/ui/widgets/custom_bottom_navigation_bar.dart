@@ -46,7 +46,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
               onTap: () {},
               child: Container(
                 child: SvgPicture.asset(
-                  AppIcons.profileSelected,
+                  AppIcons.profileUnselected,
                   width: SizeConfig.blockWidth * 3.6111,
                   height: SizeConfig.blockHeight * 2.34375,
                 ),
