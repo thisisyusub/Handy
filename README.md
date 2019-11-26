@@ -2,18 +2,18 @@
 
 Control your life
 
-<img src="image1.png"/>
+<img src="image1.jpg"/>
 
-<img src="image2.png"/>
+<img src="image2.jpg"/>
 
-<img src="image3.png"/>
+<img src="image3.jpg"/>
 
-<img src="image4.png"/>
+<img src="image4.jpg"/>
 
-<img src="image5.png"/>
+<img src="image5.jpg"/>
 
-<img src="image6.png"/>
+<img src="image6.jpg"/>
 
-<img src="image7.png"/>
+<img src="image7.jpg"/>
 
 
