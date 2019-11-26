@@ -30,8 +30,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Healthier',
       theme: ThemeData(
-        primaryColor: AppColors.topBarColor,
-        accentColor: AppColors.topBarColor,
+        primaryColor: AppColors.signUpButtonColor,
+        accentColor: AppColors.signUpButtonColor,
       ),
       home: WelcomeView(),
       onGenerateRoute: Router.generateRoute,

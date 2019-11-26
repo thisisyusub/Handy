@@ -5,7 +5,6 @@ import 'package:heathier/ui/shared/app_icons.dart';
 import 'package:heathier/ui/widgets/add_button.dart';
 import 'package:heathier/ui/widgets/custom_bottom_navigation_bar.dart';
 import 'package:heathier/ui/widgets/home_list_view.dart';
-import 'package:heathier/ui/widgets/home_top_bar.dart';
 import 'package:heathier/ui/widgets/water_action_button.dart';
 import 'package:heathier/utils/size_config.dart';
 
@@ -22,7 +21,9 @@ class HomeView extends StatelessWidget {
               body: SingleChildScrollView(
                 child: Column(
                   children: <Widget>[
-                    HomeTopBar(),
+                    SizedBox(
+                      height: SizeConfig.blockHeight * 33,
+                    ),
                     Padding(
                       padding: EdgeInsets.only(
                         left: SizeConfig.blockWidth * 8.8888,
