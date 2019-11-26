@@ -1,19 +1,28 @@
-# heathier
+# Healthier
 
 Control your life
 
-<img src="image1.jpg"/>
+***
 
-<img src="image2.jpg"/>
+Welcome Screen: 
+![alt text](image1.jpg "Welcome Screen")
 
-<img src="image3.jpg"/>
+Onboarding 1: 
+![alt text](image2.jpg "Onboarding 1")
 
-<img src="image4.jpg"/>
+Onboarding 2: 
+![alt text](image3.jpg "Onboarding 2")
 
-<img src="image5.jpg"/>
+Onboarding 3: 
+![alt text](image4.jpg "Onboarding 3")
 
-<img src="image6.jpg"/>
+Onboarding 4: 
+![alt text](image5.jpg "Onboarding 4")
 
-<img src="image7.jpg"/>
+Onboarding 5: 
+![alt text](image6.jpg "Onboarding 5")
+
+Home Screen: 
+![alt text](image7.jpg "Welcome Screen")
 
 
