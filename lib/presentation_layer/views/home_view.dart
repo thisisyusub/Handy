@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:heathier/core/constants/app_strings.dart';
-import 'package:heathier/ui/shared/app_colors.dart';
-import 'package:heathier/ui/shared/app_icons.dart';
-import 'package:heathier/ui/widgets/add_button.dart';
-import 'package:heathier/ui/widgets/custom_bottom_navigation_bar.dart';
-import 'package:heathier/ui/widgets/home_list_item.dart';
-import 'package:heathier/ui/widgets/water_action_button.dart';
+import 'package:heathier/contants/app_strings.dart';
+import 'package:heathier/presentation_layer/shared/app_colors.dart';
+import 'package:heathier/presentation_layer/shared/app_icons.dart';
+import 'package:heathier/presentation_layer/widgets/add_button.dart';
+import 'package:heathier/presentation_layer/widgets/home_list_item.dart';
+import 'package:heathier/presentation_layer/widgets/water_action_button.dart';
 import 'package:heathier/utils/size_config.dart';
 
 class HomeView extends StatelessWidget {
@@ -69,7 +68,6 @@ class HomeView extends StatelessWidget {
                   ],
                 ),
               ),
-              bottomNavigationBar: CustomBottomNavigationBar(),
             );
           },
         );

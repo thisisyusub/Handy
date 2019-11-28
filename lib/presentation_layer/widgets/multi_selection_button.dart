@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:heathier/ui/shared/app_colors.dart';
-import 'package:heathier/ui/shared/app_text_styles.dart';
+import 'package:heathier/presentation_layer/shared/app_colors.dart';
+import 'package:heathier/presentation_layer/shared/app_text_styles.dart';
 import 'package:heathier/utils/size_config.dart';
 
 class MultiSelectionButton extends StatelessWidget {
@@ -22,7 +22,7 @@ class MultiSelectionButton extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           GestureDetector(
-            onTap: () => selectFunction(title),
+            onTap: () => selectFunction(false, title),
             child: Container(
               width:
                   SizeConfig.blockWidth * 54.166 * SizeConfig.textScaleFactor,

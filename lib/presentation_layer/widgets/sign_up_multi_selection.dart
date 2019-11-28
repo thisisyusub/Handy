@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:heathier/core/models/multi_selection.dart';
-import 'package:heathier/ui/widgets/multi_selection_button.dart';
-import 'package:heathier/ui/widgets/page_view_title.dart';
+import 'package:heathier/data_layer/models/multi_selection.dart';
+import 'package:heathier/presentation_layer/widgets/page_view_title.dart';
 import 'package:heathier/utils/size_config.dart';
+
+import 'multi_selection_button.dart';
 
 class SignUpMultiSelection extends StatelessWidget {
   final MultiSelection multiSelection;
   final bool enableMultiSelection;
+  final Function selectionFunction;
 
   SignUpMultiSelection({
     @required this.multiSelection,
+    @required this.selectionFunction,
     this.enableMultiSelection = false,
   });
 
@@ -33,7 +36,7 @@ class SignUpMultiSelection extends StatelessWidget {
                   (element) => MultiSelectionButton(
                     title: element.title,
                     isSelected: element.isSelected,
-                    selectFunction: enableMultiSelection ? null : null,
+                    selectFunction: selectionFunction,
                   ),
                 )
                 .toList(),
@@ -42,26 +45,4 @@ class SignUpMultiSelection extends StatelessWidget {
       ),
     );
   }
-
-//  void onMultiSelectionEnabled(String title) {
-//    setState(() {
-//      widget.multiSelection.elements.forEach((element) {
-//        if (element.title == title) {
-//          element.isSelected = !element.isSelected;
-//        }
-//      });
-//    });
-//  }
-//
-//  void onItemSelected(String title) {
-//    setState(() {
-//      widget.multiSelection.elements.forEach((element) {
-//        if (element.title == title) {
-//          element.isSelected = true;
-//        } else {
-//          element.isSelected = false;
-//        }
-//      });
-//    });
-//  }
 }

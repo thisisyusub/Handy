@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:heathier/ui/shared/app_colors.dart';
+import 'package:heathier/presentation_layer/shared/app_colors.dart';
 import 'package:heathier/utils/size_config.dart';
 
 class CustomProgressBar extends StatelessWidget {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:heathier/core/constants/routes.dart';
-import 'package:heathier/ui/views/home_view.dart';
-import 'package:heathier/ui/views/sign_up_view.dart';
-import 'package:heathier/ui/views/welcome_view.dart';
+import 'package:heathier/contants/routes.dart';
+import 'package:heathier/presentation_layer/views/home_view.dart';
+import 'package:heathier/presentation_layer/views/sign_up_view.dart';
+import 'package:heathier/presentation_layer/views/welcome_view.dart';
 
 class Router {
   Router._();

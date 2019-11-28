@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:heathier/ui/shared/app_text_styles.dart';
+import 'package:heathier/presentation_layer/shared/app_text_styles.dart';
 
 class PageViewTitle extends StatelessWidget {
   final String title;

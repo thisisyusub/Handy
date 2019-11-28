@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:heathier/core/constants/app_strings.dart';
-import 'package:heathier/core/models/selectable_item.dart';
-import 'package:heathier/ui/shared/app_text_styles.dart';
-import 'package:heathier/ui/widgets/chip_item.dart';
-import 'package:heathier/ui/widgets/multi_selection_button.dart';
+import 'package:heathier/contants/app_strings.dart';
+import 'package:heathier/data_layer/models/selectable_item.dart';
+import 'package:heathier/presentation_layer/shared/app_text_styles.dart';
 import 'package:heathier/utils/size_config.dart';
+
+import 'chip_item.dart';
+import 'multi_selection_button.dart';
 
 class SignUpActivity extends StatelessWidget {
   final List<SelectableItem> elements;

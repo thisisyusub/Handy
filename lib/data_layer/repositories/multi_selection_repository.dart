@@ -1,5 +1,5 @@
-import 'package:heathier/core/models/multi_selection.dart';
-import 'package:heathier/core/models/selectable_item.dart';
+import 'package:heathier/data_layer/models/multi_selection.dart';
+import 'package:heathier/data_layer/models/selectable_item.dart';
 
 class MultiSelectionRepository {
   final List<MultiSelection> _multiSelectionElements = <MultiSelection>[
@@ -77,5 +77,6 @@ class MultiSelectionRepository {
     ),
   ];
 
-  List<MultiSelection> getElements() => [..._multiSelectionElements];
+  List<MultiSelection> getMultiSelectionElements() =>
+      [..._multiSelectionElements];
 }

@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:heathier/core/constants/app_strings.dart';
-import 'package:heathier/ui/shared/app_colors.dart';
-import 'package:heathier/ui/shared/app_text_styles.dart';
-import 'package:heathier/ui/widgets/sign_up_button.dart';
+import 'package:heathier/contants/app_strings.dart';
+import 'package:heathier/presentation_layer/shared/app_colors.dart';
+import 'package:heathier/presentation_layer/shared/app_text_styles.dart';
+import 'package:heathier/presentation_layer/widgets/sign_up_button.dart';
 import 'package:heathier/utils/size_config.dart';
 
 class WelcomeView extends StatelessWidget {

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:heathier/ui/shared/app_colors.dart';
-import 'package:heathier/ui/shared/app_text_styles.dart';
-import 'package:heathier/ui/widgets/custom_progress_bar.dart';
+import 'package:heathier/presentation_layer/shared/app_colors.dart';
+import 'package:heathier/presentation_layer/shared/app_text_styles.dart';
 import 'package:heathier/utils/size_config.dart';
+
+import 'custom_progress_bar.dart';
 
 class HomeListItem extends StatelessWidget {
   final String iconPath;

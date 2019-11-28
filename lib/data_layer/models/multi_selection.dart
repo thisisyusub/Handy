@@ -1,4 +1,4 @@
-import 'package:heathier/core/models/selectable_item.dart';
+import 'package:heathier/data_layer/models/selectable_item.dart';
 import 'package:meta/meta.dart';
 
 class MultiSelection {

@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
-import 'package:heathier/ui/shared/app_colors.dart';
 import 'package:heathier/utils/size_config.dart';
+
+import 'app_colors.dart';
 
 class AppTextStyles {
   AppTextStyles._();

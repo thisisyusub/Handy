@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:heathier/ui/router.dart';
-import 'package:heathier/ui/shared/app_colors.dart';
-import 'package:heathier/ui/views/welcome_view.dart';
-
-import 'locator.dart';
+import 'package:heathier/presentation_layer/router.dart';
+import 'package:heathier/presentation_layer/shared/app_colors.dart';
+import 'package:heathier/presentation_layer/views/welcome_view.dart';
 
 void main() async {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -18,7 +16,6 @@ void main() async {
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
-  setupLocator();
   runApp(MyApp());
 }
 
