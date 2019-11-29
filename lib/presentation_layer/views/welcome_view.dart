@@ -1,10 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:heathier/bloc_layer/blocs/welcome_bloc.dart';
-import 'package:heathier/bloc_layer/states/welcome_state.dart';
 import 'package:heathier/contants/app_strings.dart';
-import 'package:heathier/contants/routes.dart';
 import 'package:heathier/presentation_layer/shared/app_colors.dart';
 import 'package:heathier/presentation_layer/shared/app_text_styles.dart';
 import 'package:heathier/presentation_layer/widgets/sign_up_button.dart';
@@ -48,19 +44,8 @@ class WelcomeView extends StatelessWidget {
                               padding: EdgeInsets.only(
                                 bottom: SizeConfig.blockHeight * 4.6875,
                               ),
-                              child: BlocBuilder<WelcomeBloc, WelcomeState>(
-                                builder: (context, state) {
-                                  return BlocListener<WelcomeBloc, WelcomeState>(
-                                    listener: (context, state) {
-                                      if(state is SignUpClickedState) {
-                                        print('listener running...');
-                                        Navigator.of(context).pushNamed(Routes.Home);
-                                      }
-                                    },
-                                    child: SignUpButton(),
-                                  );
-                                }
-                              ),
+
+                              child: SignUpButton(),
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
