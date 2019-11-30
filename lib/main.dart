@@ -48,6 +48,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: AppColors.signUpButtonColor,
         accentColor: AppColors.signUpButtonColor,
+        fontFamily: 'Rubik',
       ),
       home:BlocBuilder<AuthenticationBloc, AuthenticationState>(
         builder: (context, state) {

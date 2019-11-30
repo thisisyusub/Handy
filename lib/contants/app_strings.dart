@@ -38,4 +38,10 @@ class AppStrings {
   static const String kg = 'kg';
   static const String activityLevel = 'Activity Level';
   static const String add = 'Add';
+
+  // new part last
+static const String byContinuingYouAccept = 'by continuing you accept';
+static const String termsOfUse = ' Terms of Use';
+static const String continueWithEmail = 'continue with email';
+static const String continueWithGoogle = 'continue with Google';
 }

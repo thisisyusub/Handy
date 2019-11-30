@@ -6,6 +6,25 @@ import 'app_colors.dart';
 class AppTextStyles {
   AppTextStyles._();
 
+  // new part last
+  static final fontSize14MediumStyle = TextStyle(
+    fontSize: SizeConfig.textMultiplier * 2.1875,
+    color: AppColors.customButtonTextColor,
+    fontWeight: FontWeight.w500,
+  );
+
+  static final fontSize11Style = TextStyle(
+    fontSize: SizeConfig.textMultiplier * 1.71875,
+    color: AppColors.customButtonTextColor,
+  );
+
+  static final fontSize11BoldStyle = TextStyle(
+    fontSize: SizeConfig.textMultiplier * 1.71875,
+    color: AppColors.customButtonTextColor,
+    fontWeight: FontWeight.bold,
+  );
+
+
   // new part
   static final fontSize40Style = TextStyle(
     fontSize: SizeConfig.textMultiplier * 6.25,

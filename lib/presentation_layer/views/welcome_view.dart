@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:heathier/contants/app_strings.dart';
 import 'package:heathier/presentation_layer/shared/app_colors.dart';
 import 'package:heathier/presentation_layer/shared/app_text_styles.dart';
-import 'package:heathier/presentation_layer/widgets/sign_up_button.dart';
+import 'package:heathier/presentation_layer/widgets/custom_button.dart';
 import 'package:heathier/utils/size_config.dart';
 
 class WelcomeView extends StatelessWidget {
@@ -16,7 +16,7 @@ class WelcomeView extends StatelessWidget {
             SizeConfig().init(constraints, orientation, context);
             return Scaffold(
               resizeToAvoidBottomInset: false,
-              backgroundColor: AppColors.goalItemBackgroundColor,
+              backgroundColor: AppColors.appBackgroundColor,
               body: Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: SizeConfig.blockWidth * 8.333,
@@ -25,38 +25,50 @@ class WelcomeView extends StatelessWidget {
                 child: Stack(
                   children: <Widget>[
                     Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        AppStrings.welcomeToHealth,
-                        style: AppTextStyles.fontSize40Style,
+                      alignment: Alignment.topCenter,
+                      child: Container(
+                        margin: EdgeInsets.only(
+                          top: SizeConfig.blockHeight * 17.1875,
+                        ),
+                        height: SizeConfig.blockHeight * 39.53125,
+                        width: SizeConfig.blockWidth * 70.277,
+                        child: Placeholder(),
                       ),
                     ),
                     Align(
                       alignment: Alignment.bottomCenter,
                       child: Padding(
                         padding: EdgeInsets.only(
-                          bottom: SizeConfig.blockHeight * 4.375,
+                          bottom: SizeConfig.blockHeight * 3.75,
                         ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
-                            Padding(
-                              padding: EdgeInsets.only(
-                                bottom: SizeConfig.blockHeight * 4.6875,
+                            CustomButton(
+                              height: SizeConfig.blockHeight * 5.625,
+                              width: SizeConfig.blockWidth * 57.777,
+                              title: AppStrings.continueWithEmail,
+                              margin: EdgeInsets.zero,
+                            ),
+                            CustomButton(
+                              height: SizeConfig.blockHeight * 5.625,
+                              width: SizeConfig.blockWidth * 57.777,
+                              title: AppStrings.continueWithGoogle,
+                              margin: EdgeInsets.only(
+                                top: SizeConfig.blockHeight * 3.125,
+                                bottom: SizeConfig.blockHeight * 2.5,
                               ),
-
-                              child: SignUpButton(),
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  AppStrings.haveAnAccount,
-                                  style: AppTextStyles.fontSize16Style,
+                                  AppStrings.byContinuingYouAccept,
+                                  style: AppTextStyles.fontSize11Style,
                                 ),
                                 Text(
-                                  AppStrings.logIn,
-                                  style: AppTextStyles.fontSize16BoldStyle,
+                                  AppStrings.termsOfUse,
+                                  style: AppTextStyles.fontSize11BoldStyle,
                                 ),
                               ],
                             ),

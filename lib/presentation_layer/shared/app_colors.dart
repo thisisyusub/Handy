@@ -33,4 +33,10 @@ class AppColors {
   static const progressBarBackgroundColor = Color.fromRGBO(245, 245, 245, 1);
   static const indicatorTextColor = Color.fromRGBO(46, 46, 46, 1);
   static const indicatorTitleTextColor = Color.fromRGBO(151, 149, 149, 1);
+
+
+  // new part last
+static const appBackgroundColor = Color.fromRGBO(252, 252, 252, 1);
+static const customButtonBackgroundColor = Color.fromRGBO(194, 216, 255, 1);
+static const customButtonTextColor = Color.fromRGBO(26, 26, 26, 1);
 }
