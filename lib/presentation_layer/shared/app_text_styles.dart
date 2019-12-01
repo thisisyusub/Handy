@@ -13,11 +13,28 @@ class AppTextStyles {
     fontWeight: FontWeight.w500,
   );
 
+  static final fontSize22MediumStyle = TextStyle(
+    fontSize: SizeConfig.textMultiplier * 3.4375,
+    color: AppColors.handyTextColor,
+    fontWeight: FontWeight.w500,
+  );
+
+  static final fontSize14RegularStyle = TextStyle(
+    fontSize: SizeConfig.textMultiplier * 2.1875,
+    color: AppColors.customButtonTextColor,
+  );
+
   static final fontSize14MediumStyle = TextStyle(
     fontSize: SizeConfig.textMultiplier * 2.1875,
     color: AppColors.customButtonTextColor,
     fontWeight: FontWeight.w500,
   );
+
+  static final fontSize12RegularStyle = TextStyle(
+    fontSize: SizeConfig.textMultiplier * 1.875,
+    color: AppColors.customButtonTextColor,
+  );
+
 
   static final fontSize11Style = TextStyle(
     fontSize: SizeConfig.textMultiplier * 1.71875,

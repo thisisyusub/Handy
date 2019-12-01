@@ -8,8 +8,8 @@ import 'package:heathier/bloc_layer/states/authentication_state.dart';
 import 'package:heathier/presentation_layer/router.dart';
 import 'package:heathier/presentation_layer/shared/app_colors.dart';
 import 'package:heathier/presentation_layer/simple_bloc_delegate.dart';
-import 'package:heathier/presentation_layer/views/home_view.dart';
-import 'package:heathier/presentation_layer/views/welcome_view.dart';
+import 'package:heathier/presentation_layer/pages/home_page.dart';
+import 'package:heathier/presentation_layer/pages/welcome_page.dart';
 
 void main() async {
   SystemChrome.setSystemUIOverlayStyle(
@@ -59,10 +59,10 @@ class MyApp extends StatelessWidget {
           }
 
           if(state is AuthenticationUnAuthenticatedState) {
-            return WelcomeView();
+            return WelcomePage();
           }
 
-          return HomeView();
+          return HomePage();
         },
       ),
       onGenerateRoute: Router.generateRoute,

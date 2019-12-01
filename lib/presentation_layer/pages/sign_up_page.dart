@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:heathier/contants/app_strings.dart';
+import 'package:heathier/presentation_layer/shared/app_colors.dart';
 import 'package:heathier/presentation_layer/shared/app_text_styles.dart';
 import 'package:heathier/presentation_layer/widgets/sign_up_activity.dart';
 import 'package:heathier/presentation_layer/widgets/sign_up_multi_selection.dart';
 import 'package:heathier/presentation_layer/widgets/tells_about_you.dart';
 import 'package:heathier/utils/size_config.dart';
 
-class SignUpView extends StatelessWidget {
+class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.appBackgroundColor,
       body: Padding(
         padding: EdgeInsets.symmetric(
           vertical: 0,

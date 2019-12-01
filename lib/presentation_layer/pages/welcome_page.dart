@@ -2,13 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:heathier/contants/app_strings.dart';
+import 'package:heathier/contants/routes.dart';
 import 'package:heathier/presentation_layer/shared/app_colors.dart';
 import 'package:heathier/presentation_layer/shared/app_icons.dart';
 import 'package:heathier/presentation_layer/shared/app_text_styles.dart';
 import 'package:heathier/presentation_layer/widgets/custom_button.dart';
 import 'package:heathier/utils/size_config.dart';
 
-class WelcomeView extends StatelessWidget {
+class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -49,7 +50,7 @@ class WelcomeView extends StatelessWidget {
                             ),
                             SvgPicture.asset(
                               AppIcons.illustration,
-                              height: SizeConfig.blockHeight *39.0625,
+                              height: SizeConfig.blockHeight * 39.0625,
                               width: SizeConfig.blockWidth * 72.222,
                             ),
                           ],
@@ -65,11 +66,15 @@ class WelcomeView extends StatelessWidget {
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
-                            CustomButton(
-                              height: SizeConfig.blockHeight * 5.625,
-                              width: SizeConfig.blockWidth * 57.777,
-                              title: AppStrings.continueWithEmail,
-                              margin: EdgeInsets.zero,
+                            GestureDetector(
+                              onTap: () => Navigator.of(context)
+                                  .pushNamed(Routes.Register),
+                              child: CustomButton(
+                                height: SizeConfig.blockHeight * 5.625,
+                                width: SizeConfig.blockWidth * 57.777,
+                                title: AppStrings.continueWithEmail,
+                                margin: EdgeInsets.zero,
+                              ),
                             ),
                             CustomButton(
                               height: SizeConfig.blockHeight * 5.625,

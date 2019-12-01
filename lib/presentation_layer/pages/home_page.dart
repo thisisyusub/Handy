@@ -7,7 +7,7 @@ import 'package:heathier/presentation_layer/widgets/home_list_item.dart';
 import 'package:heathier/presentation_layer/widgets/water_action_button.dart';
 import 'package:heathier/utils/size_config.dart';
 
-class HomeView extends StatelessWidget {
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -16,7 +16,7 @@ class HomeView extends StatelessWidget {
           builder: (context, orientation) {
             SizeConfig().init(constraints, orientation, context);
             return Scaffold(
-              backgroundColor: AppColors.goalItemBackgroundColor,
+              backgroundColor: AppColors.appBackgroundColor,
               body: SingleChildScrollView(
                 child: Column(
                   children: <Widget>[

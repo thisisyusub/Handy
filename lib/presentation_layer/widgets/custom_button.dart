@@ -19,17 +19,21 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width * SizeConfig.textScaleFactor,
+      width: width * (SizeConfig.textScaleFactor),
       height: height * SizeConfig.textScaleFactor,
       margin: margin,
       decoration: BoxDecoration(
         color: AppColors.customButtonBackgroundColor,
-        borderRadius: BorderRadius.circular(18),
+        borderRadius: BorderRadius.circular(
+          SizeConfig.blockWidth * 5 * SizeConfig.textScaleFactor,
+        ),
       ),
-      child: Center(child: Text(
-        title,
-        style: AppTextStyles.fontSize14MediumStyle,
-      ),),
+      child: Center(
+        child: Text(
+          title,
+          style: AppTextStyles.fontSize14MediumStyle,
+        ),
+      ),
     );
   }
 }

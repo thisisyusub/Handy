@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:heathier/contants/routes.dart';
-import 'package:heathier/presentation_layer/views/home_view.dart';
-import 'package:heathier/presentation_layer/views/sign_up_view.dart';
-import 'package:heathier/presentation_layer/views/welcome_view.dart';
+import 'package:heathier/presentation_layer/pages/home_page.dart';
+import 'package:heathier/presentation_layer/pages/register_page.dart';
+import 'package:heathier/presentation_layer/pages/sign_up_page.dart';
+import 'package:heathier/presentation_layer/pages/welcome_page.dart';
 
 class Router {
   Router._();
@@ -10,11 +11,13 @@ class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.Welcome:
-        return MaterialPageRoute(builder: (_) => WelcomeView());
+        return MaterialPageRoute(builder: (_) => WelcomePage());
+      case Routes.Register:
+        return MaterialPageRoute(builder: (_) => RegisterPage());
       case Routes.Home:
-        return MaterialPageRoute(builder: (_) => HomeView());
+        return MaterialPageRoute(builder: (_) => HomePage());
       case Routes.SignUp:
-        return MaterialPageRoute(builder: (_) => SignUpView());
+        return MaterialPageRoute(builder: (_) => SignUpPage());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(

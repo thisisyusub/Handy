@@ -40,9 +40,21 @@ class AppStrings {
   static const String add = 'Add';
 
   // new part last
+ // welcome screen
 static const String handy = 'Handy';
 static const String byContinuingYouAccept = 'by continuing you accept';
 static const String termsOfUse = ' Terms of Use';
 static const String continueWithEmail = 'continue with email';
 static const String continueWithGoogle = 'continue with Google';
+
+// register screen
+static const String welcome = 'Welcome';
+static const String email = 'Email';
+static const String password = 'Password';
+static const String forgotPassword = 'forgot password';
+static const String login = 'login';
+static const String create = 'create';
+static const String hintEmail = 'jeremywalker@gmail.com';
+
+// on boarding screen
 }
