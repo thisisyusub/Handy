@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:heathier/contants/app_strings.dart';
 import 'package:heathier/presentation_layer/shared/app_colors.dart';
+import 'package:heathier/presentation_layer/shared/app_icons.dart';
 import 'package:heathier/presentation_layer/shared/app_text_styles.dart';
 import 'package:heathier/presentation_layer/widgets/custom_button.dart';
 import 'package:heathier/utils/size_config.dart';
@@ -28,11 +30,30 @@ class WelcomeView extends StatelessWidget {
                       alignment: Alignment.topCenter,
                       child: Container(
                         margin: EdgeInsets.only(
-                          top: SizeConfig.blockHeight * 17.1875,
+                          top: SizeConfig.blockHeight * 14.84375,
                         ),
-                        height: SizeConfig.blockHeight * 39.53125,
-                        width: SizeConfig.blockWidth * 70.277,
-                        child: Placeholder(),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(
+                                left: SizeConfig.blockWidth * 7.222,
+                              ),
+                              child: Text(
+                                AppStrings.handy,
+                                style: AppTextStyles.fontSize30MediumStyle,
+                              ),
+                            ),
+                            SizedBox(
+                              height: SizeConfig.blockHeight * 7.1875,
+                            ),
+                            SvgPicture.asset(
+                              AppIcons.illustration,
+                              height: SizeConfig.blockHeight *39.0625,
+                              width: SizeConfig.blockWidth * 72.222,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     Align(

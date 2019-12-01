@@ -40,6 +40,7 @@ class AppStrings {
   static const String add = 'Add';
 
   // new part last
+static const String handy = 'Handy';
 static const String byContinuingYouAccept = 'by continuing you accept';
 static const String termsOfUse = ' Terms of Use';
 static const String continueWithEmail = 'continue with email';

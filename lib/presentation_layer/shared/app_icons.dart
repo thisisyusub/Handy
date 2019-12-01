@@ -7,4 +7,5 @@ class AppIcons {
   static const String calorie = 'assets/icons/calorie.svg';
   static const String moon = 'assets/icons/moon.svg';
   static const String waterDrop = 'assets/icons/water_drop.svg';
+  static const String illustration = 'assets/icons/illustration.svg';
 }

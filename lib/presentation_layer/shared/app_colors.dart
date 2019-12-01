@@ -36,6 +36,7 @@ class AppColors {
 
 
   // new part last
+static const handyTextColor = Color.fromRGBO(63, 61, 86, 1);
 static const appBackgroundColor = Color.fromRGBO(252, 252, 252, 1);
 static const customButtonBackgroundColor = Color.fromRGBO(194, 216, 255, 1);
 static const customButtonTextColor = Color.fromRGBO(26, 26, 26, 1);
