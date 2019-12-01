@@ -29,7 +29,6 @@ class AppColors {
   static const waterProgressBarColor = Color.fromRGBO(251, 248, 174, 1);
   static const sleepProgressBarColor = Color.fromRGBO(174, 251, 174, 1);
   static const homeListItemTitleTextColor = Color.fromRGBO(110, 110, 110, 1);
-  static const progressBarBackgroundColor = Color.fromRGBO(245, 245, 245, 1);
   static const indicatorTextColor = Color.fromRGBO(46, 46, 46, 1);
   static const indicatorTitleTextColor = Color.fromRGBO(151, 149, 149, 1);
 
@@ -40,4 +39,6 @@ static const appBackgroundColor = Color.fromRGBO(252, 252, 252, 1);
 static const customButtonBackgroundColor = Color.fromRGBO(194, 216, 255, 1);
 static const customButtonTextColor = Color.fromRGBO(26, 26, 26, 1);
 static const pageViewSubtitleColor = Color.fromRGBO(148, 146, 170, 1);
+static const progressBarIndicatorColor = Color.fromRGBO(95, 151, 255, 1);
+static const progressBarBackgroundColor = Color.fromRGBO(194, 216, 255, 1);
 }

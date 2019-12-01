@@ -3,15 +3,15 @@ import 'package:heathier/presentation_layer/shared/app_colors.dart';
 import 'package:heathier/utils/size_config.dart';
 
 class CustomProgressBar extends StatelessWidget {
-  final Color progressColor;
+  final double indicatorValueFactor;
 
-  CustomProgressBar(this.progressColor);
+  CustomProgressBar(this.indicatorValueFactor);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: SizeConfig.blockWidth * 14.722 * SizeConfig.textScaleFactor,
-      height: SizeConfig.blockHeight * 1.5625 * SizeConfig.textScaleFactor,
+      width: SizeConfig.blockWidth * 16.666 * SizeConfig.textScaleFactor,
+      height: SizeConfig.blockHeight * 1.875 * SizeConfig.textScaleFactor,
       child: Stack(
         children: <Widget>[
           Container(
@@ -21,10 +21,10 @@ class CustomProgressBar extends StatelessWidget {
             ),
           ),
           FractionallySizedBox(
-            widthFactor: 0.30,
+            widthFactor: indicatorValueFactor,
             child: Container(
               decoration: BoxDecoration(
-                color: progressColor,
+                color: AppColors.progressBarIndicatorColor,
                 borderRadius: BorderRadius.circular(6),
               ),
             ),

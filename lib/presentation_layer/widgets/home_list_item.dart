@@ -80,7 +80,7 @@ class HomeListItem extends StatelessWidget {
                               ),
                             ],
                           ),
-                          CustomProgressBar(progressBarColor),
+                          CustomProgressBar(0.67),
                         ],
                       ),
                       SizedBox(
