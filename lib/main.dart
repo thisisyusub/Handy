@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:heathier/bloc_layer/blocs/authentication_bloc.dart';
+import 'package:heathier/bloc_layer/blocs/onboarding_bloc.dart';
 import 'package:heathier/bloc_layer/events/authentication_event.dart';
 import 'package:heathier/bloc_layer/states/authentication_state.dart';
 import 'package:heathier/presentation_layer/router.dart';
@@ -37,35 +38,39 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<AuthenticationBloc>(context)
-      .add(
-        AppStartedEvent(),
-      );
+    BlocProvider.of<AuthenticationBloc>(context).add(
+      AppStartedEvent(),
+    );
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Healthier',
-      theme: ThemeData(
-        primaryColor: AppColors.signUpButtonColor,
-        accentColor: AppColors.signUpButtonColor,
-        fontFamily: 'Rubik',
+    return BlocProvider<OnBoardingBloc>(
+      create: (_) => OnBoardingBloc(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Healthier',
+        theme: ThemeData(
+          primaryColor: AppColors.signUpButtonColor,
+          accentColor: AppColors.signUpButtonColor,
+          fontFamily: 'Rubik',
+        ),
+        home: BlocBuilder<AuthenticationBloc, AuthenticationState>(
+          builder: (context, state) {
+            if (state is AuthenticationLoadingState) {
+              return Scaffold(
+                body: Center(
+                  child: CircularProgressIndicator(),
+                ),
+              );
+            }
+
+            if (state is AuthenticationUnAuthenticatedState) {
+              return WelcomePage();
+            }
+
+            return HomePage();
+          },
+        ),
+        onGenerateRoute: Router.generateRoute,
       ),
-      home:BlocBuilder<AuthenticationBloc, AuthenticationState>(
-        builder: (context, state) {
-          if(state is AuthenticationLoadingState) {
-            return Scaffold(
-              body: Center(child: CircularProgressIndicator(),),
-            );
-          }
-
-          if(state is AuthenticationUnAuthenticatedState) {
-            return WelcomePage();
-          }
-
-          return HomePage();
-        },
-      ),
-      onGenerateRoute: Router.generateRoute,
     );
   }
 }

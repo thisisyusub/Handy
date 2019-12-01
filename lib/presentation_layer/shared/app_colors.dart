@@ -22,7 +22,6 @@ class AppColors {
   static const signUpButtonTextColor = Color.fromRGBO(55, 55, 55, 1);
   static const pageViewControllerTextColor = Color.fromRGBO(152, 152, 152, 1);
   static const pageViewTitleColor = Color.fromRGBO(20, 20, 20, 1);
-  static const pageViewSubtitleColor = Color.fromRGBO(123, 123, 123, 1);
   static const multiSelectionButtonColor = Color.fromRGBO(235, 241, 255, 1);
   static const multiSelectionButtonTextColor = Color.fromRGBO(46, 46, 46, 1);
   static const bottomNavigationShadowColor = Color.fromRGBO(239, 242, 249, 0.72);
@@ -40,4 +39,5 @@ static const handyTextColor = Color.fromRGBO(63, 61, 86, 1);
 static const appBackgroundColor = Color.fromRGBO(252, 252, 252, 1);
 static const customButtonBackgroundColor = Color.fromRGBO(194, 216, 255, 1);
 static const customButtonTextColor = Color.fromRGBO(26, 26, 26, 1);
+static const pageViewSubtitleColor = Color.fromRGBO(148, 146, 170, 1);
 }

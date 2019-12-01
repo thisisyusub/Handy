@@ -76,13 +76,18 @@ class WelcomePage extends StatelessWidget {
                                 margin: EdgeInsets.zero,
                               ),
                             ),
-                            CustomButton(
-                              height: SizeConfig.blockHeight * 5.625,
-                              width: SizeConfig.blockWidth * 57.777,
-                              title: AppStrings.continueWithGoogle,
-                              margin: EdgeInsets.only(
-                                top: SizeConfig.blockHeight * 3.125,
-                                bottom: SizeConfig.blockHeight * 2.5,
+                            GestureDetector(
+                              onTap: () => Navigator.of(context).pushNamed(
+                                Routes.SignUp,
+                              ),
+                              child: CustomButton(
+                                height: SizeConfig.blockHeight * 5.625,
+                                width: SizeConfig.blockWidth * 57.777,
+                                title: AppStrings.continueWithGoogle,
+                                margin: EdgeInsets.only(
+                                  top: SizeConfig.blockHeight * 3.125,
+                                  bottom: SizeConfig.blockHeight * 2.5,
+                                ),
                               ),
                             ),
                             Row(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:heathier/contants/app_strings.dart';
+import 'package:heathier/contants/routes.dart';
 import 'package:heathier/presentation_layer/shared/app_colors.dart';
 import 'package:heathier/presentation_layer/shared/app_text_styles.dart';
 import 'package:heathier/presentation_layer/widgets/custom_button.dart';
@@ -62,25 +63,30 @@ class RegisterPage extends StatelessWidget {
               SizedBox(
                 height: SizeConfig.blockHeight * 3.4375,
               ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      CustomButton(
-                        height: SizeConfig.blockHeight * 5.625,
-                        width: SizeConfig.blockWidth * 28.888,
-                        margin: EdgeInsets.zero,
-                        title: AppStrings.login,
-                      ),
-                      CustomButton(
-                        height: SizeConfig.blockHeight * 5.625,
-                        width: SizeConfig.blockWidth * 28.888,
-                        margin: EdgeInsets.only(
-                          left: SizeConfig.blockWidth * 4.444,
-                        ),
-                        title: AppStrings.create,
-                      ),
-                    ],
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  GestureDetector(
+                    onTap: () => Navigator.of(context).pushNamed(
+                      Routes.Home,
+                    ),
+                    child: CustomButton(
+                      height: SizeConfig.blockHeight * 5.625,
+                      width: SizeConfig.blockWidth * 28.888,
+                      margin: EdgeInsets.zero,
+                      title: AppStrings.login,
+                    ),
                   ),
+                  CustomButton(
+                    height: SizeConfig.blockHeight * 5.625,
+                    width: SizeConfig.blockWidth * 28.888,
+                    margin: EdgeInsets.only(
+                      left: SizeConfig.blockWidth * 4.444,
+                    ),
+                    title: AppStrings.create,
+                  ),
+                ],
+              ),
             ],
           ),
         ),

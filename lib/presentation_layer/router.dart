@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:heathier/contants/routes.dart';
 import 'package:heathier/presentation_layer/pages/home_page.dart';
 import 'package:heathier/presentation_layer/pages/register_page.dart';
-import 'package:heathier/presentation_layer/pages/sign_up_page.dart';
+import 'package:heathier/presentation_layer/pages/onboarding_page.dart';
 import 'package:heathier/presentation_layer/pages/welcome_page.dart';
 
 class Router {
@@ -17,7 +17,7 @@ class Router {
       case Routes.Home:
         return MaterialPageRoute(builder: (_) => HomePage());
       case Routes.SignUp:
-        return MaterialPageRoute(builder: (_) => SignUpPage());
+        return MaterialPageRoute(builder: (_) => OnBoardingPage());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(

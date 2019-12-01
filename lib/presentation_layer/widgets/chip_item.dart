@@ -7,30 +7,36 @@ class ChipItem extends StatelessWidget {
   final String label;
   final double width;
   final double height;
+  final bool colored;
+  final double borderRadius;
 
   ChipItem({
     this.label,
     this.width,
     this.height,
+    this.colored = false,
+    this.borderRadius,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(
-        horizontal: SizeConfig.blockWidth * 2,
-        vertical: 0,
-      ),
       width: width * SizeConfig.textScaleFactor,
       height: height * SizeConfig.textScaleFactor,
       decoration: BoxDecoration(
-        color: AppColors.multiSelectionButtonColor,
-        borderRadius: BorderRadius.circular(12),
+        color: colored ? AppColors.customButtonBackgroundColor : AppColors.appBackgroundColor,
+        borderRadius: BorderRadius.circular(
+          borderRadius * SizeConfig.textScaleFactor,
+        ),
+        border: Border.all(
+          width: 1,
+          color: AppColors.customButtonTextColor,
+        ),
       ),
       child: Center(
         child: Text(
           label,
-          style: AppTextStyles.fontSize12Style,
+          style: AppTextStyles.fontSize12RegularStyle,
         ),
       ),
     );

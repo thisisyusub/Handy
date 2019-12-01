@@ -35,6 +35,11 @@ class AppTextStyles {
     color: AppColors.customButtonTextColor,
   );
 
+  static final fontSize12ColorRegularStyle = TextStyle(
+    fontSize: SizeConfig.textMultiplier * 1.875,
+    color: AppColors.pageViewSubtitleColor,
+  );
+
 
   static final fontSize11Style = TextStyle(
     fontSize: SizeConfig.textMultiplier * 1.71875,
