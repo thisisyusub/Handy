@@ -3,6 +3,7 @@ import 'package:heathier/contants/app_strings.dart';
 import 'package:heathier/presentation_layer/shared/app_colors.dart';
 import 'package:heathier/presentation_layer/shared/app_icons.dart';
 import 'package:heathier/presentation_layer/widgets/add_button.dart';
+import 'package:heathier/presentation_layer/widgets/custom_drawer.dart';
 import 'package:heathier/presentation_layer/widgets/home_list_item.dart';
 import 'package:heathier/presentation_layer/widgets/water_action_button.dart';
 import 'package:heathier/utils/size_config.dart';
@@ -16,6 +17,7 @@ class HomePage extends StatelessWidget {
           builder: (context, orientation) {
             SizeConfig().init(constraints, orientation, context);
             return Scaffold(
+              drawer: CustomDrawer(),
               backgroundColor: AppColors.appBackgroundColor,
               body: SingleChildScrollView(
                 child: Column(
