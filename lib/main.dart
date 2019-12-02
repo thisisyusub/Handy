@@ -15,8 +15,8 @@ import 'package:heathier/presentation_layer/pages/welcome_page.dart';
 void main() async {
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
-      systemNavigationBarColor: Colors.white, // navigation bar color
-      statusBarColor: Colors.white, // status bar color
+      systemNavigationBarColor: AppColors.appBackgroundColor, // navigation bar color
+      statusBarColor: AppColors.appBackgroundColor, // status bar color
       statusBarIconBrightness: Brightness.dark, // status bar icons' color
       systemNavigationBarIconBrightness:
           Brightness.dark, //navigation bar icons' color
