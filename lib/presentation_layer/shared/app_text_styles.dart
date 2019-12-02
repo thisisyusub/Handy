@@ -46,6 +46,16 @@ class AppTextStyles {
     color: AppColors.pageViewSubtitleColor,
   );
 
+  static final fontSize12wRegularV2Style = TextStyle(
+    fontSize: SizeConfig.textMultiplier * 1.875,
+    color: AppColors.homeListItemTitleTextColor,
+  );
+
+  static final fontSize12MediumStyle = TextStyle(
+    fontSize: SizeConfig.textMultiplier * 1.875,
+    color: AppColors.homeListItemTitleTextColor,
+  );
+
 
   static final fontSize11Style = TextStyle(
     fontSize: SizeConfig.textMultiplier * 1.71875,
@@ -113,11 +123,6 @@ class AppTextStyles {
   static final fontSize12Style = TextStyle(
     fontSize: SizeConfig.textMultiplier * 1.875,
     color: AppColors.multiSelectionButtonTextColor,
-  );
-
-  static final fontSize12withColorStyle = TextStyle(
-    fontSize: SizeConfig.textMultiplier * 1.875,
-    color: AppColors.homeListItemTitleTextColor,
   );
 
   static final fontSize14withColorStyle = TextStyle(

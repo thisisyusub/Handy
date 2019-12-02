@@ -1,31 +1,6 @@
 class AppStrings {
   AppStrings._();
 
-  static const String dailyMessagePart1 = 'Good morning Kanan,';
-  static const String dailyMessagePart2 = 'do not forget your goals';
-  static const String profileButton = 'Profile';
-  static const String yourGoalsForToday = 'Your goals for today';
-  static const String kCal = 'kCal';
-  static const String glass = 'glass';
-  static const String glasses = 'glasses';
-  static const String hour = 'hour';
-  static const String hours = 'hours';
-  static const String calorie = 'Calorie';
-  static const String water = 'Water';
-  static const String sleep = 'Sleep';
-  static const String welcomeToHealth = 'Welcome to\nHealth';
-  static const String signUp = 'Sign up';
-  static const String haveAnAccount = 'I have an account, ';
-  static const String logIn = 'log in.';
-  static const String weNeedTheseInformation =
-      'We need these information for further calculations';
-  static const String iAmUsingThisApp = 'I am using this app to';
-  static const String maintainMyLifestyle = 'Maintain my lifestyle';
-  static const String lossWeight = 'Loss weight';
-  static const String cm = 'cm';
-  static const String add = 'Add';
-
-  // new part last
   // welcome screen
   static const String handy = 'Handy';
   static const String byContinuingYouAccept = 'by continuing you accept';
@@ -72,11 +47,27 @@ class AppStrings {
   static const String activityLevel = 'Activity Level';
 
   // on boarding screen (Do you follow any diet)
-static const String doYouFollowAnyDiet = 'Do you follow any diet?';
-static const String no = 'No';
-static const String vegan = 'Vegan';
-static const String ketogenic = 'Ketogenic';
-static const String glutenFree = 'Gluten-free';
-static const String diaryFree = 'Diary-free';
-static const String paleo = 'Paleo';
+  static const String doYouFollowAnyDiet = 'Do you follow any diet?';
+  static const String no = 'No';
+  static const String vegan = 'Vegan';
+  static const String ketogenic = 'Ketogenic';
+  static const String glutenFree = 'Gluten-free';
+  static const String diaryFree = 'Diary-free';
+  static const String paleo = 'Paleo';
+
+// home screen
+  static const String calorie = 'Calorie';
+  static const String water = 'Water';
+  static const String sleep = 'Sleep';
+  static const String add = 'Add';
+  static const String edit = 'Edit';
+  static const String Cal = 'Cal';
+  static const String glass = 'glass';
+  static const String glasses = 'glasses';
+  static const String hour = 'hour';
+  static const String hours = 'hours';
+  static const String medicine = 'Medicine';
+  static const String manage = 'Manage';
+  static const String normal = 'normal';
+  static const String bmi = 'BMI';
 }

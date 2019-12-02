@@ -24,21 +24,22 @@ class AppColors {
   static const pageViewTitleColor = Color.fromRGBO(20, 20, 20, 1);
   static const multiSelectionButtonColor = Color.fromRGBO(235, 241, 255, 1);
   static const multiSelectionButtonTextColor = Color.fromRGBO(46, 46, 46, 1);
-  static const bottomNavigationShadowColor = Color.fromRGBO(239, 242, 249, 0.72);
+  static const bottomNavigationShadowColor =
+      Color.fromRGBO(239, 242, 249, 0.72);
   static const calorieProgressBarColor = Color.fromRGBO(251, 174, 174, 1);
   static const waterProgressBarColor = Color.fromRGBO(251, 248, 174, 1);
   static const sleepProgressBarColor = Color.fromRGBO(174, 251, 174, 1);
-  static const homeListItemTitleTextColor = Color.fromRGBO(110, 110, 110, 1);
   static const indicatorTextColor = Color.fromRGBO(46, 46, 46, 1);
   static const indicatorTitleTextColor = Color.fromRGBO(151, 149, 149, 1);
 
-
   // new part last
-static const handyTextColor = Color.fromRGBO(63, 61, 86, 1);
-static const appBackgroundColor = Color.fromRGBO(252, 252, 252, 1);
-static const customButtonBackgroundColor = Color.fromRGBO(194, 216, 255, 1);
-static const customButtonTextColor = Color.fromRGBO(26, 26, 26, 1);
-static const pageViewSubtitleColor = Color.fromRGBO(148, 146, 170, 1);
-static const progressBarIndicatorColor = Color.fromRGBO(95, 151, 255, 1);
-static const progressBarBackgroundColor = Color.fromRGBO(194, 216, 255, 1);
+  static const handyTextColor = Color.fromRGBO(63, 61, 86, 1);
+  static const appBackgroundColor = Color.fromRGBO(252, 252, 252, 1);
+  static const customButtonBackgroundColor = Color.fromRGBO(194, 216, 255, 1);
+  static const customButtonTextColor = Color.fromRGBO(26, 26, 26, 1);
+  static const pageViewSubtitleColor = Color.fromRGBO(148, 146, 170, 1);
+  static const progressBarIndicatorColor = Color.fromRGBO(95, 151, 255, 1);
+  static const progressBarBackgroundColor = Color.fromRGBO(194, 216, 255, 1);
+  static const homeListItemTitleTextColor = Color.fromRGBO(129, 129, 129, 1);
+  static const homeListItemShadowColor = Color.fromRGBO(194, 216, 255, 0.4);
 }

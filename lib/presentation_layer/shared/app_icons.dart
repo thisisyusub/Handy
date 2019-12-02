@@ -8,6 +8,7 @@ class AppIcons {
   static const String moon = 'assets/icons/moon.svg';
   static const String waterDrop = 'assets/icons/water_drop.svg';
   static const String illustration = 'assets/icons/illustration.svg';
-  static const String forYou = 'assets/icons/for_you.svg';
+  static const String medicine = 'assets/icons/medicine.svg';
+  static const String weight = 'assets/icons/weight.svg';
   static const String forYouPng = 'assets/images/for_you.png';
 }

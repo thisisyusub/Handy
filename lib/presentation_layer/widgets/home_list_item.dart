@@ -4,23 +4,19 @@ import 'package:heathier/presentation_layer/shared/app_colors.dart';
 import 'package:heathier/presentation_layer/shared/app_text_styles.dart';
 import 'package:heathier/utils/size_config.dart';
 
-import 'custom_progress_bar.dart';
-
 class HomeListItem extends StatelessWidget {
   final String iconPath;
   final String title;
-  final Color progressBarColor;
-  final Widget action;
-  final String indicator;
-  final String indicatorTitle;
+  final Widget rightTopWidget;
+  final Widget leftBottomWidget;
+  final Widget rightBottomWidget;
 
   HomeListItem({
     @required this.iconPath,
     @required this.title,
-    @required this.progressBarColor,
-    @required this.action,
-    @required this.indicator,
-    @required this.indicatorTitle,
+    @required this.rightTopWidget,
+    @required this.leftBottomWidget,
+    @required this.rightBottomWidget,
   });
 
   @override
@@ -29,12 +25,14 @@ class HomeListItem extends StatelessWidget {
       children: <Widget>[
         Container(
           width: SizeConfig.blockWidth * 82.222,
-          height: SizeConfig.blockHeight * 20 * SizeConfig.textScaleFactor,
           padding: EdgeInsets.only(
             left: SizeConfig.blockWidth * 4.444,
             right: SizeConfig.blockWidth * 8.8888,
             top: SizeConfig.blockHeight * 3.4375 * SizeConfig.textScaleFactor,
             bottom: SizeConfig.blockHeight * 5,
+          ),
+          margin: EdgeInsets.only(
+            bottom: SizeConfig.blockHeight * 5.15625,
           ),
           decoration: BoxDecoration(
             color: AppColors.appBackgroundColor,
@@ -43,7 +41,7 @@ class HomeListItem extends StatelessWidget {
               BoxShadow(
                 blurRadius: 10,
                 spreadRadius: 1,
-                color: AppColors.goalsListItemShadowColor,
+                color: AppColors.homeListItemShadowColor,
                 offset: Offset(
                   0.0,
                   5.0,
@@ -67,7 +65,6 @@ class HomeListItem extends StatelessWidget {
                     left: SizeConfig.blockWidth * 4.444,
                   ),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -76,42 +73,23 @@ class HomeListItem extends StatelessWidget {
                             children: <Widget>[
                               Text(
                                 title,
-                                style: AppTextStyles.fontSize12withColorStyle,
+                                style: AppTextStyles.fontSize12wRegularV2Style,
                               ),
                             ],
                           ),
-                          CustomProgressBar(0.67),
+                          rightTopWidget,
                         ],
                       ),
                       SizedBox(
-                        height: SizeConfig.blockHeight *
-                            4.6875 *
-                            SizeConfig.textScaleFactor,
+                        height: SizeConfig.blockHeight * 3.75,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           Expanded(
-                            child: Wrap(
-                              direction: Axis.horizontal,
-                              crossAxisAlignment: WrapCrossAlignment.center,
-                              children: <Widget>[
-                                Text(
-                                  indicator,
-                                  style: AppTextStyles.fontSize14withColorStyle,
-                                ),
-                                SizedBox(
-                                  width: 5,
-                                ),
-                                Text(
-                                  indicatorTitle,
-                                  style: AppTextStyles.fontSize8withColorStyle,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ],
-                            ),
+                            child: leftBottomWidget,
                           ),
-                          action,
+                          rightBottomWidget,
                         ],
                       ),
                     ],
@@ -120,9 +98,6 @@ class HomeListItem extends StatelessWidget {
               ),
             ],
           ),
-        ),
-        SizedBox(
-          height: SizeConfig.blockHeight * 3.75,
         ),
       ],
     );
