@@ -26,7 +26,8 @@ class OnBoardingPage extends StatelessWidget {
         child: BlocListener<OnBoardingBloc, OnBoardingState>(
           listener: (context, state) {
             if (state is LoadHomePageState) {
-              Navigator.of(context).pushNamed(Routes.Home);
+              Navigator.of(context).pushNamedAndRemoveUntil(
+                  Routes.Home, (Route<dynamic> route) => false);
             }
           },
           child: BlocBuilder<OnBoardingBloc, OnBoardingState>(
@@ -96,7 +97,6 @@ class OnBoardingPage extends StatelessWidget {
                 ],
               );
             }
-
             return Container();
           }),
         ),

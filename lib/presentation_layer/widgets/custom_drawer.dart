@@ -1,18 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:heathier/presentation_layer/shared/app_colors.dart';
 import 'package:heathier/utils/size_config.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: AppColors.appBackgroundColor,
-      width: SizeConfig.blockWidth * 62.777,
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: SizeConfig.blockWidth * 8.888,
-          vertical: SizeConfig.blockHeight * 5,
-        ),
+    return Drawer(
+      child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -48,10 +41,7 @@ class CustomDrawer extends StatelessWidget {
             SizedBox(
               height: SizeConfig.blockHeight * 10.9375,
             ),
-            ListTile(
-              title: Text('Sign out'),
-              onTap: null,
-            ),
+            ListTile(title: Text('Sign out'), onTap: () {}),
           ],
         ),
       ),
