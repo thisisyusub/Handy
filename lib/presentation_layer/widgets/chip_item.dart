@@ -9,6 +9,7 @@ class ChipItem extends StatelessWidget {
   final double height;
   final bool colored;
   final double borderRadius;
+  final bool isResizable;
 
   ChipItem({
     this.label,
@@ -16,15 +17,18 @@ class ChipItem extends StatelessWidget {
     this.height,
     this.colored = false,
     this.borderRadius,
+    this.isResizable = true,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width * SizeConfig.textScaleFactor,
-      height: height * SizeConfig.textScaleFactor,
+      width: width * (isResizable ? SizeConfig.textScaleFactor : 1),
+      height: height * (isResizable ? SizeConfig.textScaleFactor : 1),
       decoration: BoxDecoration(
-        color: colored ? AppColors.customButtonBackgroundColor : AppColors.appBackgroundColor,
+        color: colored
+            ? AppColors.customButtonBackgroundColor
+            : AppColors.appBackgroundColor,
         borderRadius: BorderRadius.circular(
           borderRadius * SizeConfig.textScaleFactor,
         ),
@@ -37,6 +41,8 @@ class ChipItem extends StatelessWidget {
         child: Text(
           label,
           style: AppTextStyles.fontSize12RegularStyle,
+          softWrap: true,
+         textAlign: TextAlign.center,
         ),
       ),
     );

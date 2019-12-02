@@ -70,4 +70,13 @@ class AppStrings {
   static const String kg = 'kg';
   static const String oz = 'oz';
   static const String activityLevel = 'Activity Level';
+
+  // on boarding screen (Do you follow any diet)
+static const String doYouFollowAnyDiet = 'Do you follow any diet?';
+static const String no = 'No';
+static const String vegan = 'Vegan';
+static const String ketogenic = 'Ketogenic';
+static const String glutenFree = 'Gluten-free';
+static const String diaryFree = 'Diary-free';
+static const String paleo = 'Paleo';
 }
