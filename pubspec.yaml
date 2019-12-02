@@ -55,6 +55,7 @@ flutter:
    - assets/icons/moon.svg
    - assets/icons/water_drop.svg
    - assets/icons/illustration.svg
+   - assets/images/for_you.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

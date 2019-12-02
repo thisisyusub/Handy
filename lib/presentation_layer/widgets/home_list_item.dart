@@ -37,7 +37,7 @@ class HomeListItem extends StatelessWidget {
             bottom: SizeConfig.blockHeight * 5,
           ),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: AppColors.appBackgroundColor,
             borderRadius: BorderRadius.circular(10),
             boxShadow: [
               BoxShadow(

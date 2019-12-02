@@ -14,8 +14,14 @@ class AppTextStyles {
   );
 
   static final fontSize22MediumStyle = TextStyle(
-    fontSize: SizeConfig.textMultiplier * 3.4375,
+    fontSize: SizeConfig.textMultiplier * 2.5,
     color: AppColors.handyTextColor,
+    fontWeight: FontWeight.w500,
+  );
+
+  static final fontSize16MMediumStyle = TextStyle(
+    fontSize: SizeConfig.textMultiplier * 2.1875,
+    color: AppColors.customButtonTextColor,
     fontWeight: FontWeight.w500,
   );
 
