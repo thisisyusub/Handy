@@ -49,12 +49,12 @@ class OnBoardingBloc extends Bloc<OnBoardingEvent, OnBoardingState> {
         _isSkipAvailable = _isPrevAvailable = _isStartAvailable = false;
         break;
       case 1:
-        _isNextAvailable = _isSkipAvailable = true;
-        _isPrevAvailable = _isStartAvailable = false;
+        _isNextAvailable = _isPrevAvailable = true;
+        _isSkipAvailable = _isStartAvailable = false;
         break;
       case 2:
-        _isPrevAvailable = _isNextAvailable = true;
-        _isStartAvailable = _isStartAvailable = false;
+        _isSkipAvailable = _isNextAvailable = true;
+        _isStartAvailable = _isPrevAvailable = false;
         break;
       case 3:
         _isPrevAvailable = _isStartAvailable = true;

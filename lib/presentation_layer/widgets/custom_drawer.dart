@@ -19,13 +19,13 @@ class CustomDrawer extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: SizeConfig.blockHeight * 15.625,
+              height: SizeConfig.heightMultiplier * 15.625,
             ),
             ListTile(
               title: Text('Jake'),
               onTap: null,
             ),
-            SizedBox(height: SizeConfig.blockHeight * 12.5),
+            SizedBox(height: SizeConfig.heightMultiplier * 12.5),
             ListTile(
               title: Text('Notifications'),
               onTap: () {},
@@ -39,7 +39,7 @@ class CustomDrawer extends StatelessWidget {
               onTap: () {},
             ),
             SizedBox(
-              height: SizeConfig.blockHeight * 10.9375,
+              height: SizeConfig.heightMultiplier * 10.9375,
             ),
             ListTile(title: Text('Sign out'), onTap: () {}),
           ],

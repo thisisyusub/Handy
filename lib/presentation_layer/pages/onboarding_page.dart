@@ -21,7 +21,7 @@ class OnBoardingPage extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.symmetric(
           vertical: 0,
-          horizontal: SizeConfig.blockWidth * 8.888,
+          horizontal: SizeConfig.widthMultiplier * 8.888,
         ),
         child: BlocListener<OnBoardingBloc, OnBoardingState>(
           listener: (context, state) {
@@ -37,22 +37,22 @@ class OnBoardingPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   SizedBox(
-                    height: SizeConfig.blockHeight * 19.0625,
+                    height: SizeConfig.heightMultiplier * 19.0625,
                   ),
                   Expanded(
                     child: IndexedStack(
                       index: state.index,
                       children: [
                         OnBoardingTellsUsAboutYou(),
-                        OnBoardingWhatIsYourGoal(),
                         OnBoardingMoreAboutYou(),
+                        OnBoardingWhatIsYourGoal(),
                         OnBoardingDoYouFollowAnyDiet(),
                       ],
                     ),
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      bottom: SizeConfig.blockHeight * 4.6875,
+                      bottom: SizeConfig.heightMultiplier * 4.6875,
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

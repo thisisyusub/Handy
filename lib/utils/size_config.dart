@@ -5,17 +5,13 @@ class SizeConfig {
 
   static double screenHeight;
 
-  static double blockWidth = 0;
+  static double widthMultiplier = 0;
 
-  static double blockHeight = 0;
+  static double heightMultiplier = 0;
 
   static double textMultiplier;
 
   static double imageSizeMultiplier;
-
-  static double heightMultiplier;
-
-  static double widthMultiplier;
 
   static bool isPortrait = true;
 
@@ -44,17 +40,13 @@ class SizeConfig {
       isMobilePortrait = false;
     }
 
-    blockWidth = screenWidth / 100;
+    widthMultiplier = screenWidth / 100;
 
-    blockHeight = screenHeight / 100;
+    heightMultiplier = screenHeight / 100;
 
-    textMultiplier = blockHeight;
+    textMultiplier = heightMultiplier;
 
-    imageSizeMultiplier = blockWidth;
-
-    heightMultiplier = blockHeight;
-
-    widthMultiplier = blockWidth;
+    imageSizeMultiplier = widthMultiplier;
 
     textScaleFactor = MediaQuery.of(context).textScaleFactor;
   }

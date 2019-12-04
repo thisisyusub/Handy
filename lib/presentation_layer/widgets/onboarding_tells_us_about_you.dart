@@ -24,16 +24,16 @@ class OnBoardingTellsUsAboutYou extends StatelessWidget {
                 style: AppTextStyles.fontSize14RegularStyle,
               ),
               SizedBox(
-                width: SizeConfig.blockWidth * 3.333,
+                width: SizeConfig.widthMultiplier * 3.333,
               ),
               Container(
-                width: SizeConfig.blockWidth * 26.666,
+                width: SizeConfig.widthMultiplier * 26.666,
                 child: TextField(),
               ),
             ],
           ),
           SizedBox(
-            width: SizeConfig.blockWidth * 5.15625,
+            width: SizeConfig.widthMultiplier * 5.15625,
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -43,16 +43,16 @@ class OnBoardingTellsUsAboutYou extends StatelessWidget {
                 style: AppTextStyles.fontSize14RegularStyle,
               ),
               SizedBox(
-                width: SizeConfig.blockWidth * 3.333,
+                width: SizeConfig.widthMultiplier * 3.333,
               ),
               Container(
-                width: SizeConfig.blockWidth * 8.888,
+                width: SizeConfig.widthMultiplier * 8.888,
                 child: TextField(),
               ),
             ],
           ),
           SizedBox(
-            height: SizeConfig.blockHeight * 4.375,
+            height: SizeConfig.heightMultiplier * 4.375,
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -62,23 +62,23 @@ class OnBoardingTellsUsAboutYou extends StatelessWidget {
                 style: AppTextStyles.fontSize14RegularStyle,
               ),
               SizedBox(
-                width: SizeConfig.blockWidth * 3.333,
+                width: SizeConfig.widthMultiplier * 3.333,
               ),
               ChipItem(
                 label: AppStrings.male,
-                width: SizeConfig.blockWidth * 19.444,
-                height: SizeConfig.blockHeight * 3.75,
+                width: SizeConfig.widthMultiplier * 19.444,
+                height: SizeConfig.heightMultiplier * 3.75,
                 colored: true,
-                borderRadius: SizeConfig.blockWidth * 3.333,
+                borderRadius: SizeConfig.widthMultiplier * 3.333,
               ),
               SizedBox(
-                width: SizeConfig.blockWidth * 3.333,
+                width: SizeConfig.widthMultiplier * 3.333,
               ),
               ChipItem(
                 label: AppStrings.female,
-                width: SizeConfig.blockWidth * 19.444,
-                height: SizeConfig.blockHeight * 3.75,
-                borderRadius: SizeConfig.blockWidth * 3.333,
+                width: SizeConfig.widthMultiplier * 19.444,
+                height: SizeConfig.heightMultiplier * 3.75,
+                borderRadius: SizeConfig.widthMultiplier * 3.333,
               ),
             ],
           ),

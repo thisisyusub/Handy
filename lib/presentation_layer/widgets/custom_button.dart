@@ -25,7 +25,7 @@ class CustomButton extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.customButtonBackgroundColor,
         borderRadius: BorderRadius.circular(
-          SizeConfig.blockWidth * 5 * SizeConfig.textScaleFactor,
+          SizeConfig.widthMultiplier * 5 * SizeConfig.textScaleFactor,
         ),
       ),
       child: Center(

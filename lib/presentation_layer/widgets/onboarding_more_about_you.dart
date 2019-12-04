@@ -23,36 +23,36 @@ class OnBoardingMoreAboutYou extends StatelessWidget {
                 style: AppTextStyles.fontSize14RegularStyle,
               ),
               SizedBox(
-                width: SizeConfig.blockWidth * 2.777,
+                width: SizeConfig.widthMultiplier * 2.777,
               ),
               Container(
-                width: SizeConfig.blockWidth * 8.888,
+                width: SizeConfig.widthMultiplier * 8.888,
                 child: TextField(),
               ),
               SizedBox(
-                width: SizeConfig.blockWidth * 2.777,
+                width: SizeConfig.widthMultiplier * 2.777,
               ),
               ChipItem(
                 label: AppStrings.kg,
-                width: SizeConfig.blockWidth * 13.888,
-                height: SizeConfig.blockHeight * 3.75,
+                width: SizeConfig.widthMultiplier * 13.888,
+                height: SizeConfig.heightMultiplier * 3.75,
                 colored: true,
-                borderRadius: SizeConfig.blockWidth * 3.333,
+                borderRadius: SizeConfig.widthMultiplier * 3.333,
               ),
               SizedBox(
-                width: SizeConfig.blockWidth * 2.777,
+                width: SizeConfig.widthMultiplier * 2.777,
               ),
               ChipItem(
-                label: AppStrings.oz,
-                width: SizeConfig.blockWidth * 13.888,
-                height: SizeConfig.blockHeight * 3.75,
+                label: AppStrings.lb,
+                width: SizeConfig.widthMultiplier * 13.888,
+                height: SizeConfig.heightMultiplier * 3.75,
                 colored: false,
-                borderRadius: SizeConfig.blockWidth * 3.333,
+                borderRadius: SizeConfig.widthMultiplier * 3.333,
               ),
             ],
           ),
           SizedBox(
-            height: SizeConfig.blockHeight * 4,
+            height: SizeConfig.heightMultiplier * 4,
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -62,16 +62,16 @@ class OnBoardingMoreAboutYou extends StatelessWidget {
                 style: AppTextStyles.fontSize14RegularStyle,
               ),
               SizedBox(
-                width: SizeConfig.blockWidth * 2.777,
+                width: SizeConfig.widthMultiplier * 2.777,
               ),
               Container(
-                width: SizeConfig.blockWidth * 8.888,
+                width: SizeConfig.widthMultiplier * 8.888,
                 child: TextField(),
               ),
             ],
           ),
           SizedBox(
-            height: SizeConfig.blockHeight * 4,
+            height: SizeConfig.heightMultiplier * 4,
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -81,7 +81,7 @@ class OnBoardingMoreAboutYou extends StatelessWidget {
                 style: AppTextStyles.fontSize14RegularStyle,
               ),
               SizedBox(
-                width: SizeConfig.blockWidth * 2.777,
+                width: SizeConfig.widthMultiplier * 2.777,
               ),
                DropdownButton<String>(
                 items: [

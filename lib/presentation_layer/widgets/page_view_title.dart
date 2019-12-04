@@ -15,7 +15,7 @@ class PageViewTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
-        bottom: SizeConfig.blockHeight * 9,
+        bottom: SizeConfig.heightMultiplier * 9,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.max,

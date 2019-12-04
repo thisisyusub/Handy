@@ -18,29 +18,29 @@ class OnBoardingWhatIsYourGoal extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               ChipItem(
-                height: SizeConfig.blockHeight * 5,
-                width: SizeConfig.blockWidth * 45,
+                height: SizeConfig.heightMultiplier * 5,
+                width: SizeConfig.widthMultiplier * 45,
                 label: AppStrings.maintainLifestyle,
                 colored: true,
-                borderRadius: SizeConfig.blockWidth * 4.444,
+                borderRadius: SizeConfig.widthMultiplier * 4.444,
               ),
               SizedBox(
-                height: SizeConfig.blockHeight * 2.5,
+                height: SizeConfig.heightMultiplier * 2.5,
               ),
               ChipItem(
-                height: SizeConfig.blockHeight * 5,
-                width: SizeConfig.blockWidth * 45,
+                height: SizeConfig.heightMultiplier * 5,
+                width: SizeConfig.widthMultiplier * 45,
                 label: AppStrings.maintainLifestyle,
-                borderRadius: SizeConfig.blockWidth * 4.444,
+                borderRadius: SizeConfig.widthMultiplier * 4.444,
               ),
               SizedBox(
-                height: SizeConfig.blockHeight * 2.5,
+                height: SizeConfig.heightMultiplier * 2.5,
               ),
               ChipItem(
-                height: SizeConfig.blockHeight * 5,
-                width: SizeConfig.blockWidth * 45,
+                height: SizeConfig.heightMultiplier * 5,
+                width: SizeConfig.widthMultiplier * 45,
                 label: AppStrings.maintainLifestyle,
-                borderRadius: SizeConfig.blockWidth * 4.444,
+                borderRadius: SizeConfig.widthMultiplier * 4.444,
               ),
             ],
           )

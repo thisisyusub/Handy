@@ -11,12 +11,12 @@ class WaterActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: SizeConfig.blockHeight * 3.125 * SizeConfig.textScaleFactor,
-      width: SizeConfig.blockWidth * 5.555 * SizeConfig.textScaleFactor,
+      height: SizeConfig.heightMultiplier * 3.125 * SizeConfig.textScaleFactor,
+      width: SizeConfig.widthMultiplier * 5.555 * SizeConfig.textScaleFactor,
       decoration: BoxDecoration(
         color: AppColors.multiSelectionButtonColor,
         borderRadius: BorderRadius.circular(
-          SizeConfig.blockHeight * 2.5 * SizeConfig.textScaleFactor,
+          SizeConfig.heightMultiplier * 2.5 * SizeConfig.textScaleFactor,
         ),
       ),
       child: Center(

@@ -2,7 +2,7 @@ class AppStrings {
   AppStrings._();
 
   // welcome screen
-  static const String handy = 'Handy';
+  static const String healthier = 'Healthier';
   static const String byContinuingYouAccept = 'by continuing you accept';
   static const String termsOfUse = ' Terms of Use';
   static const String continueWithEmail = 'continue with email';
@@ -43,7 +43,7 @@ class AppStrings {
   static const String height = 'Height';
   static const String weight = 'Weight';
   static const String kg = 'kg';
-  static const String oz = 'oz';
+  static const String lb = 'lb';
   static const String activityLevel = 'Activity Level';
 
   // on boarding screen (Do you follow any diet)

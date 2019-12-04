@@ -8,8 +8,8 @@ class AddButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: SizeConfig.blockWidth * 14.722 * SizeConfig.textScaleFactor,
-      height: SizeConfig.blockHeight * 3 * SizeConfig.textScaleFactor,
+      width: SizeConfig.widthMultiplier * 14.722 * SizeConfig.textScaleFactor,
+      height: SizeConfig.heightMultiplier * 3 * SizeConfig.textScaleFactor,
       decoration: BoxDecoration(
         color: AppColors.multiSelectionButtonColor,
         borderRadius: BorderRadius.circular(8),

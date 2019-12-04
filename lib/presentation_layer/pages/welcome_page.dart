@@ -22,7 +22,7 @@ class WelcomePage extends StatelessWidget {
               backgroundColor: AppColors.appBackgroundColor,
               body: Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: SizeConfig.blockWidth * 8.333,
+                  horizontal: SizeConfig.widthMultiplier * 8.333,
                   vertical: 0,
                 ),
                 child: Stack(
@@ -31,27 +31,27 @@ class WelcomePage extends StatelessWidget {
                       alignment: Alignment.topCenter,
                       child: Container(
                         margin: EdgeInsets.only(
-                          top: SizeConfig.blockHeight * 14.84375,
+                          top: SizeConfig.heightMultiplier * 14.84375,
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Padding(
                               padding: EdgeInsets.only(
-                                left: SizeConfig.blockWidth * 7.222,
+                                left: SizeConfig.widthMultiplier * 7.222,
                               ),
                               child: Text(
-                                AppStrings.handy,
+                                AppStrings.healthier,
                                 style: AppTextStyles.fontSize30MediumStyle,
                               ),
                             ),
                             SizedBox(
-                              height: SizeConfig.blockHeight * 7.1875,
+                              height: SizeConfig.heightMultiplier * 7.1875,
                             ),
                             SvgPicture.asset(
                               AppIcons.illustration,
-                              height: SizeConfig.blockHeight * 39.0625,
-                              width: SizeConfig.blockWidth * 72.222,
+                              height: SizeConfig.heightMultiplier * 39.0625,
+                              width: SizeConfig.widthMultiplier * 72.222,
                             ),
                           ],
                         ),
@@ -61,7 +61,7 @@ class WelcomePage extends StatelessWidget {
                       alignment: Alignment.bottomCenter,
                       child: Padding(
                         padding: EdgeInsets.only(
-                          bottom: SizeConfig.blockHeight * 3.75,
+                          bottom: SizeConfig.heightMultiplier * 3.75,
                         ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -70,8 +70,8 @@ class WelcomePage extends StatelessWidget {
                               onTap: () => Navigator.of(context)
                                   .pushNamed(Routes.Register),
                               child: CustomButton(
-                                height: SizeConfig.blockHeight * 5.625,
-                                width: SizeConfig.blockWidth * 57.777,
+                                height: SizeConfig.heightMultiplier * 5.625,
+                                width: SizeConfig.widthMultiplier * 57.777,
                                 title: AppStrings.continueWithEmail,
                                 margin: EdgeInsets.zero,
                               ),
@@ -81,12 +81,12 @@ class WelcomePage extends StatelessWidget {
                                 Routes.SignUp,
                               ),
                               child: CustomButton(
-                                height: SizeConfig.blockHeight * 5.625,
-                                width: SizeConfig.blockWidth * 57.777,
+                                height: SizeConfig.heightMultiplier * 5.625,
+                                width: SizeConfig.widthMultiplier * 57.777,
                                 title: AppStrings.continueWithGoogle,
                                 margin: EdgeInsets.only(
-                                  top: SizeConfig.blockHeight * 3.125,
-                                  bottom: SizeConfig.blockHeight * 2.5,
+                                  top: SizeConfig.heightMultiplier * 3.125,
+                                  bottom: SizeConfig.heightMultiplier * 2.5,
                                 ),
                               ),
                             ),

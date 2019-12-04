@@ -24,15 +24,15 @@ class HomeListItem extends StatelessWidget {
     return Column(
       children: <Widget>[
         Container(
-          width: SizeConfig.blockWidth * 82.222,
+          width: SizeConfig.widthMultiplier * 82.222,
           padding: EdgeInsets.only(
-            left: SizeConfig.blockWidth * 4.444,
-            right: SizeConfig.blockWidth * 8.8888,
-            top: SizeConfig.blockHeight * 3.4375 * SizeConfig.textScaleFactor,
-            bottom: SizeConfig.blockHeight * 5,
+            left: SizeConfig.widthMultiplier * 4.444,
+            right: SizeConfig.widthMultiplier * 8.8888,
+            top: SizeConfig.heightMultiplier * 3.4375 * SizeConfig.textScaleFactor,
+            bottom: SizeConfig.heightMultiplier * 5,
           ),
           margin: EdgeInsets.only(
-            bottom: SizeConfig.blockHeight * 5.15625,
+            bottom: SizeConfig.heightMultiplier * 5.15625,
           ),
           decoration: BoxDecoration(
             color: AppColors.appBackgroundColor,
@@ -55,14 +55,14 @@ class HomeListItem extends StatelessWidget {
               SvgPicture.asset(
                 iconPath,
                 height:
-                    SizeConfig.blockHeight * 2.5 * SizeConfig.textScaleFactor,
+                    SizeConfig.heightMultiplier * 2.5 * SizeConfig.textScaleFactor,
                 width:
-                    SizeConfig.blockWidth * 4.444 * SizeConfig.textScaleFactor,
+                    SizeConfig.widthMultiplier * 4.444 * SizeConfig.textScaleFactor,
               ),
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.only(
-                    left: SizeConfig.blockWidth * 4.444,
+                    left: SizeConfig.widthMultiplier * 4.444,
                   ),
                   child: Column(
                     children: <Widget>[
@@ -81,7 +81,7 @@ class HomeListItem extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        height: SizeConfig.blockHeight * 3.75,
+                        height: SizeConfig.heightMultiplier * 3.75,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
