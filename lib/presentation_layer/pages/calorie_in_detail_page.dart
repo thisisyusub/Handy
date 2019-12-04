@@ -71,7 +71,6 @@ class CalorieInDetailPage extends StatelessWidget {
               SizedBox(
                 height: SizeConfig.heightMultiplier * 7.03125,
               ),
-
             ],
           ),
         ),
