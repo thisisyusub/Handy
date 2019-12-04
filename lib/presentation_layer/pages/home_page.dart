@@ -83,6 +83,7 @@ class HomePage extends StatelessWidget {
                             left: SizeConfig.widthMultiplier * 8.888,
                           ),
                           child: SingleChildScrollView(
+                            physics: BouncingScrollPhysics(),
                             scrollDirection: Axis.horizontal,
                             child: Row(
                               children: <Widget>[
