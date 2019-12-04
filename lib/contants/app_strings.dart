@@ -70,4 +70,7 @@ class AppStrings {
   static const String manage = 'Manage';
   static const String normal = 'normal';
   static const String bmi = 'BMI';
+
+  // calorie in detail page
+  static const String setTarget = 'Set Target';
 }

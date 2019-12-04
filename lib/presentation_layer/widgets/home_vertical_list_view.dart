@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:heathier/contants/app_strings.dart';
+import 'package:heathier/contants/routes.dart';
 import 'package:heathier/presentation_layer/shared/app_icons.dart';
 import 'package:heathier/utils/size_config.dart';
 import 'chip_item.dart';
@@ -13,16 +14,20 @@ class HomeVerticalListView extends StatelessWidget {
       child: ListView(
         physics: const BouncingScrollPhysics(),
         children: <Widget>[
-          HomeListItem(
-            iconPath: AppIcons.calorie,
-            title: AppStrings.calorie,
-            rightTopWidget: CustomProgressBar(0.5),
-            leftBottomWidget: Text('782/1800 Cal'),
-            rightBottomWidget: ChipItem(
-              label: AppStrings.add,
-              height: SizeConfig.heightMultiplier * 3.75,
-              width: SizeConfig.widthMultiplier * 14.444,
-              borderRadius: SizeConfig.widthMultiplier * 3.33,
+          GestureDetector(
+            onTap: () =>
+                Navigator.of(context).pushNamed(Routes.CalorieInDetail),
+            child: HomeListItem(
+              iconPath: AppIcons.calorie,
+              title: AppStrings.calorie,
+              rightTopWidget: CustomProgressBar(0.5),
+              leftBottomWidget: Text('782/1800 Cal'),
+              rightBottomWidget: ChipItem(
+                label: AppStrings.add,
+                height: SizeConfig.heightMultiplier * 3.75,
+                width: SizeConfig.widthMultiplier * 14.444,
+                borderRadius: SizeConfig.widthMultiplier * 3.33,
+              ),
             ),
           ),
           HomeListItem(

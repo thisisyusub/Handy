@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:heathier/contants/routes.dart';
+import 'package:heathier/presentation_layer/pages/calorie_in_detail_page.dart';
 import 'package:heathier/presentation_layer/pages/home_page.dart';
 import 'package:heathier/presentation_layer/pages/register_page.dart';
 import 'package:heathier/presentation_layer/pages/onboarding_page.dart';
@@ -11,13 +12,25 @@ class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.Welcome:
-        return MaterialPageRoute(builder: (_) => WelcomePage());
+        return MaterialPageRoute(
+          builder: (_) => WelcomePage(),
+        );
       case Routes.Register:
-        return MaterialPageRoute(builder: (_) => RegisterPage());
+        return MaterialPageRoute(
+          builder: (_) => RegisterPage(),
+        );
       case Routes.Home:
-        return MaterialPageRoute(builder: (_) => HomePage());
+        return MaterialPageRoute(
+          builder: (_) => HomePage(),
+        );
       case Routes.SignUp:
-        return MaterialPageRoute(builder: (_) => OnBoardingPage());
+        return MaterialPageRoute(
+          builder: (_) => OnBoardingPage(),
+        );
+      case Routes.CalorieInDetail:
+        return MaterialPageRoute(
+          builder: (_) => CalorieInDetailPage(),
+        );
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
