@@ -33,21 +33,23 @@ class HomeVerticalListView extends StatelessWidget {
             rightBottomWidget: Row(
               children: <Widget>[
                 ChipItem(
-                  label: '-',
                   height: SizeConfig.heightMultiplier * 4.6875,
                   width: SizeConfig.widthMultiplier * 8.333,
                   borderRadius: SizeConfig.widthMultiplier * 4.166,
                   isResizable: false,
+                  isIconButton: true,
+                  buttonIcon: Icons.remove,
                 ),
                 SizedBox(
                   width: SizeConfig.widthMultiplier * 2.777,
                 ),
                 ChipItem(
-                  label: '+',
                   height: SizeConfig.heightMultiplier * 4.6875,
                   width: SizeConfig.widthMultiplier * 8.333,
                   borderRadius: SizeConfig.widthMultiplier * 4.166,
                   isResizable: false,
+                  isIconButton: true,
+                  buttonIcon: Icons.add,
                 ),
               ],
             ),
@@ -110,21 +112,23 @@ class HomeVerticalListView extends StatelessWidget {
                 Row(
                   children: <Widget>[
                     ChipItem(
-                      label: '-',
                       height: SizeConfig.heightMultiplier * 4.6875,
                       width: SizeConfig.widthMultiplier * 8.333,
                       borderRadius: SizeConfig.widthMultiplier * 4.166,
                       isResizable: false,
+                      isIconButton: true,
+                      buttonIcon: Icons.remove,
                     ),
                     SizedBox(
                       width: SizeConfig.widthMultiplier * 2.777,
                     ),
                     ChipItem(
-                      label: '+',
                       height: SizeConfig.heightMultiplier * 4.6875,
                       width: SizeConfig.widthMultiplier * 8.333,
                       borderRadius: SizeConfig.widthMultiplier * 4.166,
                       isResizable: false,
+                      isIconButton: true,
+                      buttonIcon: Icons.add,
                     ),
                   ],
                 ),
@@ -135,21 +139,23 @@ class HomeVerticalListView extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     ChipItem(
-                      label: '-',
                       height: SizeConfig.heightMultiplier * 4.6875,
                       width: SizeConfig.widthMultiplier * 8.333,
                       borderRadius: SizeConfig.widthMultiplier * 4.166,
                       isResizable: false,
+                      isIconButton: true,
+                      buttonIcon: Icons.remove,
                     ),
                     SizedBox(
                       width: SizeConfig.widthMultiplier * 2.777,
                     ),
                     ChipItem(
-                      label: '+',
                       height: SizeConfig.heightMultiplier * 4.6875,
                       width: SizeConfig.widthMultiplier * 8.333,
                       borderRadius: SizeConfig.widthMultiplier * 4.166,
                       isResizable: false,
+                      isIconButton: true,
+                      buttonIcon: Icons.add,
                     ),
                   ],
                 ),

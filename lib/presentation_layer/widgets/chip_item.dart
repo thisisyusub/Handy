@@ -10,6 +10,8 @@ class ChipItem extends StatelessWidget {
   final bool colored;
   final double borderRadius;
   final bool isResizable;
+  final IconData buttonIcon;
+  final bool isIconButton;
 
   ChipItem({
     this.label,
@@ -18,6 +20,8 @@ class ChipItem extends StatelessWidget {
     this.colored = false,
     this.borderRadius,
     this.isResizable = true,
+    this.buttonIcon,
+    this.isIconButton = false,
   });
 
   @override
@@ -38,12 +42,14 @@ class ChipItem extends StatelessWidget {
         ),
       ),
       child: Center(
-        child: Text(
-          label,
-          style: AppTextStyles.fontSize12RegularStyle,
-          softWrap: true,
-         textAlign: TextAlign.center,
-        ),
+        child: isIconButton
+            ? Icon(buttonIcon)
+            : Text(
+                label,
+                style: AppTextStyles.fontSize12RegularStyle,
+                softWrap: true,
+                textAlign: TextAlign.center,
+              ),
       ),
     );
   }
