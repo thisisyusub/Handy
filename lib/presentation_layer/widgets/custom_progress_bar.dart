@@ -16,7 +16,7 @@ class CustomProgressBar extends StatelessWidget {
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
-              color: AppColors.progressBarBackgroundColor,
+              color: AppColors.primaryColor,
               borderRadius: BorderRadius.circular(6),
             ),
           ),

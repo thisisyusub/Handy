@@ -58,8 +58,8 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Healthier',
           theme: ThemeData(
-            primaryColor: AppColors.signUpButtonColor,
-            accentColor: AppColors.signUpButtonColor,
+            primaryColor: AppColors.primaryColor,
+            accentColor: AppColors.primaryColor,
             fontFamily: 'Rubik',
           ),
           home: BlocBuilder<AuthenticationBloc, AuthenticationState>(
