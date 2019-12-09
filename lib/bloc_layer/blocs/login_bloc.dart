@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:heathier/bloc_layer/events/login_event.dart';
-import 'package:heathier/bloc_layer/states/login_state.dart';
+import 'package:handy/bloc_layer/events/login_event.dart';
+import 'package:handy/bloc_layer/states/login_state.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   @override

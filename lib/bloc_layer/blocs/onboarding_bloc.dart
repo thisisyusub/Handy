@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:heathier/bloc_layer/events/onboarding_event.dart';
-import 'package:heathier/bloc_layer/states/onboarding_state.dart';
+import 'package:handy/bloc_layer/events/onboarding_event.dart';
+import 'package:handy/bloc_layer/states/onboarding_state.dart';
 
 class OnBoardingBloc extends Bloc<OnBoardingEvent, OnBoardingState> {
   int _currentIndex = 0;

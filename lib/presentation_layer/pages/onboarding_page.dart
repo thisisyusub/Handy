@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:heathier/bloc_layer/blocs/onboarding_bloc.dart';
-import 'package:heathier/bloc_layer/events/onboarding_event.dart';
-import 'package:heathier/bloc_layer/states/onboarding_state.dart';
-import 'package:heathier/contants/app_strings.dart';
-import 'package:heathier/contants/routes.dart';
-import 'package:heathier/presentation_layer/shared/app_colors.dart';
-import 'package:heathier/presentation_layer/shared/app_text_styles.dart';
-import 'package:heathier/presentation_layer/widgets/onboarding_do_you_follow_any_diet.dart';
-import 'package:heathier/presentation_layer/widgets/onboarding_more_about_you.dart';
-import 'package:heathier/presentation_layer/widgets/onboarding_tells_us_about_you.dart';
-import 'package:heathier/presentation_layer/widgets/onboarding_whats_your_goal.dart';
-import 'package:heathier/utils/size_config.dart';
+import 'package:handy/bloc_layer/blocs/onboarding_bloc.dart';
+import 'package:handy/bloc_layer/events/onboarding_event.dart';
+import 'package:handy/bloc_layer/states/onboarding_state.dart';
+import 'package:handy/contants/app_strings.dart';
+import 'package:handy/contants/routes.dart';
+import 'package:handy/presentation_layer/shared/app_colors.dart';
+import 'package:handy/presentation_layer/shared/app_text_styles.dart';
+import 'package:handy/presentation_layer/widgets/onboarding_do_you_follow_any_diet.dart';
+import 'package:handy/presentation_layer/widgets/onboarding_more_about_you.dart';
+import 'package:handy/presentation_layer/widgets/onboarding_tells_us_about_you.dart';
+import 'package:handy/presentation_layer/widgets/onboarding_whats_your_goal.dart';
+import 'package:handy/utils/size_config.dart';
 
 class OnBoardingPage extends StatelessWidget {
   @override

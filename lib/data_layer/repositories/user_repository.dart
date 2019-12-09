@@ -1,4 +1,5 @@
-import 'package:heathier/data_layer/models/registration.dart';
+
+import 'package:handy/data_layer/models/registration.dart';
 
 class UserRepository {
   var _currentUser = User();

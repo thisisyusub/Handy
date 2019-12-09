@@ -2,7 +2,7 @@ class AppStrings {
   AppStrings._();
 
   // welcome screen
-  static const String healthier = 'Healthier';
+  static const String handy = 'Handy';
   static const String byContinuingYouAccept = 'by continuing you accept';
   static const String termsOfUse = ' Terms of Use';
   static const String continueWithEmail = 'continue with email';
@@ -73,4 +73,30 @@ class AppStrings {
 
   // calorie in detail page
   static const String setTarget = 'Set Target';
+
+  // daily meals
+  static const String breakfast = 'Breakfast';
+  static const String meals = 'Meals';
+  static const String launch = 'Launch';
+  static const String dinner = 'Dinner';
+  static const String morningSnack = 'Morning snack';
+  static const String AfternoonSnack = 'Afternoon snack';
+  static const String EveningSnack = 'Evening snack';
+
+// Nutritional profile
+  static const String nutritionalProfile = 'Nutritional Profile';
+  static const String dailyValueIsBasesOnYourDailyNutritionalGoals =
+      'Daily Value is based on your daily nutrition goals';
+  static const String lowIntake = 'low intake';
+  static const String averageIntake = 'average intake';
+  static const String highIntake = 'high intake';
+  static const String dailyValue = 'Daily value';
+  static const String totalFat = 'Total fat';
+  static const String saturatedFat = 'Saturated fat';
+  static const String cholesterol = 'Cholesterol';
+  static const String sodium = 'Sodium';
+  static const String totalCarbohydrate = 'Total Carbo';
+
+  // Water in detail page
+  static const String setReminder = 'Set reminder';
 }

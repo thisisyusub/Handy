@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:heathier/bloc_layer/events/authentication_event.dart';
-import 'package:heathier/bloc_layer/states/authentication_state.dart';
+import 'package:handy/bloc_layer/events/authentication_event.dart';
+import 'package:handy/bloc_layer/states/authentication_state.dart';
 
 class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> {
   @override

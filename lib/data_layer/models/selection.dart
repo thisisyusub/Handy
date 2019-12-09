@@ -1,4 +1,4 @@
-import 'package:heathier/data_layer/models/selectable_item.dart';
+import 'package:handy/data_layer/models/selectable_item.dart';
 import 'package:meta/meta.dart';
 
 class Selection {

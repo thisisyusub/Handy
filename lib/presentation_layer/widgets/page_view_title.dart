@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:heathier/presentation_layer/shared/app_text_styles.dart';
-import 'package:heathier/utils/size_config.dart';
+import 'package:handy/presentation_layer/shared/app_text_styles.dart';
+import 'package:handy/utils/size_config.dart';
 
 class PageViewTitle extends StatelessWidget {
   final String title;

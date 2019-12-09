@@ -6,4 +6,5 @@ class Routes {
   static const String Register = 'Register';
   static const String SignUp = 'SignUp';
   static const String CalorieInDetail = 'CalorieInDetail';
+  static const String WaterInDetail = 'WaterInDetail';
 }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:heathier/contants/app_strings.dart';
-import 'package:heathier/presentation_layer/widgets/chip_item.dart';
-import 'package:heathier/presentation_layer/widgets/page_view_title.dart';
-import 'package:heathier/utils/size_config.dart';
+import 'package:handy/contants/app_strings.dart';
+import 'package:handy/presentation_layer/widgets/page_view_title.dart';
+import 'package:handy/utils/size_config.dart';
+
+import 'chip_item.dart';
 
 class OnBoardingDoYouFollowAnyDiet extends StatelessWidget {
   @override

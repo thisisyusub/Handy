@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:heathier/presentation_layer/shared/app_colors.dart';
-import 'package:heathier/presentation_layer/shared/app_icons.dart';
-import 'package:heathier/presentation_layer/shared/app_text_styles.dart';
-import 'package:heathier/presentation_layer/widgets/custom_drawer.dart';
-import 'package:heathier/presentation_layer/widgets/home_vertical_list_view.dart';
-import 'package:heathier/utils/size_config.dart';
+import 'package:handy/presentation_layer/shared/app_colors.dart';
+import 'package:handy/presentation_layer/shared/app_icons.dart';
+import 'package:handy/presentation_layer/shared/app_text_styles.dart';
+import 'package:handy/presentation_layer/widgets/custom_drawer.dart';
+import 'package:handy/presentation_layer/widgets/home_vertical_list_view.dart';
+import 'package:handy/utils/size_config.dart';
 
 class HomePage extends StatelessWidget {
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -56,14 +56,14 @@ class HomePage extends StatelessWidget {
                             children: <Widget>[
                               Text(
                                 'Good morning Jeremy',
-                                style: AppTextStyles.fontSize16MMediumStyle,
+                                style: AppTextStyles.fontSize16MediumStyle,
                               ),
                               SizedBox(
                                 height: SizeConfig.heightMultiplier * 3.4375,
                               ),
                               Text(
                                 'you should take \'Orphenadrine\' at 9PM',
-                                style: AppTextStyles.fontSize16MMediumStyle,
+                                style: AppTextStyles.fontSize16MediumStyle,
                               ),
                               SizedBox(
                                 height: SizeConfig.heightMultiplier * 3.4375,

@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:heathier/utils/size_config.dart';
+import 'package:handy/utils/size_config.dart';
 
 import 'app_colors.dart';
 
@@ -19,7 +19,7 @@ class AppTextStyles {
     fontWeight: FontWeight.w500,
   );
 
-  static final fontSize16MMediumStyle = TextStyle(
+  static final fontSize16MediumStyle = TextStyle(
     fontSize: SizeConfig.textMultiplier * 2.1875,
     color: AppColors.customButtonTextColor,
     fontWeight: FontWeight.w500,
@@ -46,7 +46,7 @@ class AppTextStyles {
     color: AppColors.pageViewSubtitleColor,
   );
 
-  static final fontSize12wRegularV2Style = TextStyle(
+  static final fontSize12RegularV2Style = TextStyle(
     fontSize: SizeConfig.textMultiplier * 1.875,
     color: AppColors.homeListItemTitleTextColor,
   );
@@ -55,6 +55,7 @@ class AppTextStyles {
     fontSize: SizeConfig.textMultiplier * 1.875,
     color: AppColors.homeListItemTitleTextColor,
   );
+
 
   static final fontSize11Style = TextStyle(
     fontSize: SizeConfig.textMultiplier * 1.71875,

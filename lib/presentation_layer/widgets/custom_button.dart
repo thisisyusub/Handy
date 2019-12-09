@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:heathier/presentation_layer/shared/app_colors.dart';
-import 'package:heathier/presentation_layer/shared/app_text_styles.dart';
-import 'package:heathier/utils/size_config.dart';
+import 'package:handy/presentation_layer/shared/app_colors.dart';
+import 'package:handy/presentation_layer/shared/app_text_styles.dart';
+import 'package:handy/utils/size_config.dart';
 
 class CustomButton extends StatelessWidget {
   final double width;
@@ -23,7 +23,7 @@ class CustomButton extends StatelessWidget {
       height: height * SizeConfig.textScaleFactor,
       margin: margin,
       decoration: BoxDecoration(
-        color: AppColors.customButtonBackgroundColor,
+        color: AppColors.primaryColor,
         borderRadius: BorderRadius.circular(
           SizeConfig.widthMultiplier * 5 * SizeConfig.textScaleFactor,
         ),

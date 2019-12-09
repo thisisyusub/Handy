@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:heathier/contants/app_strings.dart';
-import 'package:heathier/contants/routes.dart';
-import 'package:heathier/presentation_layer/shared/app_colors.dart';
-import 'package:heathier/presentation_layer/shared/app_icons.dart';
-import 'package:heathier/presentation_layer/shared/app_text_styles.dart';
-import 'package:heathier/presentation_layer/widgets/custom_button.dart';
-import 'package:heathier/utils/size_config.dart';
+import 'package:handy/contants/app_strings.dart';
+import 'package:handy/contants/routes.dart';
+import 'package:handy/presentation_layer/shared/app_colors.dart';
+import 'package:handy/presentation_layer/shared/app_icons.dart';
+import 'package:handy/presentation_layer/shared/app_text_styles.dart';
+import 'package:handy/presentation_layer/widgets/custom_button.dart';
+import 'package:handy/utils/size_config.dart';
 
 class WelcomePage extends StatelessWidget {
   @override
@@ -41,7 +41,7 @@ class WelcomePage extends StatelessWidget {
                                 left: SizeConfig.widthMultiplier * 7.222,
                               ),
                               child: Text(
-                                AppStrings.healthier,
+                                AppStrings.handy,
                                 style: AppTextStyles.fontSize30MediumStyle,
                               ),
                             ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:heathier/contants/app_strings.dart';
-import 'package:heathier/contants/routes.dart';
-import 'package:heathier/presentation_layer/shared/app_icons.dart';
-import 'package:heathier/utils/size_config.dart';
+import 'package:handy/contants/app_strings.dart';
+import 'package:handy/contants/routes.dart';
+import 'package:handy/presentation_layer/shared/app_icons.dart';
+import 'package:handy/utils/size_config.dart';
 import 'chip_item.dart';
 import 'custom_progress_bar.dart';
 import 'home_list_item.dart';
@@ -20,43 +20,54 @@ class HomeVerticalListView extends StatelessWidget {
             child: HomeListItem(
               iconPath: AppIcons.calorie,
               title: AppStrings.calorie,
-              rightTopWidget: CustomProgressBar(0.5),
+              rightTopWidget: Hero(
+                tag: '${AppStrings.calorie} progress bar',
+                child: CustomProgressBar(0.5),
+              ),
               leftBottomWidget: Text('782/1800 Cal'),
-              rightBottomWidget: ChipItem(
-                label: AppStrings.add,
-                height: SizeConfig.heightMultiplier * 3.75,
-                width: SizeConfig.widthMultiplier * 14.444,
-                borderRadius: SizeConfig.widthMultiplier * 3.33,
+              rightBottomWidget: Hero(
+                tag: '${AppStrings.calorie} add button',
+                child: ChipItem(
+                  label: AppStrings.add,
+                  height: SizeConfig.heightMultiplier * 3.75,
+                  width: SizeConfig.widthMultiplier * 14.444,
+                  borderRadius: SizeConfig.widthMultiplier * 3.33,
+                ),
               ),
             ),
           ),
-          HomeListItem(
-            iconPath: AppIcons.waterDrop,
-            title: AppStrings.water,
-            rightTopWidget: CustomProgressBar(0.4),
-            leftBottomWidget: Text('7/12 glasses'),
-            rightBottomWidget: Row(
-              children: <Widget>[
-                ChipItem(
-                  height: SizeConfig.heightMultiplier * 4.6875,
-                  width: SizeConfig.widthMultiplier * 8.333,
-                  borderRadius: SizeConfig.widthMultiplier * 4.166,
-                  isResizable: false,
-                  isIconButton: true,
-                  buttonIcon: Icons.remove,
-                ),
-                SizedBox(
-                  width: SizeConfig.widthMultiplier * 2.777,
-                ),
-                ChipItem(
-                  height: SizeConfig.heightMultiplier * 4.6875,
-                  width: SizeConfig.widthMultiplier * 8.333,
-                  borderRadius: SizeConfig.widthMultiplier * 4.166,
-                  isResizable: false,
-                  isIconButton: true,
-                  buttonIcon: Icons.add,
-                ),
-              ],
+          GestureDetector(
+            onTap: () => Navigator.of(context).pushNamed(
+              Routes.WaterInDetail,
+            ),
+            child: HomeListItem(
+              iconPath: AppIcons.waterDrop,
+              title: AppStrings.water,
+              rightTopWidget: CustomProgressBar(0.4),
+              leftBottomWidget: Text('7/12 glasses'),
+              rightBottomWidget: Row(
+                children: <Widget>[
+                  ChipItem(
+                    height: SizeConfig.heightMultiplier * 4.6875,
+                    width: SizeConfig.widthMultiplier * 8.333,
+                    borderRadius: SizeConfig.widthMultiplier * 4.166,
+                    isResizable: false,
+                    isIconButton: true,
+                    buttonIcon: Icons.remove,
+                  ),
+                  SizedBox(
+                    width: SizeConfig.widthMultiplier * 2.777,
+                  ),
+                  ChipItem(
+                    height: SizeConfig.heightMultiplier * 4.6875,
+                    width: SizeConfig.widthMultiplier * 8.333,
+                    borderRadius: SizeConfig.widthMultiplier * 4.166,
+                    isResizable: false,
+                    isIconButton: true,
+                    buttonIcon: Icons.add,
+                  ),
+                ],
+              ),
             ),
           ),
           HomeListItem(

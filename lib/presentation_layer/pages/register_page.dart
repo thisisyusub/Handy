@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:heathier/contants/app_strings.dart';
-import 'package:heathier/contants/routes.dart';
-import 'package:heathier/presentation_layer/shared/app_colors.dart';
-import 'package:heathier/presentation_layer/shared/app_text_styles.dart';
-import 'package:heathier/presentation_layer/widgets/custom_button.dart';
-import 'package:heathier/utils/size_config.dart';
+import 'package:handy/contants/app_strings.dart';
+import 'package:handy/contants/routes.dart';
+import 'package:handy/presentation_layer/shared/app_colors.dart';
+import 'package:handy/presentation_layer/shared/app_text_styles.dart';
+import 'package:handy/presentation_layer/widgets/custom_button.dart';
+import 'package:handy/utils/size_config.dart';
 
 class RegisterPage extends StatelessWidget {
   @override

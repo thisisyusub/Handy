@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:heathier/presentation_layer/shared/app_colors.dart';
-import 'package:heathier/presentation_layer/shared/app_text_styles.dart';
-import 'package:heathier/utils/size_config.dart';
+import 'package:handy/presentation_layer/shared/app_colors.dart';
+import 'package:handy/presentation_layer/shared/app_text_styles.dart';
+import 'package:handy/utils/size_config.dart';
 
 class ChipItem extends StatelessWidget {
   final String label;
@@ -30,9 +30,7 @@ class ChipItem extends StatelessWidget {
       width: width * (isResizable ? SizeConfig.textScaleFactor : 1),
       height: height * (isResizable ? SizeConfig.textScaleFactor : 1),
       decoration: BoxDecoration(
-        color: colored
-            ? AppColors.customButtonBackgroundColor
-            : AppColors.appBackgroundColor,
+        color: colored ? AppColors.primaryColor : AppColors.appBackgroundColor,
         borderRadius: BorderRadius.circular(
           borderRadius * SizeConfig.textScaleFactor,
         ),

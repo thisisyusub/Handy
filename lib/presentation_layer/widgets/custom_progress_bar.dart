@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:heathier/presentation_layer/shared/app_colors.dart';
-import 'package:heathier/utils/size_config.dart';
+import 'package:handy/presentation_layer/shared/app_colors.dart';
+import 'package:handy/utils/size_config.dart';
 
 class CustomProgressBar extends StatelessWidget {
   final double indicatorValueFactor;
