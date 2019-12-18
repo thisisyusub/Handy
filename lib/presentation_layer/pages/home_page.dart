@@ -38,96 +38,82 @@ class HomePage extends StatelessWidget {
                 ),
                 drawer: CustomDrawer(),
                 backgroundColor: AppColors.appBackgroundColor,
-                body: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Padding(
-                          padding: EdgeInsets.only(
-                            top: SizeConfig.heightMultiplier * 4,
-                            left: SizeConfig.widthMultiplier * 8.888,
-                            right: SizeConfig.widthMultiplier * 8.888,
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                'Good morning Jeremy',
-                                style: AppTextStyles.fontSize16MediumStyle,
-                              ),
-                              SizedBox(
-                                height: SizeConfig.heightMultiplier * 3.4375,
-                              ),
-                              Text(
-                                'you should take \'Orphenadrine\' at 9PM',
-                                style: AppTextStyles.fontSize16MediumStyle,
-                              ),
-                              SizedBox(
-                                height: SizeConfig.heightMultiplier * 3.4375,
-                              ),
-                              Text(
-                                'These are for you',
-                                style: AppTextStyles.fontSize12RegularStyle,
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: SizeConfig.heightMultiplier * 1.5625,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                            left: SizeConfig.widthMultiplier * 8.888,
-                          ),
-                          child: SingleChildScrollView(
-                            physics: BouncingScrollPhysics(),
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              children: <Widget>[
-                                Container(
-                                  child: Image.asset(
-                                    AppIcons.forYouPng,
-                                  ),
-                                  width: SizeConfig.widthMultiplier * 37.5,
-                                  height: SizeConfig.heightMultiplier * 14.0625,
-                                ),
-                                SizedBox(
-                                  width: SizeConfig.widthMultiplier * 5.555,
-                                ),
-                                Container(
-                                  child: Image.asset(
-                                    AppIcons.forYouPng,
-                                  ),
-                                  width: SizeConfig.widthMultiplier * 37.5,
-                                  height: SizeConfig.heightMultiplier * 14.0625,
-                                ),
-                                SizedBox(
-                                  width: SizeConfig.widthMultiplier * 5.555,
-                                ),
-                                Container(
-                                  child: Image.asset(
-                                    AppIcons.forYouPng,
-                                  ),
-                                  width: SizeConfig.widthMultiplier * 37.5,
-                                  height: SizeConfig.heightMultiplier * 14.0625,
-                                ),
-                                SizedBox(
-                                  width: SizeConfig.widthMultiplier * 5.555,
-                                ),
-                              ],
+                body: Padding(
+                  padding: EdgeInsets.only(
+                    top: SizeConfig.heightMultiplier * 4,
+                    left: SizeConfig.widthMultiplier * 8.888,
+                    right: SizeConfig.widthMultiplier * 8.888,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      RichText(
+                        text: TextSpan(
+                          text: 'Good morning Jeremy\n\n',
+                          style: AppTextStyles.fontSize16MediumStyle,
+                          children: [
+                            TextSpan(
+                              text: 'you should take \'Orphenadrine\' at 9PM',
                             ),
-                          ),
+                          ],
                         ),
-                        SizedBox(
-                          height: SizeConfig.heightMultiplier * 5.15625,
+                      ),
+                      SizedBox(
+                        height: SizeConfig.heightMultiplier * 3.4375,
+                      ),
+                      Text(
+                        'These are for you',
+                        style: AppTextStyles.fontSize12RegularStyle,
+                      ),
+                      SizedBox(
+                        height: SizeConfig.heightMultiplier * 1.5625,
+                      ),
+                      SingleChildScrollView(
+                        physics: BouncingScrollPhysics(),
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                              child: Image.asset(
+                                AppIcons.forYouPng,
+                              ),
+                              width: SizeConfig.widthMultiplier * 37.5,
+                              height: SizeConfig.heightMultiplier * 14.0625,
+                            ),
+                            SizedBox(
+                              width: SizeConfig.widthMultiplier * 5.555,
+                            ),
+                            Container(
+                              child: Image.asset(
+                                AppIcons.forYouPng,
+                              ),
+                              width: SizeConfig.widthMultiplier * 37.5,
+                              height: SizeConfig.heightMultiplier * 14.0625,
+                            ),
+                            SizedBox(
+                              width: SizeConfig.widthMultiplier * 5.555,
+                            ),
+                            Container(
+                              child: Image.asset(
+                                AppIcons.forYouPng,
+                              ),
+                              width: SizeConfig.widthMultiplier * 37.5,
+                              height: SizeConfig.heightMultiplier * 14.0625,
+                            ),
+                            SizedBox(
+                              width: SizeConfig.widthMultiplier * 5.555,
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                    HomeVerticalListView(),
-                  ],
+                      ),
+                      SizedBox(
+                        height: SizeConfig.heightMultiplier * 5.15625,
+                      ),
+                      Expanded(
+                        child: HomeVerticalListView(),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             );

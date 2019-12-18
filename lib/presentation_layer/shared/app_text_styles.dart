@@ -10,19 +10,19 @@ class AppTextStyles {
   static final fontSize30MediumStyle = TextStyle(
     fontSize: SizeConfig.textMultiplier * 4.6875,
     color: AppColors.handyTextColor,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w400,
   );
 
   static final fontSize22MediumStyle = TextStyle(
     fontSize: SizeConfig.textMultiplier * 2.5,
     color: AppColors.handyTextColor,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w700,
   );
 
   static final fontSize16MediumStyle = TextStyle(
     fontSize: SizeConfig.textMultiplier * 2.1875,
     color: AppColors.customButtonTextColor,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w700,
   );
 
   static final fontSize14RegularStyle = TextStyle(
@@ -30,10 +30,20 @@ class AppTextStyles {
     color: AppColors.customButtonTextColor,
   );
 
+  static final fontSize14V2RegularStyle = TextStyle(
+    fontSize: SizeConfig.textMultiplier * 2.1875,
+    color: AppColors.nutritionalItemTitleColor,
+  );
+
+  static final fontSize14V3RegularStyle = TextStyle(
+    fontSize: SizeConfig.textMultiplier * 2.1875,
+    color: AppColors.nutritionalItemAmountColor,
+  );
+
   static final fontSize14MediumStyle = TextStyle(
     fontSize: SizeConfig.textMultiplier * 2.1875,
     color: AppColors.customButtonTextColor,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w400,
   );
 
   static final fontSize12RegularStyle = TextStyle(
@@ -54,8 +64,8 @@ class AppTextStyles {
   static final fontSize12MediumStyle = TextStyle(
     fontSize: SizeConfig.textMultiplier * 1.875,
     color: AppColors.homeListItemTitleTextColor,
+    fontWeight: FontWeight.w400,
   );
-
 
   static final fontSize11Style = TextStyle(
     fontSize: SizeConfig.textMultiplier * 1.71875,
@@ -65,6 +75,12 @@ class AppTextStyles {
   static final fontSize11BoldStyle = TextStyle(
     fontSize: SizeConfig.textMultiplier * 1.71875,
     color: AppColors.customButtonTextColor,
+    fontWeight: FontWeight.bold,
+  );
+
+  static final fontSize10RegularStyle = TextStyle(
+    fontSize: SizeConfig.textMultiplier * 1.5625,
+    color: AppColors.homeListItemTitleTextColor,
     fontWeight: FontWeight.bold,
   );
 }

@@ -97,6 +97,9 @@ class AppStrings {
   static const String sodium = 'Sodium';
   static const String totalCarbohydrate = 'Total Carbo';
 
+  // set calorie target page
+  static const String save = 'Save';
+
   // Water in detail page
   static const String setReminder = 'Set reminder';
 }

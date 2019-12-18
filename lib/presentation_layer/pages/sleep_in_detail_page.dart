@@ -7,7 +7,7 @@ import 'package:handy/presentation_layer/widgets/custom_progress_bar.dart';
 import 'package:handy/presentation_layer/widgets/date_controller.dart';
 import 'package:handy/utils/size_config.dart';
 
-class WaterInDetailPage extends StatelessWidget {
+class SleepInDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -38,7 +38,7 @@ class WaterInDetailPage extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: SizeConfig.heightMultiplier * 3.5,
+                height: SizeConfig.heightMultiplier * 7.8125,
               ),
               Expanded(
                 child: ListView(
@@ -48,41 +48,27 @@ class WaterInDetailPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Text(
-                          AppStrings.water,
+                          AppStrings.calorie,
                           style: AppTextStyles.fontSize16MediumStyle,
                         ),
                         CustomProgressBar(0.64),
                       ],
                     ),
                     SizedBox(
-                      height: SizeConfig.heightMultiplier * 5.15626,
+                      height: SizeConfig.heightMultiplier * 5.46875,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        Text('7/12 glasses'),
-                        Row(
-                          children: <Widget>[
-                            ChipItem(
-                              height: SizeConfig.heightMultiplier * 4.6875,
-                              width: SizeConfig.widthMultiplier * 8.333,
-                              borderRadius: SizeConfig.widthMultiplier * 4.166,
-                              isResizable: false,
-                              isIconButton: true,
-                              buttonIcon: Icons.remove,
-                            ),
-                            SizedBox(
-                              width: SizeConfig.widthMultiplier * 2.777,
-                            ),
-                            ChipItem(
-                              height: SizeConfig.heightMultiplier * 4.6875,
-                              width: SizeConfig.widthMultiplier * 8.333,
-                              borderRadius: SizeConfig.widthMultiplier * 4.166,
-                              isResizable: false,
-                              isIconButton: true,
-                              buttonIcon: Icons.add,
-                            ),
-                          ],
+                        Text(
+                          '7/8 hours',
+                          style: AppTextStyles.fontSize16MediumStyle,
+                        ),
+                        ChipItem(
+                          label: AppStrings.edit,
+                          height: SizeConfig.heightMultiplier * 3.75,
+                          width: SizeConfig.widthMultiplier * 14.444,
+                          borderRadius: SizeConfig.widthMultiplier * 3.33,
                         ),
                       ],
                     ),
@@ -97,11 +83,9 @@ class WaterInDetailPage extends StatelessWidget {
                       color: AppColors.dividerColor,
                       thickness: 1,
                     ),
-                    SizedBox(
-                      height: SizeConfig.heightMultiplier * 4.6875,
-                    ),
                     Padding(
                       padding: EdgeInsets.only(
+                        top: SizeConfig.heightMultiplier * 4.6875,
                         left: SizeConfig.widthMultiplier * 8.333,
                       ),
                       child: Text(
@@ -109,59 +93,11 @@ class WaterInDetailPage extends StatelessWidget {
                         style: AppTextStyles.fontSize14MediumStyle,
                       ),
                     ),
-                    SizedBox(
-                      height: SizeConfig.heightMultiplier * 9.375,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        _waterTypeBoxWidget(
-                          'glasss',
-                          '200 ml',
-                          true,
-                        ),
-                        SizedBox(
-                          width: SizeConfig.widthMultiplier * 6.944,
-                        ),
-                        _waterTypeBoxWidget('bottle', '500 ml'),
-                      ],
-                    ),
                   ],
                 ),
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget _waterTypeBoxWidget(String type, String amount,
-      [bool isSelected = false]) {
-    return Container(
-      height: SizeConfig.heightMultiplier * 12.5,
-      width: SizeConfig.widthMultiplier * 22.222,
-      decoration: BoxDecoration(
-        color: isSelected ? AppColors.waterTypeBackgroundColor : null,
-        borderRadius: BorderRadius.circular(
-          SizeConfig.widthMultiplier * 4.166,
-        ),
-        border: Border.all(
-          width: 1,
-          color: AppColors.waterTypeBorderColor,
-        ),
-      ),
-      child: Center(
-        child: RichText(
-          text: TextSpan(
-              text: '$type\n',
-              style: AppTextStyles.fontSize14MediumStyle,
-              children: [
-                TextSpan(
-                  text: amount,
-                  style: AppTextStyles.fontSize10RegularStyle,
-                ),
-              ]),
         ),
       ),
     );

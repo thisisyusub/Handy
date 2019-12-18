@@ -7,4 +7,7 @@ class Routes {
   static const String SignUp = 'SignUp';
   static const String CalorieInDetail = 'CalorieInDetail';
   static const String WaterInDetail = 'WaterInDetail';
+  static const String SetCalorieTarget = 'SetCalorieTarget';
+  static const String SleepInDetail = 'SleepInDetail';
+  static const String MedicineInDetail = 'MedicineInDetail';
 }

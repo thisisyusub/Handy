@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:handy/contants/routes.dart';
 import 'package:handy/presentation_layer/pages/calorie_in_detail_page.dart';
 import 'package:handy/presentation_layer/pages/home_page.dart';
+import 'package:handy/presentation_layer/pages/medicine_in_detail_page.dart';
 import 'package:handy/presentation_layer/pages/onboarding_page.dart';
 import 'package:handy/presentation_layer/pages/register_page.dart';
+import 'package:handy/presentation_layer/pages/set_calorie_target_page.dart';
+import 'package:handy/presentation_layer/pages/sleep_in_detail_page.dart';
 import 'package:handy/presentation_layer/pages/water_in_detail_page.dart';
 import 'package:handy/presentation_layer/pages/welcome_page.dart';
 
@@ -35,6 +38,18 @@ class Router {
       case Routes.WaterInDetail:
         return MaterialPageRoute(
           builder: (_) => WaterInDetailPage(),
+        );
+      case Routes.SetCalorieTarget:
+        return MaterialPageRoute(
+          builder: (_) => SetCalorieTargetPage(),
+        );
+      case Routes.SleepInDetail:
+        return MaterialPageRoute(
+          builder: (_) => SleepInDetailPage(),
+        );
+      case Routes.MedicineInDetail:
+        return MaterialPageRoute(
+          builder: (_) => MedicineInDetailPage(),
         );
       default:
         return MaterialPageRoute(

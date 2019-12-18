@@ -18,7 +18,6 @@ class OnBoardingTellsUsAboutYou extends StatelessWidget {
             subTitle: AppStrings.weNeedTheseInformationToCustomizeYourExp,
           ),
           Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
               Text(
                 AppStrings.name,
@@ -32,9 +31,6 @@ class OnBoardingTellsUsAboutYou extends StatelessWidget {
                 child: TextField(),
               ),
             ],
-          ),
-          SizedBox(
-            width: SizeConfig.widthMultiplier * 5.15625,
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.end,

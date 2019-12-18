@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:handy/presentation_layer/shared/app_colors.dart';
 import 'package:handy/utils/size_config.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -7,7 +6,6 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: AppColors.appBackgroundColor,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,10 +29,6 @@ class CustomDrawer extends StatelessWidget {
               SizedBox(height: SizeConfig.heightMultiplier * 12.5),
               ListTile(
                 title: Text('Notifications'),
-                onTap: () {},
-              ),
-              ListTile(
-                title: Text('Dark Mode'),
                 onTap: () {},
               ),
               ListTile(

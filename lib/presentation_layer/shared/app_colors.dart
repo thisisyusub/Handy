@@ -18,4 +18,8 @@ class AppColors {
   static const lowIntakeCircleColor = Color.fromRGBO(255, 246, 119, 1);
   static const averageIntakeCircleColor = Color.fromRGBO(159, 243, 159, 1);
   static const highIntakeCircleColor = Color.fromRGBO(255, 91, 91, 1);
+  static const nutritionalItemTitleColor = Color.fromRGBO(46, 46, 46, 1);
+  static const nutritionalItemAmountColor = Color.fromRGBO(146, 146, 146, 1);
+  static const waterTypeBorderColor = Color.fromRGBO(112, 112, 112, 1);
+  static const waterTypeBackgroundColor = Color.fromRGBO(194, 216, 255, 1);
 }
