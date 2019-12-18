@@ -1,6 +1,7 @@
 # Handy
 
 ***Process***
+
 As a solution, we walked through a classic design thinking process as proposed by The Hasso Plattner Institute of Design at Stanford (d.school).
 
 <img src="design/process.jpeg"/>
@@ -98,6 +99,7 @@ Prototyping was completed by adding visuality to the static and monochrome wiref
 <img src="design/prototype.jpeg"/>
 
 **Changes through iterations**
+
 After working with the backend developer, we can catch the gap in the requirements. For the long-term use of the product, “age” is not the data we can use later. For the calculations, we will need the current age of users, so I changed “age” to the “date of birth” to keep the current age of users at the system.
 
 <img src="design/chage_through_iteration.jpeg"/>
@@ -111,6 +113,7 @@ During the design process, especially on colors, accessibility made me do some c
 <img src="design/bmi.jpeg"/>
 
 **What can be done**
+
 If it was the real project to launch, there were some concepts that should also be included in the process. First of all, research must be done carefully. Because there is no probability to launch any product for users before understanding their deep needs and goals. Understanding is not enough, because we can make mistakes — testing. Without any doubt, any assumption should be tempered with the users before going a reality. Understanding and designing for the whole needs and goals of the users may be a hard but not impossible task to be done.
 
 Readme have been created based on the following medium article:
