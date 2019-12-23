@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:handy/bloc_layer/blocs/login_or_signup_bloc.dart';
+import 'package:handy/data_layer/services/api_service.dart';
 import 'package:handy/presentation_layer/pages/welcome_page.dart';
 import 'package:handy/presentation_layer/router.dart';
 import 'package:handy/presentation_layer/shared/app_colors.dart';
@@ -22,8 +23,7 @@ void main() async {
       // status bar color
       statusBarIconBrightness: Brightness.dark,
       // status bar icons' color
-      systemNavigationBarIconBrightness:
-          Brightness.dark, //navigation bar icons' color
+      systemNavigationBarIconBrightness: Brightness.dark, // bar icons' color
     ),
   );
 

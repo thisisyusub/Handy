@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:handy/contants/app_strings.dart';
 import 'package:handy/contants/routes.dart';
 import 'package:handy/presentation_layer/shared/app_colors.dart';
@@ -67,8 +67,9 @@ class WelcomePage extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
                             GestureDetector(
-                              onTap: () => Navigator.of(context)
-                                  .pushNamed(Routes.Register),
+                              onTap: () => Navigator.of(context).pushNamed(
+                                Routes.Register,
+                              ),
                               child: CustomButton(
                                 height: SizeConfig.heightMultiplier * 5.625,
                                 width: SizeConfig.widthMultiplier * 57.777,
@@ -78,7 +79,7 @@ class WelcomePage extends StatelessWidget {
                             ),
                             GestureDetector(
                               onTap: () => Navigator.of(context).pushNamed(
-                                Routes.SignUp,
+                                Routes.OnBoarding,
                               ),
                               child: CustomButton(
                                 height: SizeConfig.heightMultiplier * 5.625,
@@ -95,11 +96,9 @@ class WelcomePage extends StatelessWidget {
                               children: <Widget>[
                                 Text(
                                   AppStrings.byContinuingYouAccept,
-                                  style: AppTextStyles.fontSize11Style,
                                 ),
                                 Text(
                                   AppStrings.termsOfUse,
-                                  style: AppTextStyles.fontSize11BoldStyle,
                                 ),
                               ],
                             ),

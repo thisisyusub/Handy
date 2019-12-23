@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:handy/contants/routes.dart';
+import 'package:handy/presentation_layer/pages/add_medicine_page.dart';
 import 'package:handy/presentation_layer/pages/calorie_in_detail_page.dart';
 import 'package:handy/presentation_layer/pages/home_page.dart';
 import 'package:handy/presentation_layer/pages/medicine_in_detail_page.dart';
@@ -27,7 +28,7 @@ class Router {
         return MaterialPageRoute(
           builder: (_) => HomePage(),
         );
-      case Routes.SignUp:
+      case Routes.OnBoarding:
         return MaterialPageRoute(
           builder: (_) => OnBoardingPage(),
         );
@@ -50,6 +51,10 @@ class Router {
       case Routes.MedicineInDetail:
         return MaterialPageRoute(
           builder: (_) => MedicineInDetailPage(),
+        );
+      case Routes.AddMedicine:
+        return MaterialPageRoute(
+          builder: (_) => AddMedicinePage(),
         );
       default:
         return MaterialPageRoute(

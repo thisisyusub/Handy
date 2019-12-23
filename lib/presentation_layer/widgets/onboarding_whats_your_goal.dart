@@ -31,7 +31,7 @@ class OnBoardingWhatIsYourGoal extends StatelessWidget {
               ChipItem(
                 height: SizeConfig.heightMultiplier * 5,
                 width: SizeConfig.widthMultiplier * 45,
-                label: AppStrings.maintainLifestyle,
+                label: AppStrings.loseWeight,
                 borderRadius: SizeConfig.widthMultiplier * 4.444,
               ),
               SizedBox(
@@ -40,7 +40,7 @@ class OnBoardingWhatIsYourGoal extends StatelessWidget {
               ChipItem(
                 height: SizeConfig.heightMultiplier * 5,
                 width: SizeConfig.widthMultiplier * 45,
-                label: AppStrings.maintainLifestyle,
+                label: AppStrings.gainWeight,
                 borderRadius: SizeConfig.widthMultiplier * 4.444,
               ),
             ],

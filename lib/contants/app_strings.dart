@@ -102,4 +102,10 @@ class AppStrings {
 
   // Water in detail page
   static const String setReminder = 'Set reminder';
+
+  // add medicine page
+  static const String time = 'Time';
+  static const String timesPer = 'times per';
+  static const String addTime = '+ add time';
+  static const String setAsReminders = 'set as reminders';
 }

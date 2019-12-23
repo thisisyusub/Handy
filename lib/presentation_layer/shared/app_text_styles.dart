@@ -10,19 +10,19 @@ class AppTextStyles {
   static final fontSize30MediumStyle = TextStyle(
     fontSize: SizeConfig.textMultiplier * 4.6875,
     color: AppColors.handyTextColor,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w600,
   );
 
   static final fontSize22MediumStyle = TextStyle(
     fontSize: SizeConfig.textMultiplier * 2.5,
     color: AppColors.handyTextColor,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w600,
   );
 
   static final fontSize16MediumStyle = TextStyle(
     fontSize: SizeConfig.textMultiplier * 2.1875,
     color: AppColors.customButtonTextColor,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w600,
   );
 
   static final fontSize14RegularStyle = TextStyle(
@@ -43,7 +43,7 @@ class AppTextStyles {
   static final fontSize14MediumStyle = TextStyle(
     fontSize: SizeConfig.textMultiplier * 2.1875,
     color: AppColors.customButtonTextColor,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w600,
   );
 
   static final fontSize12RegularStyle = TextStyle(
@@ -64,7 +64,7 @@ class AppTextStyles {
   static final fontSize12MediumStyle = TextStyle(
     fontSize: SizeConfig.textMultiplier * 1.875,
     color: AppColors.homeListItemTitleTextColor,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w600,
   );
 
   static final fontSize11Style = TextStyle(
