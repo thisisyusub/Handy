@@ -10,11 +10,16 @@ class LoginOrSignUpBloc extends Bloc<LoginOrSignUpEvent, LoginOrSignUpState> {
   @override
   Stream<LoginOrSignUpState> mapEventToState(LoginOrSignUpEvent event) async* {
     if (event is CreateButtonClicked) {
-      final result = await ConnectivityService.getInstance.isConnected();
-      if (result == false) {
-       yield  ErrorHappenedState('No Internet Connection');
+      if ((await _isInternetAvailable()) == true) {
+        // save user email and password
       }
     } else if (event is LoginButtonClickedEvent) {
-    } 
+      if ((await _isInternetAvailable()) == true) {
+        // login user with email and password
+      }
+    }
   }
+
+  Future<bool> _isInternetAvailable() async =>
+      await ConnectivityService.getInstance.isConnected();
 }

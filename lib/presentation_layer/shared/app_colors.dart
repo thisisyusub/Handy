@@ -22,4 +22,7 @@ class AppColors {
   static const nutritionalItemAmountColor = Color.fromRGBO(146, 146, 146, 1);
   static const waterTypeBorderColor = Color.fromRGBO(112, 112, 112, 1);
   static const waterTypeBackgroundColor = Color.fromRGBO(194, 216, 255, 1);
+  static const bmiProgressBarLowColor = Color.fromRGBO(255, 246, 119, 1);
+  static const bmiProgressBarNormalColor = Color.fromRGBO(159, 243, 159, 1);
+  static const bmiProgressBarHighColor = Color.fromRGBO(255, 91, 91, 1);
 }

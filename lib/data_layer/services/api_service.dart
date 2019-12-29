@@ -6,7 +6,7 @@ import 'dart:convert';
 
 class ApiService {
   static ApiService _apiService;
-  final _baseUrl = 'your base url';
+  final _baseUrl = 'your base url;
 
   ApiService._internal();
 
@@ -18,7 +18,7 @@ class ApiService {
     String email,
     String password,
   }) async {
-    final response = await http.post('${_baseUrl}api method', body: {
+    final response = await http.post('${_baseUrl} api method', body: {
       'access': accessToken,
       'name': name,
       'email': email,

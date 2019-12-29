@@ -8,12 +8,14 @@ class CustomButton extends StatelessWidget {
   final double height;
   final String title;
   final EdgeInsets margin;
+  final bool disabled;
 
   CustomButton({
     @required this.width,
     @required this.height,
     @required this.title,
     @required this.margin,
+    this.disabled = false,
   });
 
   @override
@@ -23,7 +25,7 @@ class CustomButton extends StatelessWidget {
       height: height * SizeConfig.textScaleFactor,
       margin: margin,
       decoration: BoxDecoration(
-        color: AppColors.primaryColor,
+        color: disabled ? Colors.grey : AppColors.primaryColor,
         borderRadius: BorderRadius.circular(
           SizeConfig.widthMultiplier * 5 * SizeConfig.textScaleFactor,
         ),

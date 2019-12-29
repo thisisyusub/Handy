@@ -11,7 +11,37 @@ import 'package:handy/presentation_layer/widgets/custom_button.dart';
 import 'package:handy/utils/size_config.dart';
 import 'package:toast/toast.dart';
 
-class RegisterPage extends StatelessWidget {
+class RegisterPage extends StatefulWidget {
+  @override
+  _RegisterPageState createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  final String _emailRegex =
+      "^[a-zA-Z0-9.!#\$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*\$";
+  final _emailController = TextEditingController();
+
+  // should contain at least one upper case
+  // should contain at least one lower case
+  // should contain at least one digit
+  // at least 8 characters
+  final String _passwordRegex = r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$';
+  final _passwordController = TextEditingController();
+  bool _emailValidator = false;
+  bool _passwordValidator = false;
+  bool _enableButtons = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _emailController.addListener(
+      () => _isEmailValid(_emailController.text),
+    );
+    _passwordController.addListener(
+      () => _isPasswordValid(_passwordController.text),
+    );
+  }
+
   Widget build(BuildContext context) {
     return BlocListener<LoginOrSignUpBloc, LoginOrSignUpState>(
       listener: (context, state) {
@@ -51,9 +81,14 @@ class RegisterPage extends StatelessWidget {
                     height: SizeConfig.heightMultiplier * 2.5,
                   ),
                   TextField(
+                    controller: _emailController,
+                    maxLines: 1,
                     decoration: InputDecoration(
                       hintText: AppStrings.hintEmail,
+                      errorText:
+                          _emailValidator ? null : 'Please, enter valid email!',
                     ),
+                    maxLength: 40,
                   ),
                   SizedBox(
                     height: SizeConfig.heightMultiplier * 4,
@@ -66,7 +101,14 @@ class RegisterPage extends StatelessWidget {
                     height: SizeConfig.heightMultiplier * 2.5,
                   ),
                   TextField(
+                    controller: _passwordController,
                     obscureText: true,
+                    maxLength: 20,
+                    maxLines: 1,
+                    decoration: InputDecoration(
+                        errorText: _passwordValidator
+                            ? null
+                            : 'Please, enter valid password!'),
                   ),
                   SizedBox(
                     height: SizeConfig.heightMultiplier * 4,
@@ -82,21 +124,26 @@ class RegisterPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
                       GestureDetector(
-                        onTap: () => Navigator.of(context).pushNamed(
-                          Routes.Home,
-                        ),
+                        onTap: _enableButtons
+                            ? () => Navigator.of(context).pushNamed(
+                                  Routes.Home,
+                                )
+                            : null,
                         child: CustomButton(
                           height: SizeConfig.heightMultiplier * 5.625,
                           width: SizeConfig.widthMultiplier * 28.888,
                           margin: EdgeInsets.zero,
                           title: AppStrings.login,
+                          disabled: !_enableButtons,
                         ),
                       ),
                       GestureDetector(
-                        onTap: () =>
-                            BlocProvider.of<LoginOrSignUpBloc>(context).add(
-                          CreateButtonClicked(),
-                        ),
+                        onTap: _enableButtons
+                            ? () =>
+                                BlocProvider.of<LoginOrSignUpBloc>(context).add(
+                                  CreateButtonClicked(),
+                                )
+                            : null,
                         child: CustomButton(
                           height: SizeConfig.heightMultiplier * 5.625,
                           width: SizeConfig.widthMultiplier * 28.888,
@@ -104,9 +151,13 @@ class RegisterPage extends StatelessWidget {
                             left: SizeConfig.widthMultiplier * 4.444,
                           ),
                           title: AppStrings.create,
+                          disabled: !_enableButtons,
                         ),
                       ),
                     ],
+                  ),
+                  SizedBox(
+                    height: 10,
                   ),
                 ],
               ),
@@ -115,5 +166,33 @@ class RegisterPage extends StatelessWidget {
         );
       }),
     );
+  }
+
+  void _isEmailValid(String email) {
+    setState(() {
+      _emailValidator = RegExp(_emailRegex).hasMatch(email);
+    });
+    _enableActionButtons();
+  }
+
+  void _isPasswordValid(String password) {
+    setState(() {
+      _passwordValidator = RegExp(_passwordRegex).hasMatch(password);
+    });
+    _enableActionButtons();
+  }
+
+  void _enableActionButtons() {
+    setState(() {
+      _enableButtons = _emailValidator && _passwordValidator;
+      print('buttons enabled: $_enableButtons');
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
   }
 }

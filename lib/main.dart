@@ -30,6 +30,12 @@ void main() async {
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
+
+  await ApiService.getInstance.registerUser(
+    name: 'Musa',
+    email: 'contact@abbas0v.com',
+    password: 'test123',
+  );
 }
 
 class MyApp extends StatelessWidget {

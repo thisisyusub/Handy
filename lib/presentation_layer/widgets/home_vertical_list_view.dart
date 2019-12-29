@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:handy/contants/app_strings.dart';
 import 'package:handy/contants/routes.dart';
 import 'package:handy/presentation_layer/shared/app_icons.dart';
+import 'package:handy/presentation_layer/widgets/custom_bmi_progressbar.dart';
 import 'package:handy/utils/size_config.dart';
 import 'chip_item.dart';
 import 'custom_progress_bar.dart';
@@ -112,7 +113,7 @@ class _HomeVerticalListViewState extends State<HomeVerticalListView> {
               Text('BMI 22.4'),
             ],
           ),
-          rightBottomWidget: CustomProgressBar(0.89),
+          rightBottomWidget: CustomBMIProgressBar(60),
         ),
       ),
       GestureDetector(
