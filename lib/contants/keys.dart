@@ -7,7 +7,5 @@ class Keys {
   static const String name = 'name';
   static const String password = 'password';
   static const String email = 'email';
-
-
-  static const String accessKey = '';
+  static const String uid = 'uid';
 }

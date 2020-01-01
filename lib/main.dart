@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:handy/bloc_layer/blocs/login_or_signup_bloc.dart';
+import 'package:handy/bloc_layer/blocs/login_bloc.dart';
 import 'package:handy/data_layer/services/api_service.dart';
 import 'package:handy/presentation_layer/pages/welcome_page.dart';
 import 'package:handy/presentation_layer/router.dart';
@@ -43,8 +43,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<LoginOrSignUpBloc>(
-          create: (_) => LoginOrSignUpBloc(),
+        BlocProvider<LoginBloc>(
+          create: (_) => LoginBloc(),
         ),
         BlocProvider<OnBoardingBloc>(
           create: (_) => OnBoardingBloc(),

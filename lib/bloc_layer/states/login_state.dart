@@ -1,38 +1,15 @@
-import 'package:equatable/equatable.dart';
-
-abstract class LoginState extends Equatable {
+abstract class LoginState {
   const LoginState();
 }
 
-class LoginUninitializedState extends LoginState {
-  @override
-  List<Object> get props => [];
-}
+class UninitializedState extends LoginState {}
 
-class OptionalFieldState extends LoginState {
-  final String emailMessage;
-  final String passwordMessage;
+class LoginLoadingState extends LoginState {}
 
-  OptionalFieldState({
-    this.emailMessage,
-    this.passwordMessage,
-  });
+class SuccessLoginState extends LoginState {}
 
-  @override
-  List<Object> get props => [emailMessage, passwordMessage];
-}
+class ErrorHappenedState extends LoginState {
+  final String errorMessage;
 
-class LoginOrCreateProcessingState extends LoginState {
-  @override
-  List<Object> get props => [];
-}
-
-class LoginSuccessfullyCompletedState extends LoginState {
-  @override
-  List<Object> get props => [];
-}
-
-class LoginErrorState extends LoginState {
-  @override
-  List<Object> get props => [];
+  ErrorHappenedState(this.errorMessage);
 }
