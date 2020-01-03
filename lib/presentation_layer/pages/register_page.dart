@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:handy/bloc_layer/blocs/login_bloc.dart';
-import 'package:handy/bloc_layer/events/login_event.dart';
-import 'package:handy/bloc_layer/states/login_state.dart';
+import 'package:handy/bloc_layer/blocs/login_or_register_bloc.dart';
+import 'package:handy/bloc_layer/events/login_or_register_event.dart';
+import 'package:handy/bloc_layer/states/login_or_register_state.dart';
 import 'package:handy/contants/app_strings.dart';
 import 'package:handy/contants/routes.dart';
 import 'package:handy/presentation_layer/shared/app_colors.dart';
@@ -43,20 +43,29 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   Widget build(BuildContext context) {
-    return BlocListener<LoginBloc, LoginState>(
+    return BlocConsumer<LoginOrRegisterBloc, LoginOrRegisterState>(
+      listenWhen: (oldState, currentState) =>
+          currentState is ErrorHappenedState ||
+          currentState is SuccessLoginState,
       listener: (context, state) {
+        print('listener');
         if (state is ErrorHappenedState) {
-          Toast.show(state.errorMessage, context,
-              duration: Toast.LENGTH_SHORT, gravity: Toast.BOTTOM);
+          Toast.show(
+            state.errorMessage,
+            context,
+            duration: Toast.LENGTH_SHORT,
+            gravity: Toast.BOTTOM,
+          );
         }
 
         if (state is SuccessLoginState) {
-          Navigator.of(context).pushNamed(
+          Navigator.of(context).pushNamedAndRemoveUntil(
             Routes.Home,
+            (Route<dynamic> route) => false,
           );
         }
       },
-      child: BlocBuilder<LoginBloc, LoginState>(builder: (context, state) {
+      builder: (context, state) {
         if (state is LoginLoadingState) {
           return Stack(
             children: <Widget>[
@@ -69,7 +78,7 @@ class _RegisterPageState extends State<RegisterPage> {
         }
 
         return _unitializedWidget();
-      }),
+      },
     );
   }
 
@@ -147,7 +156,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 children: <Widget>[
                   GestureDetector(
                     onTap: _enableButtons
-                        ? () => BlocProvider.of<LoginBloc>(context).add(
+                        ? () =>
+                            BlocProvider.of<LoginOrRegisterBloc>(context).add(
                               LoginButtonClickedEvent(
                                 email: _emailController.text,
                                 password: _passwordController.text,
@@ -164,8 +174,12 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   GestureDetector(
                     onTap: _enableButtons
-                        ? () => BlocProvider.of<LoginBloc>(context).add(
-                              CreateButtonClicked(),
+                        ? () =>
+                            BlocProvider.of<LoginOrRegisterBloc>(context).add(
+                              CreateButtonClickedEvent(
+                                email: _emailController.text,
+                                password: _passwordController.text,
+                              ),
                             )
                         : null,
                     child: CustomButton(
@@ -207,7 +221,6 @@ class _RegisterPageState extends State<RegisterPage> {
   void _enableActionButtons() {
     setState(() {
       _enableButtons = _emailValidator && _passwordValidator;
-      print('buttons enabled: $_enableButtons');
     });
   }
 
@@ -218,5 +231,3 @@ class _RegisterPageState extends State<RegisterPage> {
     _passwordController.dispose();
   }
 }
-
-class LoginOrSignUpState {}
