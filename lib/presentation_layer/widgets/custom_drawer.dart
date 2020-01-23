@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:handy/bloc_layer/blocs/login_or_register_bloc.dart';
+import 'package:handy/bloc_layer/events/login_or_register_event.dart';
 import 'package:handy/utils/size_config.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -38,7 +41,32 @@ class CustomDrawer extends StatelessWidget {
               SizedBox(
                 height: SizeConfig.heightMultiplier * 10.9375,
               ),
-              ListTile(title: Text('Sign out'), onTap: () {}),
+              ListTile(
+                  title: Text('Sign out'),
+                  onTap: () async {
+                    await showDialog(
+                      context: context,
+                      builder: (_) => AlertDialog(
+                        title: Text('Sign out of Handy'),
+                        content: Text('Do you want to sign out?'),
+                        actions: <Widget>[
+                          FlatButton(
+                            child: Text('No'),
+                            onPressed: () => Navigator.of(context).pop(),
+                          ),
+                          FlatButton(
+                            child: Text('Yes'),
+                            onPressed: () =>
+                                BlocProvider.of<LoginOrRegisterBloc>(context)
+                                    .add(
+                              LogOutClickedEvent(),
+                            ),
+                          ),
+                        ],
+                      ),
+                      barrierDismissible: false,
+                    );
+                  }),
             ],
           ),
         ),

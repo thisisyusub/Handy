@@ -17,38 +17,21 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  final String _emailRegex =
-      "^[a-zA-Z0-9.!#\$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*\$";
   final _emailController = TextEditingController();
-
-  // should contain at least one upper case
-  // should contain at least one lower case
-  // should contain at least one digit
-  // at least 8 characters
-  final String _passwordRegex = r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$';
   final _passwordController = TextEditingController();
-  bool _emailValidator = false;
-  bool _passwordValidator = false;
-  bool _enableButtons = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _emailController.addListener(
-      () => _isEmailValid(_emailController.text),
-    );
-    _passwordController.addListener(
-      () => _isPasswordValid(_passwordController.text),
-    );
-  }
 
   Widget build(BuildContext context) {
     return BlocConsumer<LoginOrRegisterBloc, LoginOrRegisterState>(
-      listenWhen: (oldState, currentState) =>
-          currentState is ErrorHappenedState ||
-          currentState is SuccessLoginState,
+      listenWhen: (oldState, currentState) {
+        if (oldState is LoginLoadingState) {
+          Navigator.of(context).pop();
+        }
+
+        return currentState is ErrorHappenedState ||
+            currentState is SuccessLoginState ||
+            currentState is LoginLoadingState;
+      },
       listener: (context, state) {
-        print('listener');
         if (state is ErrorHappenedState) {
           Toast.show(
             state.errorMessage,
@@ -56,44 +39,48 @@ class _RegisterPageState extends State<RegisterPage> {
             duration: Toast.LENGTH_SHORT,
             gravity: Toast.BOTTOM,
           );
-        }
-
-        if (state is SuccessLoginState) {
+        } else if (state is SuccessLoginState) {
           Navigator.of(context).pushNamedAndRemoveUntil(
             Routes.Home,
             (Route<dynamic> route) => false,
           );
+        } else if (state is LoginLoadingState) {
+          showDialog(
+            context: context,
+            builder: (_) => AlertDialog(
+              title: Text('Please, be patient...'),
+              content: Row(
+                children: <Widget>[
+                  CircularProgressIndicator(),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text('Loading'),
+                ],
+              ),
+            ),
+            barrierDismissible: false,
+          );
         }
       },
       builder: (context, state) {
-        if (state is LoginLoadingState) {
-          return Stack(
-            children: <Widget>[
-              _unitializedWidget(),
-              Center(
-                child: CircularProgressIndicator(),
-              ),
-            ],
-          );
-        }
-
-        return _unitializedWidget();
+        return _unitializedWidget(state);
       },
     );
   }
 
-  Widget _unitializedWidget() {
+  Widget _unitializedWidget(LoginOrRegisterState state) {
     return Scaffold(
       resizeToAvoidBottomPadding: true,
       resizeToAvoidBottomInset: true,
       backgroundColor: AppColors.appBackgroundColor,
-      body: SingleChildScrollView(
-        child: Container(
-          padding: EdgeInsets.only(
-            top: SizeConfig.heightMultiplier * 18.75,
-            left: SizeConfig.widthMultiplier * 8.888,
-            right: SizeConfig.widthMultiplier * 8.888,
-          ),
+      body: Padding(
+        padding: EdgeInsets.only(
+          top: SizeConfig.heightMultiplier * 18.75,
+          left: SizeConfig.widthMultiplier * 8.888,
+          right: SizeConfig.widthMultiplier * 8.888,
+        ),
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -111,15 +98,21 @@ class _RegisterPageState extends State<RegisterPage> {
               SizedBox(
                 height: SizeConfig.heightMultiplier * 2.5,
               ),
-              TextField(
-                controller: _emailController,
-                maxLines: 1,
-                decoration: InputDecoration(
-                  hintText: AppStrings.hintEmail,
-                  errorText:
-                      _emailValidator ? null : 'Please, enter valid email!',
-                ),
-                maxLength: 40,
+              StreamBuilder<String>(
+                stream: BlocProvider.of<LoginOrRegisterBloc>(context).email,
+                builder: (context, snapshot) {
+                  return TextField(
+                    controller: _emailController,
+                    onChanged: BlocProvider.of<LoginOrRegisterBloc>(context)
+                        .onEmailChanged,
+                    maxLines: 1,
+                    decoration: InputDecoration(
+                      hintText: AppStrings.hintEmail,
+                      errorText: snapshot.error,
+                    ),
+                    maxLength: 40,
+                  );
+                },
               ),
               SizedBox(
                 height: SizeConfig.heightMultiplier * 4,
@@ -131,15 +124,21 @@ class _RegisterPageState extends State<RegisterPage> {
               SizedBox(
                 height: SizeConfig.heightMultiplier * 2.5,
               ),
-              TextField(
-                controller: _passwordController,
-                obscureText: true,
-                maxLength: 20,
-                maxLines: 1,
-                decoration: InputDecoration(
-                    errorText: _passwordValidator
-                        ? null
-                        : 'Please, enter valid password!'),
+              StreamBuilder<String>(
+                stream: BlocProvider.of<LoginOrRegisterBloc>(context).password,
+                builder: (context, snapshot) {
+                  return TextField(
+                    controller: _passwordController,
+                    onChanged: BlocProvider.of<LoginOrRegisterBloc>(context)
+                        .onPasswordChanged,
+                    obscureText: true,
+                    maxLength: 20,
+                    maxLines: 1,
+                    decoration: InputDecoration(
+                      errorText: snapshot.error,
+                    ),
+                  );
+                },
               ),
               SizedBox(
                 height: SizeConfig.heightMultiplier * 4,
@@ -151,48 +150,83 @@ class _RegisterPageState extends State<RegisterPage> {
               SizedBox(
                 height: SizeConfig.heightMultiplier * 3.4375,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  GestureDetector(
-                    onTap: _enableButtons
-                        ? () =>
-                            BlocProvider.of<LoginOrRegisterBloc>(context).add(
-                              LoginButtonClickedEvent(
-                                email: _emailController.text,
-                                password: _passwordController.text,
+              StreamBuilder<String>(
+                stream: BlocProvider.of<LoginOrRegisterBloc>(context).email,
+                builder: (context, email) {
+                  return StreamBuilder<String>(
+                    stream:
+                        BlocProvider.of<LoginOrRegisterBloc>(context).password,
+                    builder: (context, password) {
+                      return Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: <Widget>[
+                          GestureDetector(
+                            onTap: () => email.hasData
+                                ? (password.hasData
+                                    ? (email.hasError
+                                        ? null
+                                        : BlocProvider.of<LoginOrRegisterBloc>(
+                                                context)
+                                            .add(
+                                            LoginButtonClickedEvent(
+                                              email: _emailController.text,
+                                              password:
+                                                  _passwordController.text,
+                                            ),
+                                          ))
+                                    : null)
+                                : null,
+                            child: CustomButton(
+                              height: SizeConfig.heightMultiplier * 5.625,
+                              width: SizeConfig.widthMultiplier * 28.888,
+                              margin: EdgeInsets.zero,
+                              title: AppStrings.login,
+                              disabled: email.hasData
+                                  ? (password.hasData
+                                      ? (email.hasError
+                                          ? true
+                                          : (password.hasError ? true : false))
+                                      : true)
+                                  : true,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () => email.hasData
+                                ? (password.hasData
+                                    ? (email.hasError
+                                        ? null
+                                        : BlocProvider.of<LoginOrRegisterBloc>(
+                                                context)
+                                            .add(
+                                            CreateButtonClickedEvent(
+                                              email: _emailController.text,
+                                              password:
+                                                  _passwordController.text,
+                                            ),
+                                          ))
+                                    : null)
+                                : null,
+                            child: CustomButton(
+                              height: SizeConfig.heightMultiplier * 5.625,
+                              width: SizeConfig.widthMultiplier * 28.888,
+                              margin: EdgeInsets.only(
+                                left: SizeConfig.widthMultiplier * 4.444,
                               ),
-                            )
-                        : null,
-                    child: CustomButton(
-                      height: SizeConfig.heightMultiplier * 5.625,
-                      width: SizeConfig.widthMultiplier * 28.888,
-                      margin: EdgeInsets.zero,
-                      title: AppStrings.login,
-                      disabled: !_enableButtons,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: _enableButtons
-                        ? () =>
-                            BlocProvider.of<LoginOrRegisterBloc>(context).add(
-                              CreateButtonClickedEvent(
-                                email: _emailController.text,
-                                password: _passwordController.text,
-                              ),
-                            )
-                        : null,
-                    child: CustomButton(
-                      height: SizeConfig.heightMultiplier * 5.625,
-                      width: SizeConfig.widthMultiplier * 28.888,
-                      margin: EdgeInsets.only(
-                        left: SizeConfig.widthMultiplier * 4.444,
-                      ),
-                      title: AppStrings.create,
-                      disabled: !_enableButtons,
-                    ),
-                  ),
-                ],
+                              title: AppStrings.create,
+                              disabled: email.hasData
+                                  ? (password.hasData
+                                      ? (email.hasError
+                                          ? true
+                                          : (password.hasError ? true : false))
+                                      : true)
+                                  : true,
+                            ),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
               ),
               SizedBox(
                 height: 10,
@@ -202,32 +236,5 @@ class _RegisterPageState extends State<RegisterPage> {
         ),
       ),
     );
-  }
-
-  void _isEmailValid(String email) {
-    setState(() {
-      _emailValidator = RegExp(_emailRegex).hasMatch(email);
-    });
-    _enableActionButtons();
-  }
-
-  void _isPasswordValid(String password) {
-    setState(() {
-      _passwordValidator = RegExp(_passwordRegex).hasMatch(password);
-    });
-    _enableActionButtons();
-  }
-
-  void _enableActionButtons() {
-    setState(() {
-      _enableButtons = _emailValidator && _passwordValidator;
-    });
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    _emailController.dispose();
-    _passwordController.dispose();
   }
 }

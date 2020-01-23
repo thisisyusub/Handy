@@ -11,4 +11,5 @@ class AppIcons {
   static const String medicine = 'assets/icons/medicine.svg';
   static const String weight = 'assets/icons/weight.svg';
   static const String forYouPng = 'assets/images/for_you.png';
+  static const String appIcon = 'assets/icons/app_icon.svg';
 }

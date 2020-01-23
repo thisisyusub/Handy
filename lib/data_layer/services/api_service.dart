@@ -27,7 +27,7 @@ class ApiService {
     });
 
     if (response.statusCode != 200) {
-      throw HttpException(response.body);
+      throw HttpException(response.statusCode.toString());
     }
 
     final loginResponse = LoginResponse.fromJson(
@@ -50,7 +50,7 @@ class ApiService {
     });
 
     if (response.statusCode != 200) {
-      throw HttpException(response.body);
+      throw HttpException(response.statusCode.toString());
     }
 
     final registerResponse = RegisterResponse.fromJson(

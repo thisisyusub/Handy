@@ -13,3 +13,5 @@ class ErrorHappenedState extends LoginOrRegisterState {
 
   ErrorHappenedState(this.errorMessage);
 }
+
+class LoginUnAuthenticatedState extends LoginOrRegisterState {}

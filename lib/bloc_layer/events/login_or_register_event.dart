@@ -29,3 +29,8 @@ class CreateButtonClickedEvent extends LoginOrRegisterEvent {
   @override
   List<Object> get props => [email, password];
 }
+
+class LogOutClickedEvent extends LoginOrRegisterEvent {
+  @override
+  List<Object> get props => null;
+}
