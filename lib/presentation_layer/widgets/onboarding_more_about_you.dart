@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:handy/contants/app_strings.dart';
+import 'package:handy/constants/app_strings.dart';
 import 'package:handy/presentation_layer/shared/app_text_styles.dart';
 import 'package:handy/presentation_layer/widgets/page_view_title.dart';
 import 'package:handy/utils/size_config.dart';
@@ -84,7 +84,7 @@ class OnBoardingMoreAboutYou extends StatelessWidget {
               SizedBox(
                 width: SizeConfig.widthMultiplier * 2.777,
               ),
-               DropdownButton<String>(
+              DropdownButton<String>(
                 items: [
                   DropdownMenuItem<String>(
                     value: 'Item 1',

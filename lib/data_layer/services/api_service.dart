@@ -1,5 +1,5 @@
-import 'package:handy/contants/access_token.dart';
-import 'package:handy/contants/keys.dart';
+import 'package:handy/constants/access_token.dart';
+import 'package:handy/constants/keys.dart';
 import 'package:handy/data_layer/models/http_exception.dart';
 import 'package:handy/data_layer/models/login_response.dart';
 import 'package:handy/data_layer/models/register_response.dart';

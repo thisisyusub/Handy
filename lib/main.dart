@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:handy/bloc_layer/blocs/login_or_register_bloc.dart';
-import 'package:handy/contants/keys.dart';
+import 'package:handy/constants/keys.dart';
 import 'package:handy/presentation_layer/pages/home_page.dart';
 import 'package:handy/presentation_layer/pages/welcome_page.dart';
 import 'package:handy/presentation_layer/router.dart';

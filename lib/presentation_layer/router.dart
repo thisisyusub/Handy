@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:handy/contants/routes.dart';
+import 'package:handy/constants/routes.dart';
 import 'package:handy/presentation_layer/pages/add_medicine_page.dart';
 import 'package:handy/presentation_layer/pages/calorie_in_detail_page.dart';
 import 'package:handy/presentation_layer/pages/home_page.dart';

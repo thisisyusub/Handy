@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:handy/bloc_layer/blocs/login_or_register_bloc.dart';
 import 'package:handy/bloc_layer/states/login_or_register_state.dart';
-import 'package:handy/contants/routes.dart';
+import 'package:handy/constants/routes.dart';
 import 'package:handy/presentation_layer/shared/app_colors.dart';
 import 'package:handy/presentation_layer/shared/app_icons.dart';
 import 'package:handy/presentation_layer/shared/app_text_styles.dart';

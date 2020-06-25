@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:handy/contants/app_strings.dart';
-import 'package:handy/contants/routes.dart';
+import 'package:handy/constants/app_strings.dart';
+import 'package:handy/constants/routes.dart';
 import 'package:handy/presentation_layer/shared/app_colors.dart';
 import 'package:handy/presentation_layer/shared/app_icons.dart';
 import 'package:handy/presentation_layer/shared/app_text_styles.dart';

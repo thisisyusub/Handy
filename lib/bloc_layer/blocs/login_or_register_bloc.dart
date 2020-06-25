@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:handy/bloc_layer/events/login_or_register_event.dart';
 import 'package:handy/bloc_layer/states/login_or_register_state.dart';
-import 'package:handy/contants/keys.dart';
+import 'package:handy/constants/keys.dart';
 import 'package:handy/data_layer/services/api_service.dart';
 import 'package:handy/data_layer/services/connectivity_service.dart';
 import 'package:handy/utils/validators.dart';

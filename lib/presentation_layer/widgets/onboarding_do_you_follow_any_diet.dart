@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:handy/contants/app_strings.dart';
+import 'package:handy/constants/app_strings.dart';
 import 'package:handy/presentation_layer/widgets/page_view_title.dart';
 import 'package:handy/utils/size_config.dart';
 
