@@ -1,21 +1,20 @@
-import 'package:bloc/bloc.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:handy/bloc_layer/blocs/login_or_register_bloc.dart';
-import 'package:handy/contants/keys.dart';
-import 'package:handy/presentation_layer/pages/home_page.dart';
-import 'package:handy/presentation_layer/pages/welcome_page.dart';
-import 'package:handy/presentation_layer/router.dart';
-import 'package:handy/presentation_layer/shared/app_colors.dart';
-import 'package:handy/presentation_layer/simple_bloc_delegate.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'bloc_layer/blocs/onboarding_bloc.dart';
+import './utils/constants/keys.dart';
+import './presentation/pages/home_page.dart';
+import './presentation/pages/welcome_page.dart';
+import './presentation/router.dart';
+import './presentation/shared/app_colors.dart';
+import './presentation/simple_bloc_observer.dart';
+import './bloc/login_and_register_bloc/login_or_register_bloc.dart';
+import './bloc/on_boarding_bloc/on_boarding_bloc.dart';
+
 
 void main() async {
-  BlocSupervisor.delegate = SimpleBlocDelegate();
+  Bloc.observer = SimpleBlocObserver();
   runApp(MyApp());
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
@@ -48,10 +47,12 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Healthier',
+        title: 'Handy',
+        themeMode: ThemeMode.light,
         theme: ThemeData(
           primaryColor: AppColors.primaryColor,
           accentColor: AppColors.primaryColor,
+          scaffoldBackgroundColor: AppColors.appBackgroundColor,
           fontFamily: 'Rubik',
         ),
         home: FutureBuilder(
