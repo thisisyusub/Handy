@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "654113696409",
+    "firebase_url": "https://handy-45690.firebaseio.com",
+    "project_id": "handy-45690",
+    "storage_bucket": "handy-45690.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654113696409:android:9451d87e9267d9fc73e608",
+        "android_client_info": {
+          "package_name": "com.kanan.yusub.handy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "654113696409-2765u8g6emaj3rmvo9nduf113jc4tn3m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVAKytbcafN80MAl2zl1Nish8QhujFM0Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "654113696409-2765u8g6emaj3rmvo9nduf113jc4tn3m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
