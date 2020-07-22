@@ -1,4 +1,4 @@
-[![Generic badge](https://img.shields.io/github/workflow/status/yusubx/Handy/Flutter%20CI/master)](https://shields.io/)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/yusubx/Handy/Flutter%20CI/master)
 
 # Handy
 
