@@ -1,3 +1,5 @@
+[![Generic badge](https://img.shields.io/github/workflow/status/yusubx/Handy/Flutter%20CI/master)](https://shields.io/)
+
 # Handy
 
 ***Process***
