@@ -1,4 +1,10 @@
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/yusubx/Handy/Flutter%20CI/master)
+![GitHub stars](https://img.shields.io/github/stars/yusubx/Handy?style=social)
+![GitHub forks](https://img.shields.io/github/forks/yusubx/Handy?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/yusubx/Handy?style=social)
+![GitHub contributors](https://img.shields.io/github/contributors/yusubx/Handy)
+![GitHub last commit](https://img.shields.io/github/last-commit/yusubx/Handy)
+![GitHub top language](https://img.shields.io/github/languages/top/yusubx/Handy)
 
 # Handy
 
