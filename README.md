@@ -5,6 +5,7 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/yusubx/Handy)
 ![GitHub last commit](https://img.shields.io/github/last-commit/yusubx/Handy)
 ![GitHub top language](https://img.shields.io/github/languages/top/yusubx/Handy)
+![GitHub issues](https://img.shields.io/github/issues/yusubx/Handy)
 
 # Handy
 
