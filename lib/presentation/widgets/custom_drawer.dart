@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../utils/size_config.dart';
+import '../../utils/responsive_helper/size_config.dart';
+
 import '../../bloc/login_and_register_bloc/login_or_register_bloc.dart';
 
 class CustomDrawer extends StatelessWidget {

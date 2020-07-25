@@ -11,7 +11,7 @@ import '../widgets/three_part_indicator.dart';
 import '../widgets/three_part_indicator_detail.dart';
 import '../../utils/constants/app_strings.dart';
 import '../../utils/constants/routes.dart';
-import '../../utils/size_config.dart';
+import '../../utils/responsive_helper/size_config.dart';
 
 class CalorieInDetailPage extends StatelessWidget {
   @override
@@ -42,7 +42,7 @@ class CalorieInDetailPage extends StatelessWidget {
                   ),
                   child: Text(
                     AppStrings.setTarget,
-                    style: AppTextStyles.fontSize14MediumStyle,
+                    style: AppTextStyles.kFontSize14MediumStyle,
                   ),
                 ),
               ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../shared/app_colors.dart';
-import '../../utils/size_config.dart';
+import '../../utils/responsive_helper/size_config.dart';
 
 class ThreePartIndicator extends StatelessWidget {
   @override

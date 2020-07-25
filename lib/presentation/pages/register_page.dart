@@ -7,7 +7,7 @@ import '../../utils/constants/routes.dart';
 import '../shared/app_colors.dart';
 import '../shared/app_text_styles.dart';
 import '../widgets/custom_button.dart';
-import '../../utils/size_config.dart';
+import '../../utils/responsive_helper/size_config.dart';
 import '../../bloc/login_and_register_bloc/login_or_register_bloc.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -176,9 +176,8 @@ class _RegisterPageState extends State<RegisterPage> {
                                     : null)
                                 : null,
                             child: CustomButton(
-                              height: SizeConfig.heightMultiplier * 5.625,
                               width: SizeConfig.widthMultiplier * 28.888,
-                              margin: EdgeInsets.zero,
+                              padding: EdgeInsets.zero,
                               title: AppStrings.login,
                               disabled: email.hasData
                                   ? (password.hasData
@@ -206,9 +205,8 @@ class _RegisterPageState extends State<RegisterPage> {
                                     : null)
                                 : null,
                             child: CustomButton(
-                              height: SizeConfig.heightMultiplier * 5.625,
                               width: SizeConfig.widthMultiplier * 28.888,
-                              margin: EdgeInsets.only(
+                              padding: EdgeInsets.only(
                                 left: SizeConfig.widthMultiplier * 4.444,
                               ),
                               title: AppStrings.create,

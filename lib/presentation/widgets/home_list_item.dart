@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../shared/app_colors.dart';
 import '../shared/app_text_styles.dart';
-import '../../utils/size_config.dart';
+import '../../utils/responsive_helper/size_config.dart';
 
 class HomeListItem extends StatelessWidget {
   final String iconPath;
@@ -29,9 +29,7 @@ class HomeListItem extends StatelessWidget {
           padding: EdgeInsets.only(
             left: SizeConfig.widthMultiplier * 4.444,
             right: SizeConfig.widthMultiplier * 8.8888,
-            top: SizeConfig.heightMultiplier *
-                3.4375 *
-                SizeConfig.textScaleFactor,
+            top: SizeConfig.heightMultiplier * 3.4375,
             bottom: SizeConfig.heightMultiplier * 5,
           ),
           margin: EdgeInsets.only(
@@ -57,12 +55,8 @@ class HomeListItem extends StatelessWidget {
             children: <Widget>[
               SvgPicture.asset(
                 iconPath,
-                height: SizeConfig.heightMultiplier *
-                    2.5 *
-                    SizeConfig.textScaleFactor,
-                width: SizeConfig.widthMultiplier *
-                    4.444 *
-                    SizeConfig.textScaleFactor,
+                height: SizeConfig.heightMultiplier * 2.5,
+                width: SizeConfig.widthMultiplier * 4.444,
               ),
               Expanded(
                 child: Padding(

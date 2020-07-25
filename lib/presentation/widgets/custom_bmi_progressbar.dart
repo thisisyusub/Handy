@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../shared/app_colors.dart';
-import '../../utils/size_config.dart';
+import '../../utils/responsive_helper/size_config.dart';
 
 class CustomBMIProgressBar extends StatelessWidget {
   final double indicatorValue;
@@ -11,20 +11,16 @@ class CustomBMIProgressBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: SizeConfig.heightMultiplier * 6.5 * SizeConfig.textScaleFactor,
-      width: SizeConfig.widthMultiplier * 22 * SizeConfig.textScaleFactor,
+      height: SizeConfig.heightMultiplier * 6.5,
+      width: SizeConfig.widthMultiplier * 22,
       child: Stack(
         children: <Widget>[
           Positioned(
             right: 0,
             bottom: 0,
             child: Container(
-              width: SizeConfig.widthMultiplier *
-                  16.666 *
-                  SizeConfig.textScaleFactor,
-              height: SizeConfig.heightMultiplier *
-                  1.875 *
-                  SizeConfig.textScaleFactor,
+              width: SizeConfig.widthMultiplier * 16.666,
+              height: SizeConfig.heightMultiplier * 1.875,
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
@@ -63,7 +59,7 @@ class CustomBMIProgressBar extends StatelessWidget {
           ),
           Positioned(
             top: 0,
-            left: SizeConfig.textScaleFactor * 20,
+            left: 20,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[

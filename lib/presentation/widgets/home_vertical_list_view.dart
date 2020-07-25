@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../utils/constants/app_strings.dart';
 import '../../utils/constants/routes.dart';
 import '../shared/app_icons.dart';
-import '../../utils/size_config.dart';
+import '../../utils/responsive_helper/size_config.dart';
 import './chip_item.dart';
 import './custom_progress_bar.dart';
 import './home_list_item.dart';

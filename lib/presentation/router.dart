@@ -10,7 +10,7 @@ import './pages/register_page.dart';
 import './pages/set_calorie_target_page.dart';
 import './pages/sleep_in_detail_page.dart';
 import './pages/water_in_detail_page.dart';
-import './pages/welcome_page.dart';
+import './pages/welcome/welcome_page.dart';
 
 class Router {
   Router._();

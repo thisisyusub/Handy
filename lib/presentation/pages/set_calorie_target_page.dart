@@ -4,7 +4,7 @@ import '../../utils/constants/app_strings.dart';
 import '../../utils/constants/routes.dart';
 import '../shared/app_colors.dart';
 import '../shared/app_text_styles.dart';
-import '../../utils/size_config.dart';
+import '../../utils/responsive_helper/size_config.dart';
 
 class SetCalorieTargetPage extends StatelessWidget {
   @override
@@ -35,7 +35,7 @@ class SetCalorieTargetPage extends StatelessWidget {
                   ),
                   child: Text(
                     AppStrings.save,
-                    style: AppTextStyles.fontSize14MediumStyle,
+                    style: AppTextStyles.kFontSize14MediumStyle,
                   ),
                 ),
               ],

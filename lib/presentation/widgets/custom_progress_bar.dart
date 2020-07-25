@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../shared/app_colors.dart';
-import '../../utils/size_config.dart';
+import '../../utils/responsive_helper/size_config.dart';
 
 class CustomProgressBar extends StatelessWidget {
   final double indicatorValueFactor;
@@ -11,13 +11,13 @@ class CustomProgressBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: SizeConfig.widthMultiplier * 16.666 * SizeConfig.textScaleFactor,
-      height: SizeConfig.heightMultiplier * 1.875 * SizeConfig.textScaleFactor,
+      width: SizeConfig.widthMultiplier * 16.666,
+      height: SizeConfig.heightMultiplier * 1.875,
       child: Stack(
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
-              color: AppColors.primaryColor,
+              color: AppColors.kPrimaryColor,
               borderRadius: BorderRadius.circular(6),
             ),
           ),

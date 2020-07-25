@@ -6,7 +6,7 @@ import '../shared/app_text_styles.dart';
 import '../widgets/chip_item.dart';
 import '../widgets/custom_progress_bar.dart';
 import '../widgets/date_controller.dart';
-import '../../utils/size_config.dart';
+import '../../utils/responsive_helper/size_config.dart';
 
 // TODO: Create custom selector widget
 class WaterInDetailPage extends StatelessWidget {
@@ -35,7 +35,7 @@ class WaterInDetailPage extends StatelessWidget {
                   ),
                   Text(
                     AppStrings.setReminder,
-                    style: AppTextStyles.fontSize14MediumStyle,
+                    style: AppTextStyles.kFontSize14MediumStyle,
                   ),
                 ],
               ),
@@ -108,7 +108,7 @@ class WaterInDetailPage extends StatelessWidget {
                       ),
                       child: Text(
                         AppStrings.setTarget,
-                        style: AppTextStyles.fontSize14MediumStyle,
+                        style: AppTextStyles.kFontSize14MediumStyle,
                       ),
                     ),
                     SizedBox(
@@ -157,7 +157,7 @@ class WaterInDetailPage extends StatelessWidget {
         child: RichText(
           text: TextSpan(
               text: '$type\n',
-              style: AppTextStyles.fontSize14MediumStyle,
+              style: AppTextStyles.kFontSize14MediumStyle,
               children: [
                 TextSpan(
                   text: amount,

@@ -6,7 +6,7 @@ import '../shared/app_text_styles.dart';
 import '../widgets/chip_item.dart';
 import '../widgets/custom_progress_bar.dart';
 import '../widgets/date_controller.dart';
-import '../../utils/size_config.dart';
+import '../../utils/responsive_helper/size_config.dart';
 
 class SleepInDetailPage extends StatelessWidget {
   @override
@@ -34,7 +34,7 @@ class SleepInDetailPage extends StatelessWidget {
                   ),
                   Text(
                     AppStrings.setReminder,
-                    style: AppTextStyles.fontSize14MediumStyle,
+                    style: AppTextStyles.kFontSize14MediumStyle,
                   ),
                 ],
               ),
@@ -91,7 +91,7 @@ class SleepInDetailPage extends StatelessWidget {
                       ),
                       child: Text(
                         AppStrings.setTarget,
-                        style: AppTextStyles.fontSize14MediumStyle,
+                        style: AppTextStyles.kFontSize14MediumStyle,
                       ),
                     ),
                   ],

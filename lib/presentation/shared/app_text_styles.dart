@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import '../../utils/size_config.dart';
+import '../../utils/responsive_helper/size_config.dart';
 
 import 'app_colors.dart';
 
@@ -7,27 +7,40 @@ class AppTextStyles {
   AppTextStyles._();
 
   // new part last
-  static final fontSize30MediumStyle = TextStyle(
-    fontSize: SizeConfig.textMultiplier * 4.6875,
-    color: AppColors.handyTextColor,
+  static final kFontSize32MediumStyle = TextStyle(
+    fontSize: SizeConfig.textMultiplier * 5,
+    color: AppColors.kHandyTextColor,
     fontWeight: FontWeight.w600,
   );
 
+  static final kFontSize14MediumStyle = TextStyle(
+    fontSize: SizeConfig.textMultiplier * 2.1875,
+    color: AppColors.kHandyTextColor,
+    fontWeight: FontWeight.w600,
+  );
+
+  static final kFontSize11Style = TextStyle(
+    fontSize: SizeConfig.textMultiplier * 1.71875,
+    color: AppColors.kHandyTextColor,
+  );
+
+  //! ----------------------------------------------
+
   static final fontSize22MediumStyle = TextStyle(
     fontSize: SizeConfig.textMultiplier * 2.5,
-    color: AppColors.handyTextColor,
+    color: AppColors.kHandyTextColor,
     fontWeight: FontWeight.w600,
   );
 
   static final fontSize16MediumStyle = TextStyle(
     fontSize: SizeConfig.textMultiplier * 2.1875,
-    color: AppColors.customButtonTextColor,
+    color: AppColors.kHandyTextColor,
     fontWeight: FontWeight.w600,
   );
 
   static final fontSize14RegularStyle = TextStyle(
     fontSize: SizeConfig.textMultiplier * 2.1875,
-    color: AppColors.customButtonTextColor,
+    color: AppColors.kHandyTextColor,
   );
 
   static final fontSize14V2RegularStyle = TextStyle(
@@ -40,15 +53,9 @@ class AppTextStyles {
     color: AppColors.nutritionalItemAmountColor,
   );
 
-  static final fontSize14MediumStyle = TextStyle(
-    fontSize: SizeConfig.textMultiplier * 2.1875,
-    color: AppColors.customButtonTextColor,
-    fontWeight: FontWeight.w600,
-  );
-
   static final fontSize12RegularStyle = TextStyle(
     fontSize: SizeConfig.textMultiplier * 1.875,
-    color: AppColors.customButtonTextColor,
+    color: AppColors.kHandyTextColor,
   );
 
   static final fontSize12ColorRegularStyle = TextStyle(
@@ -65,17 +72,6 @@ class AppTextStyles {
     fontSize: SizeConfig.textMultiplier * 1.875,
     color: AppColors.homeListItemTitleTextColor,
     fontWeight: FontWeight.w600,
-  );
-
-  static final fontSize11Style = TextStyle(
-    fontSize: SizeConfig.textMultiplier * 1.71875,
-    color: AppColors.customButtonTextColor,
-  );
-
-  static final fontSize11BoldStyle = TextStyle(
-    fontSize: SizeConfig.textMultiplier * 1.71875,
-    color: AppColors.customButtonTextColor,
-    fontWeight: FontWeight.bold,
   );
 
   static final fontSize10RegularStyle = TextStyle(

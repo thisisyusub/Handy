@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../utils/constants/app_strings.dart';
 import '../shared/app_colors.dart';
 import '../shared/app_text_styles.dart';
-import '../../utils/size_config.dart';
+import '../../utils/responsive_helper/size_config.dart';
 
 class NutritionalProfile extends StatelessWidget {
   @override

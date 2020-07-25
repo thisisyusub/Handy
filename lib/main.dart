@@ -6,6 +6,8 @@ import './presentation/simple_bloc_observer.dart';
 import './app.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   Bloc.observer = SimpleBlocObserver();
   runApp(MyApp());
   SystemChrome.setSystemUIOverlayStyle(

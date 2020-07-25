@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../utils/constants/app_strings.dart';
 import '../shared/app_text_styles.dart';
 import '../widgets/page_view_title.dart';
-import '../../utils/size_config.dart';
+import '../../utils/responsive_helper/size_config.dart';
 import './chip_item.dart';
 
 class OnBoardingMoreAboutYou extends StatelessWidget {
@@ -84,7 +84,7 @@ class OnBoardingMoreAboutYou extends StatelessWidget {
               SizedBox(
                 width: SizeConfig.widthMultiplier * 2.777,
               ),
-               DropdownButton<String>(
+              DropdownButton<String>(
                 items: [
                   DropdownMenuItem<String>(
                     value: 'Item 1',

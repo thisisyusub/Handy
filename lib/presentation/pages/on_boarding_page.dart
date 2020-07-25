@@ -9,7 +9,7 @@ import '../widgets/on_boarding_do_you_follow_any_diet.dart';
 import '../widgets/on_boarding_more_about_you.dart';
 import '../widgets/on_boarding_tells_us_about_you.dart';
 import '../widgets/on_boarding_whats_your_goal.dart';
-import '../../utils/size_config.dart';
+import '../../utils/responsive_helper/size_config.dart';
 import '../../bloc/on_boarding_bloc/on_boarding_bloc.dart';
 
 class OnBoardingPage extends StatelessWidget {
@@ -70,7 +70,7 @@ class OnBoardingPage extends StatelessWidget {
                                 : (state.isSkipAvailable
                                     ? AppStrings.skip
                                     : ''),
-                            style: AppTextStyles.fontSize14MediumStyle,
+                            style: AppTextStyles.kFontSize14MediumStyle,
                           ),
                         ),
                         GestureDetector(
@@ -87,7 +87,7 @@ class OnBoardingPage extends StatelessWidget {
                                 : (state.isStartAvailable
                                     ? AppStrings.start
                                     : ''),
-                            style: AppTextStyles.fontSize14MediumStyle,
+                            style: AppTextStyles.kFontSize14MediumStyle,
                           ),
                         )
                       ],
