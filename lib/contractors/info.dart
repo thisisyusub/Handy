@@ -1,3 +1,0 @@
-/*
-Contractors will be here
- */
