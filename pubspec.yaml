@@ -14,13 +14,13 @@ description: A simple application for health tracking
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.6.0 <3.0.0"
+  sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^5.0.1
-  flutter_svg:
+  flutter_svg: ^0.17.4
   equatable: ^1.2.2
   intl: ^0.16.1
   http: ^0.12.2
