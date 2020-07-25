@@ -25,7 +25,7 @@ dependencies:
   http: ^0.12.2
   dio: ^3.0.9
   connectivity: ^0.4.9
-  flutter_svg: ^0.17.3+1
+  flutter_svg: ^0.17.4
   toast: ^0.1.5
   shared_preferences: ^0.5.8
   # The following adds the Cupertino Icons font to your application.
