@@ -23,6 +23,8 @@ This project contains `google-services.json` file of my own. You can connect you
 
 **Step 2:** Open `android/app/build.gradle` and change `applicationId` as you want: 
 
+![Step 2](configration-steps/step2.png)
+
 **Step 3:** Create firebase project and add new android project to firebase.
 
 **Step 4:** Write the `same applicationId` to the `android package name` field:
