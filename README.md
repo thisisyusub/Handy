@@ -23,7 +23,7 @@ This project contains `google-services.json` file of my own. You can connect you
 
 **Step 2:** Open `android/app/build.gradle` and change `applicationId` as you want: 
 
-![Step 2](configration-steps/step2.png)
+![Step 2](configration-steps/step2.PNG)
 
 **Step 3:** Create firebase project and add new android project to firebase.
 
@@ -31,22 +31,37 @@ This project contains `google-services.json` file of my own. You can connect you
 
 **Step 5:** Open the `android` directory of `Handy` using Android Studio:
 
+![Step 5](configration-steps/step5.PNG)
+
 **Step 6:** Tap to `Gradle` from the right side and select `android/app/Tasks/android/signingReport` and wait a bit to get `SHA1` key:
+
+![Step 6](configration-steps/step6.PNG)
 
 **Step 7:** Copy `SHA1` from terminal:
 
+![Step 7](configration-steps/step7.PNG)
+
 **Step 8:** Paste to `Debug signing certificate SHA-1` field in `Firebase` and click to `Register` button:
+
+![Step 8](configration-steps/step8.PNG)
 
 **Step 9:** Download `google-services.json` and click to next button:
 
+![Step 9](configration-steps/step9.PNG)
+
 **Step 10:** Replace file of `Handy` that is stored in `android/app/` called `google-services.json` with your own `google-services.json` file that you downloaded in the previous step:
+
+![Step 10](configration-steps/step10.PNG)
 
 **Step 11:** Click `Next` and `Skip` button in the next steps:
 
+![Step 11-1](configration-steps/step11-1.PNG)
+
+![Step 11-2](configration-steps/step11-2.PNG)
+
 **Step 12:** Go to `Authentication` screen and enable `Email/Password` and `Google` authentication:
 
-**Step 13:** 
-
+![Step 12](configration-steps/step12.PNG)
 
 
 
