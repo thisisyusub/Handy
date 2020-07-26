@@ -13,7 +13,7 @@
 
 -------
 
-## Configration
+## Configration for yourself
 
 This project contains `google-services.json` file of my own. You can connect your own firebase project using the following configrations:
 
