@@ -1,13 +1,18 @@
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+
 import '../contractors/impl_auth_repository.dart';
-import '../exceptions/http_exception.dart';
+import '../exceptions/exceptions.dart';
 
 class AuthRepository extends IAuthRepository {
   AuthRepository(
+    {
     this.firebaseAuth,
     this.googleSignIn,
+  }
   ) : assert(firebaseAuth != null && googleSignIn != null);
 
   final FirebaseAuth firebaseAuth;
@@ -22,10 +27,12 @@ class AuthRepository extends IAuthRepository {
       );
 
       return authResult.user;
-    } on PlatformException catch (e) {
-      throw HttpException(e.message);
-    } catch (e) {
-      throw HttpException(e.toString());
+    } on HttpException {
+      throw HandyHttpException();
+    } on PlatformException {
+      throw HandyPlatformException();
+    } catch (_) {
+      throw HandyException();
     }
   }
 
@@ -38,10 +45,12 @@ class AuthRepository extends IAuthRepository {
       );
 
       return authResult.user;
-    } on PlatformException catch (e) {
-      throw HttpException(e.message);
-    } catch (e) {
-      throw HttpException(e.toString());
+    } on HttpException {
+      throw HandyHttpException();
+    } on PlatformException {
+      throw HandyPlatformException();
+    } catch (_) {
+      throw HandyException();
     }
   }
 
@@ -58,13 +67,30 @@ class AuthRepository extends IAuthRepository {
         accessToken: googleSignInAuthentication.accessToken,
       );
 
-      final AuthResult authResult = await firebaseAuth.signInWithCredential(authCredential);
+      final AuthResult authResult =
+          await firebaseAuth.signInWithCredential(authCredential);
       return authResult.user;
-    } on PlatformException catch(e) {
-        throw HttpException(e.message);
+    } on HttpException {
+      throw HandyHttpException();
+    } on PlatformException {
+      throw HandyPlatformException();
+    } catch (_) {
+      throw HandyException();
     }
-    catch (e) {
-      throw HttpException(e.toString());
+  }
+
+  @override
+  Future<bool> isUserLogged() async {
+    try {
+      final user = await firebaseAuth.currentUser();
+      final isGoogleSignedIn = await googleSignIn.isSignedIn();
+      return user != null || isGoogleSignedIn;
+    } on HttpException {
+      throw HandyHttpException();
+    } on PlatformException {
+      throw HandyPlatformException();
+    } catch (_) {
+      throw HandyException();
     }
   }
 

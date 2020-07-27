@@ -8,5 +8,7 @@ abstract class IAuthRepository extends IBaseRepository {
 
   Future<void> signInWithGoogle();
 
+  Future<bool> isUserLogged();
+
   Future<void> logOut();
 }
