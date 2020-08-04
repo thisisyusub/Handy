@@ -6,77 +6,20 @@ import 'app_colors.dart';
 class AppTextStyles {
   AppTextStyles._();
 
-  // new part last
-  static final kFontSize32MediumStyle = TextStyle(
+  static final fontSize32MediumStyle = TextStyle(
     fontSize: SizeConfig.textMultiplier * 5,
-    color: AppColors.kHandyTextColor,
+    color: AppColors.handyTextColor,
     fontWeight: FontWeight.w600,
   );
 
-  static final kFontSize14MediumStyle = TextStyle(
+  static final fontSize14MediumStyle = TextStyle(
     fontSize: SizeConfig.textMultiplier * 2.1875,
-    color: AppColors.kHandyTextColor,
+    color: AppColors.handyTextColor,
     fontWeight: FontWeight.w600,
   );
 
-  static final kFontSize11Style = TextStyle(
+  static final fontSize11Style = TextStyle(
     fontSize: SizeConfig.textMultiplier * 1.71875,
-    color: AppColors.kHandyTextColor,
-  );
-
-  //! ----------------------------------------------
-
-  static final fontSize22MediumStyle = TextStyle(
-    fontSize: SizeConfig.textMultiplier * 2.5,
-    color: AppColors.kHandyTextColor,
-    fontWeight: FontWeight.w600,
-  );
-
-  static final fontSize16MediumStyle = TextStyle(
-    fontSize: SizeConfig.textMultiplier * 2.1875,
-    color: AppColors.kHandyTextColor,
-    fontWeight: FontWeight.w600,
-  );
-
-  static final fontSize14RegularStyle = TextStyle(
-    fontSize: SizeConfig.textMultiplier * 2.1875,
-    color: AppColors.kHandyTextColor,
-  );
-
-  static final fontSize14V2RegularStyle = TextStyle(
-    fontSize: SizeConfig.textMultiplier * 2.1875,
-    color: AppColors.nutritionalItemTitleColor,
-  );
-
-  static final fontSize14V3RegularStyle = TextStyle(
-    fontSize: SizeConfig.textMultiplier * 2.1875,
-    color: AppColors.nutritionalItemAmountColor,
-  );
-
-  static final fontSize12RegularStyle = TextStyle(
-    fontSize: SizeConfig.textMultiplier * 1.875,
-    color: AppColors.kHandyTextColor,
-  );
-
-  static final fontSize12ColorRegularStyle = TextStyle(
-    fontSize: SizeConfig.textMultiplier * 1.875,
-    color: AppColors.pageViewSubtitleColor,
-  );
-
-  static final fontSize12RegularV2Style = TextStyle(
-    fontSize: SizeConfig.textMultiplier * 1.875,
-    color: AppColors.homeListItemTitleTextColor,
-  );
-
-  static final fontSize12MediumStyle = TextStyle(
-    fontSize: SizeConfig.textMultiplier * 1.875,
-    color: AppColors.homeListItemTitleTextColor,
-    fontWeight: FontWeight.w600,
-  );
-
-  static final fontSize10RegularStyle = TextStyle(
-    fontSize: SizeConfig.textMultiplier * 1.5625,
-    color: AppColors.homeListItemTitleTextColor,
-    fontWeight: FontWeight.bold,
+    color: AppColors.handyTextColor,
   );
 }

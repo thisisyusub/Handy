@@ -23,17 +23,17 @@ class CustomButton extends StatelessWidget {
     return Container(
       width: width * context.textScaleFactor,
       decoration: BoxDecoration(
-        color: disabled ? Colors.grey : AppColors.kPrimaryColor,
-        borderRadius: BorderRadius.circular(
-          SizeConfig.widthMultiplier * 5,
-        ),
+        color: disabled ? Colors.grey : AppColors.primaryColor,
+        borderRadius: BorderRadius.circular(context.computeWidth(18)),
       ),
       child: Padding(
         padding: padding,
         child: Center(
           child: Text(
             title,
-            style: AppTextStyles.kFontSize14MediumStyle,
+            style: AppTextStyles.fontSize14MediumStyle.copyWith(
+              fontSize: context.computeFontSize(14),
+            ),
             overflow: TextOverflow.fade,
             textAlign: TextAlign.center,
           ),

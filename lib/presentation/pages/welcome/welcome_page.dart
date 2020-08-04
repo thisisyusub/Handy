@@ -9,7 +9,6 @@ import '../../widgets/custom_button.dart';
 import '../../../utils/extensions/text_scale_factor_helper.dart';
 import '../../../utils/constants/app_strings.dart';
 
-
 class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -23,68 +22,72 @@ class WelcomePage extends StatelessWidget {
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.only(
-                  left: SizeConfig.widthMultiplier * 22.222,
-                  top: SizeConfig.heightMultiplier * 5,
+                  left: context.computeWidth(70),
+                  top: context.computeHeight(50),
                 ),
                 child: Text(
                   AppStrings.handy,
-                  style: Theme.of(context).textTheme.headline4,
+                  style: Theme.of(context).textTheme.headline4.copyWith(
+                        fontSize: context.computeFontSize(32),
+                      ),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(
-                  left: SizeConfig.widthMultiplier * 13.333,
-                  top: SizeConfig.heightMultiplier * 7.8125,
+                  left: context.computeWidth(48),
+                  top: context.computeHeight(50),
                 ),
                 child: SvgPicture.asset(
                   AppIcons.illustration,
-                  width: SizeConfig.widthMultiplier * 68.888,
-                  height: SizeConfig.heightMultiplier * 37.5,
+                  width: context.computeWidth(300),
+                  height:context.computeHeight(220),
                 ),
               ),
-              SizedBox(height: SizeConfig.heightMultiplier * 12.03125),
+              SizedBox(height: context.computeHeight(90)),
               Center(
                 child: CustomButton(
-                  width: SizeConfig.widthMultiplier * 57.777,
+                  width: context.computeWidth(240),
                   padding: EdgeInsets.symmetric(
-                    vertical: SizeConfig.heightMultiplier *
-                        1.875 *
+                    vertical: context.computeHeight(12) *
                         context.textScaleFactor,
-                    horizontal: SizeConfig.widthMultiplier * 8.333,
+                    horizontal: context.computeHeight(30),
                   ),
                   title: AppStrings.continueWithEmail,
                 ),
               ),
-              SizedBox(height: SizeConfig.heightMultiplier * 3.125),
+              SizedBox(height: context.computeHeight(20)),
               Center(
                 child: CustomButton(
-                  width: SizeConfig.widthMultiplier * 60,
+                  width: context.computeWidth(240),
                   padding: EdgeInsets.symmetric(
-                    vertical: SizeConfig.heightMultiplier *
-                        1.875 *
+                    vertical: context.computeHeight(12) *
                         context.textScaleFactor,
+                    horizontal: context.computeHeight(30),
                   ),
                   title: AppStrings.continueWithGoogle,
                 ),
               ),
-              SizedBox(height: SizeConfig.heightMultiplier * 2.5),
+              SizedBox(height: context.computeHeight(16)),
               Center(
-                  child: RichText(
-                    overflow: TextOverflow.clip,
-                    text: TextSpan(
-                      text: AppStrings.byContinuingYouAccept,
-                      style: Theme.of(context).textTheme.caption,
-                      children: [
-                        TextSpan(
-                          text: AppStrings.termsOfUse,
-                          style: Theme.of(context).textTheme.caption.copyWith(
-                                fontWeight: FontWeight.bold,
-                              ),
-                        ),
-                      ],
+                child: RichText(
+                  overflow: TextOverflow.clip,
+                  text: TextSpan(
+                    text: AppStrings.byContinuingYouAccept,
+                    style: Theme.of(context).textTheme.caption.copyWith(
+                      fontSize: context.computeFontSize(11),
                     ),
+                    children: [
+                      TextSpan(
+                        text: AppStrings.termsOfUse,
+                        style: Theme.of(context).textTheme.caption.copyWith(
+                              fontWeight: FontWeight.bold,
+                          fontSize: context.computeFontSize(11),
+                            ),
+                      ),
+                    ],
                   ),
                 ),
+              ),
             ],
           ),
         ),
