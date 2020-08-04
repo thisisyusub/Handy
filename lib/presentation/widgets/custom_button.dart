@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_x/responsive_x.dart';
 
 import '../shared/app_colors.dart';
 import '../shared/app_text_styles.dart';
-import '../../utils/responsive_helper/size_config.dart';
 import '../../utils/extensions/text_scale_factor_helper.dart';
 
 class CustomButton extends StatelessWidget {

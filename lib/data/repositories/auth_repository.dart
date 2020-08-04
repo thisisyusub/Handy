@@ -1,3 +1,4 @@
+import 'package:meta/meta.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import '../contractors/impl_auth_repository.dart';
@@ -5,8 +6,8 @@ import './firebase_client.dart';
 
 class AuthRepository extends IAuthRepository {
   AuthRepository({
-    this.firebaseAuth,
-    this.googleSignIn,
+    @required this.firebaseAuth,
+    @required this.googleSignIn,
   }) : assert(firebaseAuth != null && googleSignIn != null);
 
   final FirebaseAuth firebaseAuth;

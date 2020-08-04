@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../../utils/constants/app_strings.dart';
+import 'package:responsive_x/responsive_x.dart';
+
 import '../../shared/app_colors.dart';
 import '../../shared/app_icons.dart';
 import '../../widgets/custom_button.dart';
-import '../../../utils/responsive_helper/size_config.dart';
+
 import '../../../utils/extensions/text_scale_factor_helper.dart';
+import '../../../utils/constants/app_strings.dart';
+
 
 class WelcomePage extends StatelessWidget {
   @override

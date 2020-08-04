@@ -3,11 +3,10 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
-import '../data/contractors/impl_auth_repository.dart';
-import '../data/exceptions/exceptions.dart';
+import '../../data/contractors/impl_auth_repository.dart';
+import '../../data/exceptions/exceptions.dart';
 
 part './auth_event.dart';
-
 part './auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {

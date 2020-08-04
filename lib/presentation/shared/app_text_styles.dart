@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import '../../utils/responsive_helper/size_config.dart';
+import 'package:responsive_x/responsive_x.dart';
 
 import 'app_colors.dart';
 
