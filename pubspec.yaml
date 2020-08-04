@@ -19,6 +19,7 @@ dependencies:
   shared_preferences: ^0.5.8
   firebase_auth: ^0.16.1
   google_sign_in: ^4.5.1
+  responsive_x: ^0.0.5
   
 
   cupertino_icons: ^0.1.2
