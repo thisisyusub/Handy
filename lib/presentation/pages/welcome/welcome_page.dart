@@ -6,8 +6,9 @@ import '../../shared/app_colors.dart';
 import '../../shared/app_icons.dart';
 import '../../widgets/custom_button.dart';
 
-import '../../../utils/extensions/text_scale_factor_helper.dart';
 import '../../../utils/constants/app_strings.dart';
+import '../../../utils/extensions/text_scale_factor_helper.dart';
+
 
 class WelcomePage extends StatelessWidget {
   @override
