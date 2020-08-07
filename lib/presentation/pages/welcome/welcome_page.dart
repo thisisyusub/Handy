@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:responsive_x/responsive_x.dart';
 
 import '../../shared/app_colors.dart';
 import '../../shared/app_icons.dart';
@@ -8,7 +7,6 @@ import '../../widgets/custom_button.dart';
 
 import '../../../utils/constants/app_strings.dart';
 import '../../../utils/extensions/text_scale_factor_helper.dart';
-
 
 class WelcomePage extends StatelessWidget {
   @override
@@ -23,66 +21,59 @@ class WelcomePage extends StatelessWidget {
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.only(
-                  left: context.computeWidth(70),
-                  top: context.computeHeight(50),
+                  left: 70,
+                  top: 50,
                 ),
                 child: Text(
                   AppStrings.handy,
-                  style: Theme.of(context).textTheme.headline4.copyWith(
-                        fontSize: context.computeFontSize(32),
-                      ),
+                  style: Theme.of(context).textTheme.headline4,
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(
-                  left: context.computeWidth(48),
-                  top: context.computeHeight(50),
+                  left: 48,
+                  top: 50,
                 ),
                 child: SvgPicture.asset(
                   AppIcons.illustration,
-                  width: context.computeWidth(300),
-                  height:context.computeHeight(220),
+                  width: 300,
+                  height: 220,
                 ),
               ),
-              SizedBox(height: context.computeHeight(90)),
+              SizedBox(height: 90),
               Center(
                 child: CustomButton(
-                  width: context.computeWidth(240),
+                  width: 240,
                   padding: EdgeInsets.symmetric(
-                    vertical: context.computeHeight(12) *
-                        context.textScaleFactor,
-                    horizontal: context.computeHeight(30),
+                    vertical: 12 * context.textScaleFactor,
+                    horizontal: 30,
                   ),
                   title: AppStrings.continueWithEmail,
                 ),
               ),
-              SizedBox(height: context.computeHeight(20)),
+              SizedBox(height: 20),
               Center(
                 child: CustomButton(
-                  width: context.computeWidth(240),
+                  width: 240,
                   padding: EdgeInsets.symmetric(
-                    vertical: context.computeHeight(12) *
-                        context.textScaleFactor,
-                    horizontal: context.computeHeight(30),
+                    vertical: 12 * context.textScaleFactor,
+                    horizontal: 30,
                   ),
                   title: AppStrings.continueWithGoogle,
                 ),
               ),
-              SizedBox(height: context.computeHeight(16)),
+              SizedBox(height: 16),
               Center(
                 child: RichText(
                   overflow: TextOverflow.clip,
                   text: TextSpan(
                     text: AppStrings.byContinuingYouAccept,
-                    style: Theme.of(context).textTheme.caption.copyWith(
-                      fontSize: context.computeFontSize(11),
-                    ),
+                    style: Theme.of(context).textTheme.caption,
                     children: [
                       TextSpan(
                         text: AppStrings.termsOfUse,
                         style: Theme.of(context).textTheme.caption.copyWith(
                               fontWeight: FontWeight.bold,
-                          fontSize: context.computeFontSize(11),
                             ),
                       ),
                     ],
