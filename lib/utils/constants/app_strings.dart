@@ -1,5 +1,5 @@
 class AppStrings {
-  AppStrings._();
+  const AppStrings._();
 
   // welcome screen
   static const String handy = 'Handy';

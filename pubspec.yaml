@@ -3,7 +3,7 @@ description: A simple application for health tracking
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.7.0 <=3.0.0"
 
 dependencies:
   flutter:
@@ -16,7 +16,7 @@ dependencies:
   toast: ^0.1.5
   firebase_auth: ^0.16.1
   google_sign_in: ^4.5.1
-
+  effective_dart: ^1.2.4
 
   cupertino_icons: ^0.1.2
 

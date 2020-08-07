@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-import './presentation/router.dart';
-import './presentation/shared/app_themes.dart';
-import './presentation/pages/auth/auth_page.dart';
 import './blocs/auth_bloc/auth_bloc.dart';
 import './data/repositories/auth_repository.dart';
+import './presentation/pages/auth/auth_page.dart';
+import './presentation/router.dart';
+import './presentation/shared/app_themes.dart';
 
-class MyApp extends StatelessWidget {
+/// Class to start app
+class HandyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RepositoryProvider<AuthRepository>(

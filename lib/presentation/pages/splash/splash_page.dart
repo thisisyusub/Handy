@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-
 import '../../../utils/constants/app_strings.dart';
 
+/// Page to shown loading when the app is started
+/// it will be shown until app checks authentication
 class SplashPage extends StatelessWidget {
-  const SplashPage({Key key}) : super(key: key);
+  /// Default Constructor of [SplashPage]
+  const SplashPage();
 
   @override
   Widget build(BuildContext context) {

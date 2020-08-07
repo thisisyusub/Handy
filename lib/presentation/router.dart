@@ -9,11 +9,11 @@ class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.Welcome:
-        return MaterialPageRoute(
+        return MaterialPageRoute<WelcomePage>(
           builder: (_) => WelcomePage(),
         );
       default:
-        return MaterialPageRoute(
+        return MaterialPageRoute<Scaffold>(
           builder: (_) => Scaffold(
             body: Center(
               child: Text('No route defined for ${settings.name}'),

@@ -4,7 +4,7 @@ import './app_text_styles.dart';
 
 final lightTheme = ThemeData(
   primaryColor: AppColors.primaryColor,
-  scaffoldBackgroundColor: AppColors.scaffoldBackgroundColor,
+  scaffoldBackgroundColor: AppColors.appBackgroundColor,
   textTheme: TextTheme(
     headline4: AppTextStyles.fontSize32MediumStyle,
     button: AppTextStyles.fontSize14MediumStyle,

@@ -1,36 +1,48 @@
 import 'package:flutter/material.dart';
 
 import '../shared/app_colors.dart';
-import '../shared/app_text_styles.dart';
-import '../../utils/extensions/text_scale_factor_helper.dart';
 
+/// Class to create custom button of [Handy]
 class CustomButton extends StatelessWidget {
-  final double width;
+  /// value to size width of button
+  final double widthFactor;
+
+  /// text of button
   final String title;
-  final EdgeInsets padding;
+
+  /// margin for button
+  final EdgeInsets margin;
+
+  /// value to get the button is enabled or not
   final bool disabled;
 
+  /// padding for [title] of [CustomButton]
+  final EdgeInsets padding;
+
+  /// Constructor to assign values of [CustomButton]
   CustomButton({
-    @required this.width,
+    @required this.widthFactor,
     @required this.title,
     @required this.padding,
-    this.disabled = false,
+    this.margin,
+    this.disabled,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width * context.textScaleFactor,
-      decoration: BoxDecoration(
-        color: disabled ? Colors.grey : AppColors.primaryColor,
-        borderRadius: BorderRadius.circular(18),
-      ),
-      child: Padding(
+    return FractionallySizedBox(
+      widthFactor: widthFactor,
+      child: Container(
         padding: padding,
+        margin: margin,
+        decoration: BoxDecoration(
+          color: disabled != null ? Colors.grey : AppColors.primaryColor,
+          borderRadius: BorderRadius.circular(18),
+        ),
         child: Center(
           child: Text(
             title,
-            style: AppTextStyles.fontSize14MediumStyle,
+            style: Theme.of(context).textTheme.button,
             overflow: TextOverflow.fade,
             textAlign: TextAlign.center,
           ),

@@ -10,12 +10,12 @@ Future<List<String>> _list(
   List<FileSystemEntityType> allowedTypes,
 ) async {
   final files = Directory(dir).listSync(recursive: false, followLinks: false);
-  final result = List<String>();
+  final result = <String>[];
 
   for (var file in files) {
     final stat = await file.stat();
 
-    if (allowedTypes == null || allowedTypes.contains(stat.type)) {
+    if (allowedTypes.contains(stat.type)) {
       result.add(file.path);
     }
   }
@@ -33,7 +33,7 @@ String _className(String dir, String baseClass) =>
 Future<bool> _scanDir({
   String dir,
   String baseDir,
-  StringBuffer sb,
+  StringBuffer stringBuffer,
   String className,
   bool isNested = true,
 }) async {
@@ -48,7 +48,7 @@ Future<bool> _scanDir({
   for (var directory in directories.toList()) {
     if (!await _scanDir(
       dir: directory,
-      sb: sb,
+      stringBuffer: stringBuffer,
       baseDir: baseDir,
       className: _className(directory, className),
     )) {
@@ -56,7 +56,7 @@ Future<bool> _scanDir({
     }
   }
 
-  sb.writeln('class $className {\n  const $className._();\n');
+  stringBuffer.writeln('class $className {\n  const $className._();\n');
 
   final modifier = isNested ? 'final' : 'static const';
 
@@ -64,21 +64,21 @@ Future<bool> _scanDir({
     final to = relative(file, from: baseDir).replaceAll('\\', '/');
     final name = basenameWithoutExtension(file).camelCase;
 
-    sb.writeln("  $modifier String $name = '$to';");
+    stringBuffer.writeln("  $modifier String $name = '$to';");
   }
 
   if (directories.isNotEmpty) {
-    sb.writeln();
+    stringBuffer.writeln();
   }
 
   for (var directory in directories) {
     final name = basename(directory).camelCase;
     final directoryClass = _className(directory, className);
 
-    sb.writeln('  $modifier $name = const $directoryClass._();');
+    stringBuffer.writeln('  $modifier $name = const $directoryClass._();');
   }
 
-  sb.writeln('}\n');
+  stringBuffer.writeln('}\n');
 
   return true;
 }
@@ -99,8 +99,8 @@ void main(List<String> args) async {
   final projectDirectory = dirname(dirname(Platform.script.toFilePath()));
 
   /// get inputs
-  String assets = argsResults['input'];
-  String output = argsResults['output'];
+  var assets = argsResults['input'] as String;
+  var output = argsResults['output'] as String;
 
   /// check if the [input] is given or not
   if (assets == null) {
@@ -117,7 +117,7 @@ void main(List<String> args) async {
 
   await _scanDir(
     dir: assets,
-    sb: sb,
+    stringBuffer: sb,
     baseDir: dirname(assets),
     className: 'Assets',
     isNested: false,
