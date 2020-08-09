@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../splash/splash_page.dart';
 import '../../../blocs/auth_bloc/auth_bloc.dart';
 import '../../../utils/constants/routes.dart';
+import '../splash/splash_page.dart';
 
 class AuthPage extends StatelessWidget {
   @override

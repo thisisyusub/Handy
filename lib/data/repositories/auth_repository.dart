@@ -2,8 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:meta/meta.dart';
 
-import './firebase_client.dart';
 import '../contractors/impl_auth_repository.dart';
+import './firebase_client.dart';
 
 /// Class to store and and make [Authentication] process and data
 class AuthRepository extends IAuthRepository {
