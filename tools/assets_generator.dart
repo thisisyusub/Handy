@@ -75,7 +75,7 @@ Future<bool> _scanDir({
     final name = basename(directory).camelCase;
     final directoryClass = _className(directory, className);
 
-    stringBuffer.writeln('  $modifier $name = const $directoryClass._();');
+    stringBuffer.writeln('  $modifier $name = $directoryClass._();');
   }
 
   stringBuffer.writeln('}\n');

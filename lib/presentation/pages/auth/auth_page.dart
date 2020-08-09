@@ -29,11 +29,11 @@ class AuthPage extends StatelessWidget {
           }
 
           if (authState is Authenticated) {
-            Navigator.of(context).pushNamed(Routes.Home);
+            Navigator.of(context).pushNamed(Routes.home);
           }
 
           if (authState is Unauthenticated) {
-            Navigator.of(context).pushNamed(Routes.Welcome);
+            Navigator.of(context).pushNamed(Routes.welcome);
           }
         },
         builder: (context, authState) {

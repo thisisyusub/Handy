@@ -1,14 +1,14 @@
 class Routes {
   Routes._();
 
-  static const String Welcome = 'Welcome';
-  static const String Home = 'Home';
-  static const String Register = 'Register';
-  static const String OnBoarding = 'OnBoarding';
-  static const String CalorieInDetail = 'CalorieInDetail';
-  static const String WaterInDetail = 'WaterInDetail';
-  static const String SetCalorieTarget = 'SetCalorieTarget';
-  static const String SleepInDetail = 'SleepInDetail';
-  static const String MedicineInDetail = 'MedicineInDetail';
-  static const String AddMedicine = 'AddMedicine';
+  static const String welcome = 'Welcome';
+  static const String home = 'Home';
+  static const String register = 'Register';
+  static const String onBoarding = 'OnBoarding';
+  static const String calorieInDetail = 'CalorieInDetail';
+  static const String waterInDetail = 'WaterInDetail';
+  static const String setCalorieTarget = 'SetCalorieTarget';
+  static const String sleepInDetail = 'SleepInDetail';
+  static const String medicineInDetail = 'MedicineInDetail';
+  static const String addMedicine = 'AddMedicine';
 }

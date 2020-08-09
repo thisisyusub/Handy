@@ -61,7 +61,7 @@ class AppStrings {
   static const String sleep = 'Sleep';
   static const String add = 'Add';
   static const String edit = 'Edit';
-  static const String Cal = 'Cal';
+  static const String cal = 'Cal';
   static const String glass = 'glass';
   static const String glasses = 'glasses';
   static const String hour = 'hour';
@@ -80,8 +80,8 @@ class AppStrings {
   static const String launch = 'Launch';
   static const String dinner = 'Dinner';
   static const String morningSnack = 'Morning snack';
-  static const String AfternoonSnack = 'Afternoon snack';
-  static const String EveningSnack = 'Evening snack';
+  static const String afternoonSnack = 'Afternoon snack';
+  static const String eveningSnack = 'Evening snack';
 
 // Nutritional profile
   static const String nutritionalProfile = 'Nutritional Profile';

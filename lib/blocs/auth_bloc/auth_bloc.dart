@@ -28,12 +28,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   Stream<AuthState> _mapAppStartedToState() async* {
     try {
       yield AuthInProgress();
-      final bool isLogged = await authRepository.isUserLogged();
+      final isLogged = await authRepository.isUserLogged();
 
-      if (isLogged)
+      if (isLogged) {
         yield Authenticated();
-      else
+      } else {
         yield Unauthenticated();
+      }
     } on HandyHttpException catch (e) {
       yield AuthFailure(e.toString());
     } on HandyPlatformException catch (e) {

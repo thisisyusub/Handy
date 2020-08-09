@@ -29,8 +29,8 @@ class Assets {
   const Assets._();
 
 
-  static const fonts = const _AssetsFonts._();
-  static const icons = const _AssetsIcons._();
-  static const images = const _AssetsImages._();
+  static const fonts = _AssetsFonts._();
+  static const icons = _AssetsIcons._();
+  static const images = _AssetsImages._();
 }
 

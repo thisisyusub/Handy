@@ -8,7 +8,7 @@ class Router {
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case Routes.Welcome:
+      case Routes.welcome:
         return MaterialPageRoute<WelcomePage>(
           builder: (_) => WelcomePage(),
         );

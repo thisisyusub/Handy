@@ -5,13 +5,13 @@ import '../exceptions/exceptions.dart';
 
 Future<T> makeAndCheckRequest<T>(Future<T> Function() requestBody) async {
   try {
-    T result = await requestBody();
+    final result = await requestBody();
     return result;
   } on HttpException {
     throw HandyHttpException();
   } on PlatformException {
     throw HandyPlatformException();
-  } catch (_) {
+  } on Exception {
     throw HandyException();
   }
 }
