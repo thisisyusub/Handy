@@ -3,23 +3,20 @@ description: A simple application for health tracking
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.7.0 <=3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^6.0.1
-  equatable: ^1.2.2
+  equatable: ^1.2.3
   intl: ^0.16.1
-  http: ^0.12.2
-  dio: ^3.0.9
   connectivity: ^0.4.9
-  flutter_svg: ^0.17.4
+  flutter_svg: ^0.18.0
   toast: ^0.1.5
-  shared_preferences: ^0.5.8
   firebase_auth: ^0.16.1
   google_sign_in: ^4.5.1
-  
+  effective_dart: ^1.2.4
 
   cupertino_icons: ^0.1.2
 
@@ -27,7 +24,10 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  recase: ^3.0.0
+  args: ^1.6.0
+  mockito: ^4.1.1
+  bloc_test: ^7.0.0
 
 
 flutter:

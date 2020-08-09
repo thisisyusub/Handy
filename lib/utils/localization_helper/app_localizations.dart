@@ -1,12 +1,14 @@
 import 'dart:convert';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+/// Class to handle localization
 class AppLocalizations {
+  /// current locale
   final Locale locale;
 
+  /// provides instance of [AppLocalizations]
   AppLocalizations(this.locale);
 
   /// Helper method to keep the code in the widgets concise
@@ -19,12 +21,13 @@ class AppLocalizations {
   static const LocalizationsDelegate<AppLocalizations> delegate =
       _AppLocalizationsDelegate();
 
-  Map<String, String> _localizedStrings;
+  Map<String, String> _localizedStrings = <String, String>{};
 
+  /// method that loads [*.json] file according to selected [Locale]
   Future<bool> load() async {
-    String jsonString =
+    final jsonString =
         await rootBundle.loadString('assets/langs/${locale.languageCode}.json');
-    Map<String, dynamic> jsonMap = json.decode(jsonString);
+    final jsonMap = json.decode(jsonString) as Map<String, dynamic>;
 
     _localizedStrings = jsonMap.map((key, value) {
       return MapEntry(key, value.toString());
@@ -33,6 +36,7 @@ class AppLocalizations {
     return true;
   }
 
+  /// method translates current string according to json key
   String translate(String key) {
     return _localizedStrings[key];
   }
@@ -51,7 +55,7 @@ class _AppLocalizationsDelegate
   // load all localization files
   @override
   Future<AppLocalizations> load(Locale locale) async {
-    AppLocalizations localizations = new AppLocalizations(locale);
+    final localizations = AppLocalizations(locale);
     await localizations.load();
     return localizations;
   }
