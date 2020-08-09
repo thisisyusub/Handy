@@ -8,7 +8,9 @@
 import 'package:flutter/material.dart';
 import '../localization_helper/app_localizations.dart';
 
+/// Extension to translate [Strings] easily
 extension StringTranslator on String {
+  /// method can be called using any [String] value
   String translate(BuildContext context) {
     return AppLocalizations.of(context).translate(this);
   }

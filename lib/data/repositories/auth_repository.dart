@@ -1,71 +1,81 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:meta/meta.dart';
+
 import '../contractors/impl_auth_repository.dart';
-import '../exceptions/http_exception.dart';
+import './firebase_client.dart';
 
+/// Class to store and and make [Authentication] process and data
 class AuthRepository extends IAuthRepository {
-  AuthRepository(
-    this.firebaseAuth,
-    this.googleSignIn,
-  ) : assert(firebaseAuth != null && googleSignIn != null);
+  /// Provides instance of [AuthRepository]
+  AuthRepository({
+    @required this.firebaseAuth,
+    @required this.googleSignIn,
+  });
 
+  /// field used to make [Firebase Authentication] with [email] and [password]
   final FirebaseAuth firebaseAuth;
+
+  /// field used to make [Google Sign in] process
   final GoogleSignIn googleSignIn;
 
   @override
   Future<FirebaseUser> login(String email, String password) async {
-    try {
+    final user = await makeAndCheckRequest<FirebaseUser>(() async {
       final authResult = await firebaseAuth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
 
       return authResult.user;
-    } on PlatformException catch (e) {
-      throw HttpException(e.message);
-    } catch (e) {
-      throw HttpException(e.toString());
-    }
+    });
+
+    return user;
   }
 
   @override
   Future<FirebaseUser> register(String email, String password) async {
-    try {
+    final user = await makeAndCheckRequest<FirebaseUser>(() async {
       final authResult = await firebaseAuth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
 
       return authResult.user;
-    } on PlatformException catch (e) {
-      throw HttpException(e.message);
-    } catch (e) {
-      throw HttpException(e.toString());
-    }
+    });
+
+    return user;
   }
 
   @override
   Future<FirebaseUser> signInWithGoogle() async {
-    try {
-      final GoogleSignInAccount googleSignInAccount =
-          await googleSignIn.signIn();
-      final GoogleSignInAuthentication googleSignInAuthentication =
+    final user = await makeAndCheckRequest<FirebaseUser>(() async {
+      final googleSignInAccount = await googleSignIn.signIn();
+      final googleSignInAuthentication =
           await googleSignInAccount.authentication;
 
-      final AuthCredential authCredential = GoogleAuthProvider.getCredential(
+      final authCredential = GoogleAuthProvider.getCredential(
         idToken: googleSignInAuthentication.idToken,
         accessToken: googleSignInAuthentication.accessToken,
       );
 
-      final AuthResult authResult = await firebaseAuth.signInWithCredential(authCredential);
+      final authResult =
+          await firebaseAuth.signInWithCredential(authCredential);
       return authResult.user;
-    } on PlatformException catch(e) {
-        throw HttpException(e.message);
-    }
-    catch (e) {
-      throw HttpException(e.toString());
-    }
+    });
+
+    return user;
+  }
+
+  @override
+  Future<bool> isUserLogged() async {
+    final isLogged = await makeAndCheckRequest<bool>(() async {
+      final user = await firebaseAuth.currentUser();
+      final isGoogleSignedIn = await googleSignIn.isSignedIn();
+      return user != null && isGoogleSignedIn;
+    });
+
+    return isLogged;
   }
 
   @override

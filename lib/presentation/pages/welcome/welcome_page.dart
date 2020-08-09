@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../../utils/constants/app_strings.dart';
-import '../../shared/app_colors.dart';
-import '../../shared/app_icons.dart';
-import '../../widgets/custom_button.dart';
-import '../../../utils/responsive_helper/size_config.dart';
-import '../../../utils/extensions/text_scale_factor_helper.dart';
 
+import '../../../utils/constants/app_strings.dart';
+import '../../../utils/constants/assets.dart';
+import '../../shared/app_colors.dart';
+import '../../widgets/custom_button.dart';
+
+/// [WelcomePage] of app
+/// shown when the is firstly opened or log out
 class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,59 +15,49 @@ class WelcomePage extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.appBackgroundColor,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(
-                  left: SizeConfig.widthMultiplier * 22.222,
-                  top: SizeConfig.heightMultiplier * 5,
-                ),
-                child: Text(
-                  AppStrings.handy,
-                  style: Theme.of(context).textTheme.headline4,
-                ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 70,
+                top: 50,
               ),
-              Padding(
-                padding: EdgeInsets.only(
-                  left: SizeConfig.widthMultiplier * 13.333,
-                  top: SizeConfig.heightMultiplier * 7.8125,
+              child: Text(
+                AppStrings.handy,
+                style: Theme.of(context).textTheme.headline4,
+              ),
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 48,
+                  right: 48,
                 ),
                 child: SvgPicture.asset(
-                  AppIcons.illustration,
-                  width: SizeConfig.widthMultiplier * 68.888,
-                  height: SizeConfig.heightMultiplier * 37.5,
+                  Assets.icons.illustration,
+                  width: double.infinity,
+                  height: double.infinity,
                 ),
               ),
-              SizedBox(height: SizeConfig.heightMultiplier * 12.03125),
-              Center(
-                child: CustomButton(
-                  width: SizeConfig.widthMultiplier * 57.777,
-                  padding: EdgeInsets.symmetric(
-                    vertical: SizeConfig.heightMultiplier *
-                        1.875 *
-                        context.textScaleFactor,
-                    horizontal: SizeConfig.widthMultiplier * 8.333,
+            ),
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  CustomButton(
+                    widthFactor: 0.7,
+                    title: AppStrings.continueWithEmail,
+                    margin: const EdgeInsets.only(bottom: 10),
+                    padding: const EdgeInsets.all(16),
                   ),
-                  title: AppStrings.continueWithEmail,
-                ),
-              ),
-              SizedBox(height: SizeConfig.heightMultiplier * 3.125),
-              Center(
-                child: CustomButton(
-                  width: SizeConfig.widthMultiplier * 60,
-                  padding: EdgeInsets.symmetric(
-                    vertical: SizeConfig.heightMultiplier *
-                        1.875 *
-                        context.textScaleFactor,
+                  CustomButton(
+                    widthFactor: 0.7,
+                    title: AppStrings.continueWithGoogle,
+                    margin: const EdgeInsets.only(bottom: 10),
+                    padding: const EdgeInsets.all(16),
                   ),
-                  title: AppStrings.continueWithGoogle,
-                ),
-              ),
-              SizedBox(height: SizeConfig.heightMultiplier * 2.5),
-              Center(
-                  child: RichText(
+                  RichText(
                     overflow: TextOverflow.clip,
                     text: TextSpan(
                       text: AppStrings.byContinuingYouAccept,
@@ -81,9 +72,11 @@ class WelcomePage extends StatelessWidget {
                       ],
                     ),
                   ),
-                ),
-            ],
-          ),
+                  SizedBox(height: 15),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
