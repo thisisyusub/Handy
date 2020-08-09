@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../data/contractors/impl_auth_repository.dart';
 import '../../data/exceptions/exceptions.dart';
@@ -9,11 +10,14 @@ import '../../data/exceptions/exceptions.dart';
 part './auth_event.dart';
 part './auth_state.dart';
 
+/// Class to control authentication
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
+  /// Provides instance of [AuthBloc]
   AuthBloc(this.authRepository)
       : assert(authRepository != null),
         super(AuthInitial());
 
+  /// Instance of [IAuthRepository]
   final IAuthRepository authRepository;
 
   @override
@@ -28,10 +32,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   Stream<AuthState> _mapAppStartedToState() async* {
     try {
       yield AuthInProgress();
-      final isLogged = await authRepository.isUserLogged();
+      final loggedUser = await authRepository.loggedUser();
 
-      if (isLogged) {
-        yield Authenticated();
+      if (loggedUser != null) {
+        yield Authenticated(loggedUser);
       } else {
         yield Unauthenticated();
       }

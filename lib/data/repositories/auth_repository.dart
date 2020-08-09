@@ -21,66 +21,80 @@ class AuthRepository extends IAuthRepository {
 
   @override
   Future<FirebaseUser> login(String email, String password) async {
-    final user = await makeAndCheckRequest<FirebaseUser>(() async {
-      final authResult = await firebaseAuth.signInWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
+    final user = await makeAndCheckRequest<FirebaseUser>(
+      () async {
+        final authResult = await firebaseAuth.signInWithEmailAndPassword(
+          email: email,
+          password: password,
+        );
 
-      return authResult.user;
-    });
+        return authResult.user;
+      },
+      exceptionType: ExceptionType.loginInWithEmailAndPassword,
+    );
 
     return user;
   }
 
   @override
   Future<FirebaseUser> register(String email, String password) async {
-    final user = await makeAndCheckRequest<FirebaseUser>(() async {
-      final authResult = await firebaseAuth.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
+    final user = await makeAndCheckRequest<FirebaseUser>(
+      () async {
+        final authResult = await firebaseAuth.createUserWithEmailAndPassword(
+          email: email,
+          password: password,
+        );
 
-      return authResult.user;
-    });
+        return authResult.user;
+      },
+      exceptionType: ExceptionType.signUpWithEmailAndPassword,
+    );
 
     return user;
   }
 
   @override
   Future<FirebaseUser> signInWithGoogle() async {
-    final user = await makeAndCheckRequest<FirebaseUser>(() async {
-      final googleSignInAccount = await googleSignIn.signIn();
-      final googleSignInAuthentication =
-          await googleSignInAccount.authentication;
+    final user = await makeAndCheckRequest<FirebaseUser>(
+      () async {
+        final googleSignInAccount = await googleSignIn.signIn();
+        final googleSignInAuthentication =
+            await googleSignInAccount.authentication;
 
-      final authCredential = GoogleAuthProvider.getCredential(
-        idToken: googleSignInAuthentication.idToken,
-        accessToken: googleSignInAuthentication.accessToken,
-      );
+        final authCredential = GoogleAuthProvider.getCredential(
+          idToken: googleSignInAuthentication.idToken,
+          accessToken: googleSignInAuthentication.accessToken,
+        );
 
-      final authResult =
-          await firebaseAuth.signInWithCredential(authCredential);
-      return authResult.user;
-    });
+        final authResult =
+            await firebaseAuth.signInWithCredential(authCredential);
+        return authResult.user;
+      },
+      exceptionType: ExceptionType.googleSignIn,
+    );
 
     return user;
   }
 
   @override
-  Future<bool> isUserLogged() async {
-    final isLogged = await makeAndCheckRequest<bool>(() async {
-      final user = await firebaseAuth.currentUser();
-      final isGoogleSignedIn = await googleSignIn.isSignedIn();
-      return user != null && isGoogleSignedIn;
-    });
+  Future<FirebaseUser> loggedUser() async {
+    final loggedUser = await makeAndCheckRequest<FirebaseUser>(
+      () async {
+        final user = await firebaseAuth.currentUser();
+        return user;
+      },
+      exceptionType: ExceptionType.loggedUser,
+    );
 
-    return isLogged;
+    return loggedUser;
   }
 
   @override
-  Future<void> logOut() async {
-    await firebaseAuth?.signOut();
-    await googleSignIn?.signOut();
-  }
+  Future<void> logOut() => makeAndCheckRequest<void>(
+        () async {
+          await firebaseAuth?.signOut();
+          await googleSignIn?.signOut();
+        },
+        exceptionType: ExceptionType.logOut,
+      );
 }
