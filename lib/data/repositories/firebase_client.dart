@@ -36,6 +36,8 @@ Future<T> makeAndCheckRequest<T>(Future<T> Function() requestBody,
         throw LogInWithGoogleFailure();
       case ExceptionType.logOut:
         throw LogOutFailure();
+      case ExceptionType.loggedUser:
+        throw LoggedUserFailure();
     }
   }
 

@@ -10,7 +10,7 @@ import '../../data/exceptions/exceptions.dart';
 part './auth_event.dart';
 part './auth_state.dart';
 
-/// Class to control authentication
+/// controls authentication process
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   /// Provides instance of [AuthBloc]
   AuthBloc(this.authRepository)
@@ -39,12 +39,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       } else {
         yield Unauthenticated();
       }
-    } on HandyHttpException catch (e) {
-      yield AuthFailure(e.toString());
-    } on HandyPlatformException catch (e) {
-      yield AuthFailure(e.toString());
-    } on HandyException catch (e) {
-      yield AuthFailure(e.toString());
+    } on LoggedUserFailure {
+      yield AuthFailure('user is not logged!');
     }
   }
 }
