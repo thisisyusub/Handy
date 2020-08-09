@@ -49,7 +49,7 @@ class _AppLocalizationsDelegate
   // add all languages code here
   @override
   bool isSupported(Locale locale) {
-    return ['en', 'az', 'ru'].contains(locale.languageCode);
+    return ['en'].contains(locale.languageCode);
   }
 
   // load all localization files

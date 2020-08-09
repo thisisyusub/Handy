@@ -10,9 +10,16 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text(
-        'handy'.translate(context),
-        style: Theme.of(context).textTheme.headline4,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            'handy'.translate(context),
+            style: Theme.of(context).textTheme.headline4,
+          ),
+          const SizedBox(height: 15),
+          const CircularProgressIndicator(),
+        ],
       ),
     );
   }

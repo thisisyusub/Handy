@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../utils/constants/assets.dart';
 import '../../../utils/extensions/translator.dart';
 import '../../shared/app_colors.dart';
+
 import '../../widgets/custom_button.dart';
 
 /// [WelcomePage] of app

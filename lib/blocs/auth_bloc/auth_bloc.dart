@@ -32,6 +32,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   Stream<AuthState> _mapAppStartedToState() async* {
     try {
       yield AuthInProgress();
+      await Future.delayed(Duration(seconds: 2));
       final loggedUser = await authRepository.loggedUser();
 
       if (loggedUser != null) {
