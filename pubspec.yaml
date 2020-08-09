@@ -1,0 +1,60 @@
+name: handy
+description: A simple application for health tracking
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter   
+  flutter_bloc: ^6.0.1
+  equatable: ^1.2.3
+  intl: ^0.16.1
+  connectivity: ^0.4.9
+  flutter_svg: ^0.18.0
+  toast: ^0.1.5
+  firebase_auth: ^0.16.1
+  google_sign_in: ^4.5.1
+  effective_dart: ^1.2.4
+
+  cupertino_icons: ^0.1.2
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  recase: ^3.0.0
+  args: ^1.6.0
+  mockito: ^4.1.1
+  
+
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/icons/
+    - assets/images/
+    - assets/langs/
+
+  fonts:
+    - family: Rubik
+      fonts:
+        - asset: assets/fonts/Rubik-Black.ttf
+        - asset: assets/fonts/Rubik-BlackItalic.ttf
+        - asset: assets/fonts/Rubik-Bold.ttf
+        - asset: assets/fonts/Rubik-BoldItalic.ttf
+        - asset: assets/fonts/Rubik-Italic.ttf
+        - asset: assets/fonts/Rubik-Light.ttf
+        - asset: assets/fonts/Rubik-LightItalic.ttf
+        - asset: assets/fonts/Rubik-Medium.ttf
+        - asset: assets/fonts/Rubik-MediumItalic.ttf
+        - asset: assets/fonts/Rubik-Regular.ttf
+          style: normal
+          weight: 900
+
+
