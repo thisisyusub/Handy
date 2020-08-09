@@ -5,7 +5,14 @@ import '../../../blocs/auth_bloc/auth_bloc.dart';
 import '../../../utils/constants/routes.dart';
 import '../splash/splash_page.dart';
 
+/// page to handle authentication process
+/// if the user is authenticated, navigates to [HomePage]
+/// if the user is not authenticated, navigates to [WelcomePage]
+/// if the authentication is in progres, shows [SplashScreen]
 class AuthPage extends StatelessWidget {
+  /// provides instance of [AuthPage]
+  const AuthPage();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

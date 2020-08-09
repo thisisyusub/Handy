@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import './app_colors.dart';
 import './app_text_styles.dart';
 
+/// [light theme configrationn] of app
+/// contains [colors], [text styles] of app
 final lightTheme = ThemeData(
   primaryColor: AppColors.primaryColor,
   scaffoldBackgroundColor: AppColors.appBackgroundColor,

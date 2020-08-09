@@ -8,6 +8,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter   
   flutter_bloc: ^6.0.1
   equatable: ^1.2.3
   intl: ^0.16.1
@@ -27,7 +29,7 @@ dev_dependencies:
   recase: ^3.0.0
   args: ^1.6.0
   mockito: ^4.1.1
-  bloc_test: ^7.0.0
+  
 
 
 flutter:
@@ -37,6 +39,7 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+    - assets/langs/
 
   fonts:
     - family: Rubik

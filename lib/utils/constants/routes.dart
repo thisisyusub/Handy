@@ -1,14 +1,10 @@
+/// provides names of routes for [Navigator]
 class Routes {
   Routes._();
 
+  /// name of [Welcome Page] used by [Navigator.pushNamed]
   static const String welcome = 'Welcome';
+
+  /// name of [Home Page] used by [Navigator.pushNamed]
   static const String home = 'Home';
-  static const String register = 'Register';
-  static const String onBoarding = 'OnBoarding';
-  static const String calorieInDetail = 'CalorieInDetail';
-  static const String waterInDetail = 'WaterInDetail';
-  static const String setCalorieTarget = 'SetCalorieTarget';
-  static const String sleepInDetail = 'SleepInDetail';
-  static const String medicineInDetail = 'MedicineInDetail';
-  static const String addMedicine = 'AddMedicine';
 }

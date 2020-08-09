@@ -27,5 +27,5 @@ void main() async {
     DeviceOrientation.portraitUp,
   ]);
 
-  runApp(HandyApp());
+  runApp(const HandyApp());
 }

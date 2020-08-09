@@ -25,12 +25,24 @@ class _AssetsImages {
   final String forYou = 'assets/images/for_you.png';
 }
 
+class _AssetsLangs {
+  const _AssetsLangs._();
+
+  final String en = 'assets/langs/en.json';
+}
+
+/// stores [assets details]
 class Assets {
   const Assets._();
 
 
+  /// fonts used in app
   static const fonts = _AssetsFonts._();
+  /// icons used in app
   static const icons = _AssetsIcons._();
+  /// images used in app
   static const images = _AssetsImages._();
+  /// langs used in app
+  static const langs = _AssetsLangs._();
 }
 

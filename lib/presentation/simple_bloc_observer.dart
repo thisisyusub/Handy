@@ -1,5 +1,7 @@
 import 'package:bloc/bloc.dart';
 
+/// Bloc Observer to control all [transitions], [events],
+/// [states] in one place
 class SimpleBlocObserver extends BlocObserver {
   @override
   void onTransition(Bloc bloc, Transition transition) {

@@ -56,6 +56,9 @@ Future<bool> _scanDir({
     }
   }
 
+  if (!className.startsWith('_')) {
+    stringBuffer.writeln('/// stores [assets details]');
+  }
   stringBuffer.writeln('class $className {\n  const $className._();\n');
 
   final modifier = isNested ? 'final' : 'static const';
@@ -75,6 +78,7 @@ Future<bool> _scanDir({
     final name = basename(directory).camelCase;
     final directoryClass = _className(directory, className);
 
+    stringBuffer.writeln('  /// $name used in app');
     stringBuffer.writeln('  $modifier $name = $directoryClass._();');
   }
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../utils/constants/app_strings.dart';
 import '../../../utils/constants/assets.dart';
+import '../../../utils/extensions/translator.dart';
 import '../../shared/app_colors.dart';
 import '../../widgets/custom_button.dart';
 
@@ -24,7 +24,7 @@ class WelcomePage extends StatelessWidget {
                 top: 50,
               ),
               child: Text(
-                AppStrings.handy,
+                'handy'.translate(context),
                 style: Theme.of(context).textTheme.headline4,
               ),
             ),
@@ -47,24 +47,24 @@ class WelcomePage extends StatelessWidget {
                 children: [
                   CustomButton(
                     widthFactor: 0.7,
-                    title: AppStrings.continueWithEmail,
+                    title: 'continue_with_email'.translate(context),
                     margin: const EdgeInsets.only(bottom: 10),
                     padding: const EdgeInsets.all(16),
                   ),
                   CustomButton(
                     widthFactor: 0.7,
-                    title: AppStrings.continueWithGoogle,
+                    title: 'continue_with_google'.translate(context),
                     margin: const EdgeInsets.only(bottom: 10),
                     padding: const EdgeInsets.all(16),
                   ),
                   RichText(
                     overflow: TextOverflow.clip,
                     text: TextSpan(
-                      text: AppStrings.byContinuingYouAccept,
+                      text: "${'by_continuing_you_accept'.translate(context)} ",
                       style: Theme.of(context).textTheme.caption,
                       children: [
                         TextSpan(
-                          text: AppStrings.termsOfUse,
+                          text: 'terms_of_use'.translate(context),
                           style: Theme.of(context).textTheme.caption.copyWith(
                                 fontWeight: FontWeight.bold,
                               ),
