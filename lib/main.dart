@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import './app.dart';
 import './presentation/shared/app_colors.dart';
-import './presentation/simple_bloc_observer.dart';
+import 'utils/simple_bloc_observer.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
