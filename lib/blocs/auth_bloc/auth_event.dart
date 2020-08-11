@@ -9,5 +9,8 @@ abstract class AuthEvent extends Equatable {
   List<Object> get props => [];
 }
 
-/// Class to trigger [AuthBloc] to start auth logic
+/// triggers [AuthBloc] to start auth logic
 class AppStarted extends AuthEvent {}
+
+/// triggers [AuthBloc] to log out current user
+class LogOut extends AuthEvent {}

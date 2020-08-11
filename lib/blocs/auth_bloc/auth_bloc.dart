@@ -26,6 +26,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   ) async* {
     if (event is AppStarted) {
       yield* _mapAppStartedToState();
+    } else if(event is LogOut) {
+      yield Unauthenticated();
     }
   }
 
