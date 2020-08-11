@@ -74,9 +74,6 @@ This project contains `google-services.json` file of my own. You can connect you
 
 [App Design](http://bit.ly/handyappdesign)
 
-<<<<<<< HEAD
-=======
 ## Maintainers
 [Kanan Yusubov](https://github.com/yusubx)
 
->>>>>>> caf57ccd4283fd957b4b0b2a2dcaa2b3e4fd1172
