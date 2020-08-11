@@ -1,5 +1,4 @@
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/yusubx/Handy/Flutter%20CI/master)
-<<<<<<< HEAD
 ![GitHub forks](https://img.shields.io/github/forks/yusubx/Handy)
 ![GitHub stars](https://img.shields.io/github/stars/yusubx/Handy)
 ![GitHub watchers](https://img.shields.io/github/watchers/yusubx/Handy)
@@ -7,7 +6,6 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/yusubx/Handy)
 ![GitHub top language](https://img.shields.io/github/languages/top/yusubx/Handy)
 ![GitHub issues](https://img.shields.io/github/issues/yusubx/Handy)
-=======
 ![GitHub forks](https://img.shields.io/github/forks/Kanza-Studio/Handy)
 ![GitHub stars](https://img.shields.io/github/stars/Kanza-Studio/Handy)
 ![GitHub watchers](https://img.shields.io/github/watchers/Kanza-Studio/Handy)
@@ -15,7 +13,6 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/Kanza-Studio/Handy)
 ![GitHub top language](https://img.shields.io/github/languages/top/Kanza-Studio/Handy)
 ![GitHub issues](https://img.shields.io/github/issues/Kanza-Studio/Handy)
->>>>>>> caf57ccd4283fd957b4b0b2a2dcaa2b3e4fd1172
 
 # Handy
 
@@ -23,7 +20,7 @@
 
 -------
 
-## Configration for yourself
+## Configuration for yourself
 
 This project contains `google-services.json` file of my own. You can connect your own firebase project using the following configrations:
 
