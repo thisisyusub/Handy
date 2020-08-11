@@ -47,11 +47,12 @@ void main() {
       expect: <AuthState>[Authenticated(user)],
     );
 
-    blocTest<AuthBloc, AuthState>(
-      'Unauthenticated State when user logged out',
-      build: () => AuthBloc(authRepository),
-      act: (bloc) => bloc.add(LogOut()),
-      expect: <AuthState>[Unauthenticated()],
-    );
+    blocTest<AuthBloc, AuthState>('Unauthenticated State when user logged out',
+        build: () => AuthBloc(authRepository),
+        act: (bloc) => bloc.add(LogOut()),
+        expect: <AuthState>[Unauthenticated()],
+        verify: (_) {
+          verify(authRepository.logOut()).called(1);
+        });
   });
 }
