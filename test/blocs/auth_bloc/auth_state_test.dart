@@ -1,9 +1,7 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:handy/blocs/auth_bloc/auth_bloc.dart';
-import 'package:mockito/mockito.dart';
 
-class MockFirebaseUser extends Mock implements FirebaseUser {}
+import '../../mocks/mocks.dart' hide MockAuthBloc, MockAuthRepository;
 
 final mockFirebaseUser = MockFirebaseUser();
 

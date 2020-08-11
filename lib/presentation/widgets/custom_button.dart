@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../shared/app_colors.dart';
-
 /// Class to create custom button of [Handy]
 class CustomButton extends StatelessWidget {
   /// value to size width of button
@@ -30,21 +28,28 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FractionallySizedBox(
-      widthFactor: widthFactor,
-      child: Container(
-        padding: padding,
-        margin: margin,
-        decoration: BoxDecoration(
-          color: disabled != null ? Colors.grey : AppColors.primaryColor,
+    return Padding(
+      padding: margin,
+      child: Material(
+        borderRadius: BorderRadius.circular(18),
+        color: Theme.of(context).primaryColor,
+        child: InkWell(
+          onTap: () {},
           borderRadius: BorderRadius.circular(18),
-        ),
-        child: Center(
-          child: Text(
-            title,
-            style: Theme.of(context).textTheme.button,
-            overflow: TextOverflow.fade,
-            textAlign: TextAlign.center,
+          splashColor: Theme.of(context).primaryColorLight,
+          child: FractionallySizedBox(
+            widthFactor: widthFactor,
+            child: Center(
+              child: Padding(
+                padding: padding,
+                child: Text(
+                  title,
+                  style: Theme.of(context).textTheme.button,
+                  overflow: TextOverflow.fade,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
           ),
         ),
       ),

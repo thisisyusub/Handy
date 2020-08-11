@@ -4,7 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../utils/constants/assets.dart';
 import '../../../utils/extensions/translator.dart';
 import '../../shared/app_colors.dart';
-
 import '../../widgets/custom_button.dart';
 
 /// [WelcomePage] of app
@@ -50,13 +49,13 @@ class WelcomePage extends StatelessWidget {
                     widthFactor: 0.7,
                     title: 'continue_with_email'.translate(context),
                     margin: const EdgeInsets.only(bottom: 10),
-                    padding: const EdgeInsets.all(16),
+                    padding: const EdgeInsets.symmetric(vertical: 20),
                   ),
                   CustomButton(
                     widthFactor: 0.7,
                     title: 'continue_with_google'.translate(context),
                     margin: const EdgeInsets.only(bottom: 10),
-                    padding: const EdgeInsets.all(16),
+                    padding: const EdgeInsets.symmetric(vertical: 20),
                   ),
                   RichText(
                     overflow: TextOverflow.clip,
