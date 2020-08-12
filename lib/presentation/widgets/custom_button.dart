@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../utils/extensions/translator.dart';
 
 /// Class to create custom button of [Handy]
 class CustomButton extends StatelessWidget {
@@ -47,7 +48,7 @@ class CustomButton extends StatelessWidget {
                   style: Theme.of(context).textTheme.button,
                   overflow: TextOverflow.fade,
                   textAlign: TextAlign.center,
-                ),
+                ).tr(),
               ),
             ),
           ),

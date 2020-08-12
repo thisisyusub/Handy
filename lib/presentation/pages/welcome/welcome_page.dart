@@ -24,9 +24,9 @@ class WelcomePage extends StatelessWidget {
                 top: 50,
               ),
               child: Text(
-                'handy'.translate(context),
+                'handy',
                 style: Theme.of(context).textTheme.headline4,
-              ),
+              ).tr(),
             ),
             Expanded(
               child: Padding(
@@ -47,24 +47,24 @@ class WelcomePage extends StatelessWidget {
                 children: [
                   CustomButton(
                     widthFactor: 0.7,
-                    title: 'continue_with_email'.translate(context),
+                    title: 'continue_with_email',
                     margin: const EdgeInsets.only(bottom: 10),
                     padding: const EdgeInsets.symmetric(vertical: 20),
                   ),
                   CustomButton(
                     widthFactor: 0.7,
-                    title: 'continue_with_google'.translate(context),
+                    title: 'continue_with_google',
                     margin: const EdgeInsets.only(bottom: 10),
                     padding: const EdgeInsets.symmetric(vertical: 20),
                   ),
                   RichText(
                     overflow: TextOverflow.clip,
                     text: TextSpan(
-                      text: "${'by_continuing_you_accept'.translate(context)} ",
+                      text: 'by_continuing_you_accept'.tr(),
                       style: Theme.of(context).textTheme.caption,
                       children: [
                         TextSpan(
-                          text: 'terms_of_use'.translate(context),
+                          text: ' ${'terms_of_use'.tr()}',
                           style: Theme.of(context).textTheme.caption.copyWith(
                                 fontWeight: FontWeight.bold,
                               ),

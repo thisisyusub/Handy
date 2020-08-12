@@ -5,11 +5,11 @@ import 'package:flutter/services.dart';
 
 /// Class to handle localization
 class AppLocalizations {
-  /// current locale
-  final Locale locale;
+  static AppLocalizations _instance;
 
-  /// provides instance of [AppLocalizations]
-  AppLocalizations(this.locale);
+  /// provides singleton instance of [AppLocalizations]
+  static AppLocalizations get instance =>
+      _instance ?? (_instance = AppLocalizations());
 
   /// Helper method to keep the code in the widgets concise
   /// Localizations are accessed using an InheritedWidget "of" syntax
@@ -24,7 +24,7 @@ class AppLocalizations {
   Map<String, String> _localizedStrings = <String, String>{};
 
   /// method that loads [*.json] file according to selected [Locale]
-  Future<bool> load() async {
+  Future<bool> load(Locale locale) async {
     final jsonString =
         await rootBundle.loadString('assets/langs/${locale.languageCode}.json');
     final jsonMap = json.decode(jsonString) as Map<String, dynamic>;
@@ -55,8 +55,8 @@ class _AppLocalizationsDelegate
   // load all localization files
   @override
   Future<AppLocalizations> load(Locale locale) async {
-    final localizations = AppLocalizations(locale);
-    await localizations.load();
+    final localizations = AppLocalizations.instance;
+    await localizations.load(locale);
     return localizations;
   }
 
