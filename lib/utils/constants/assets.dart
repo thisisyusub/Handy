@@ -28,6 +28,7 @@ class _AssetsImages {
 class _AssetsLangs {
   const _AssetsLangs._();
 
+  final String az = 'assets/langs/az.json';
   final String en = 'assets/langs/en.json';
 }
 
