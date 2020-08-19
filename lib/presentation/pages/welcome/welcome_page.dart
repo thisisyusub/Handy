@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:handy/blocs/auth_bloc/auth_bloc.dart';
 
 import '../../../utils/constants/assets.dart';
 import '../../../utils/extensions/translator.dart';
@@ -56,6 +58,8 @@ class WelcomePage extends StatelessWidget {
                     title: 'continue_with_google',
                     margin: const EdgeInsets.only(bottom: 10),
                     padding: const EdgeInsets.symmetric(vertical: 20),
+                    onTap: () => BlocProvider.of<AuthBloc>(context)
+                        .add(GoogleSignInRequested()),
                   ),
                   RichText(
                     overflow: TextOverflow.clip,

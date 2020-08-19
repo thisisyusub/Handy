@@ -18,11 +18,15 @@ class CustomButton extends StatelessWidget {
   /// padding for [title] of [CustomButton]
   final EdgeInsets padding;
 
+  /// [VoidCallback] for button
+  final VoidCallback onTap;
+
   /// Constructor to assign values of [CustomButton]
   CustomButton({
     @required this.widthFactor,
     @required this.title,
     @required this.padding,
+    this.onTap,
     this.margin,
     this.disabled,
   });
@@ -35,7 +39,7 @@ class CustomButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(18),
         color: Theme.of(context).primaryColor,
         child: InkWell(
-          onTap: () {},
+          onTap: onTap,
           borderRadius: BorderRadius.circular(18),
           splashColor: Theme.of(context).primaryColorLight,
           child: FractionallySizedBox(

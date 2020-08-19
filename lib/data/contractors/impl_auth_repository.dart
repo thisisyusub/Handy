@@ -5,17 +5,17 @@ import './impl_base_repository.dart';
 /// it should be implemented by [AuthRepository] classes
 abstract class IAuthRepository extends IBaseRepository {
   /// tried to register user according to given [email] and [password]
-  Future<FirebaseUser> register(String email, String password);
+  Future<User> register(String email, String password);
 
   /// tried to sign in user according to given [email] and [password]
-  Future<FirebaseUser> login(String email, String password);
+  Future<User> login(String email, String password);
 
   /// tried to sign in user according with [Google]
   Future<void> signInWithGoogle();
 
   /// returns the current user that logged
   /// returns [null] is not logged
-  Future<FirebaseUser> loggedUser();
+  User loggedUser();
 
   /// log out current user
   Future<void> logOut();

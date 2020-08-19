@@ -33,7 +33,7 @@ class Authenticated extends AuthState {
   const Authenticated(this.user);
 
   /// Instance of authenticated user
-  final FirebaseUser user;
+  final User user;
 
   @override
   List<Object> get props => [user];

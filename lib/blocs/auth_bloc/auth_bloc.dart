@@ -5,7 +5,6 @@ import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../data/contractors/impl_auth_repository.dart';
-import '../../data/exceptions/exceptions.dart';
 
 part './auth_event.dart';
 part './auth_state.dart';
@@ -29,13 +28,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     } else if (event is LogOut) {
       await authRepository.logOut();
       yield Unauthenticated();
+    } else if (event is GoogleSignInRequested) {
+      yield* _mapGoogleSignInRequestedToState();
     }
   }
 
   Stream<AuthState> _mapAppStartedToState() async* {
     try {
       yield AuthInProgress();
-      await Future.delayed(Duration(seconds: 2));
       final loggedUser = await authRepository.loggedUser();
 
       if (loggedUser != null) {
@@ -43,8 +43,21 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       } else {
         yield Unauthenticated();
       }
-    } on LoggedUserFailure {
-      yield AuthFailure('user is not logged!');
+    } on FirebaseAuthException catch (e) {
+      yield AuthFailure(e.message);
+    } on Exception {
+      yield AuthFailure('Error occured!');
+    }
+  }
+
+  Stream<AuthState> _mapGoogleSignInRequestedToState() async* {
+    try {
+      yield AuthInProgress();
+      authRepository.signInWithGoogle();
+    } on FirebaseAuthException catch (e) {
+      yield AuthFailure(e.message);
+    } on Exception {
+      yield AuthFailure('Error occured!');
     }
   }
 }
