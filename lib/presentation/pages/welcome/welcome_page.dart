@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:handy/blocs/auth_bloc/auth_bloc.dart';
 
+import '../../../blocs/auth_bloc/auth_bloc.dart';
 import '../../../utils/constants/assets.dart';
 import '../../../utils/extensions/translator.dart';
 import '../../shared/app_colors.dart';

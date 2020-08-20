@@ -14,5 +14,6 @@ final lightTheme = ThemeData(
     headline4: AppTextStyles.fontSize32MediumStyle,
     button: AppTextStyles.fontSize14MediumStyle,
     caption: AppTextStyles.fontSize11Style,
+    bodyText1: AppTextStyles.fontSize16MediumStyle,
   ),
 );

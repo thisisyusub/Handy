@@ -6,7 +6,7 @@ import 'app_colors.dart';
 class AppTextStyles {
   AppTextStyles._();
 
-  /// fontize: 32
+  /// Fontsize: 32
   /// FontWeight: 600
   static final fontSize32MediumStyle = TextStyle(
     fontSize: 32,
@@ -14,7 +14,15 @@ class AppTextStyles {
     fontWeight: FontWeight.w600,
   );
 
-  /// fontize: 14
+  /// Fontsize: 16
+  /// FontWeight: 600
+  static final fontSize16MediumStyle = TextStyle(
+    fontSize: 16,
+    color: Colors.black,
+    fontWeight: FontWeight.w600,
+  );
+
+  /// Fontsize: 14
   /// FontWeight: 600
   static final fontSize14MediumStyle = TextStyle(
     fontSize: 14,
@@ -22,7 +30,7 @@ class AppTextStyles {
     fontWeight: FontWeight.w600,
   );
 
-  /// fontize: 11
+  /// Fontsize: 11
   /// FontWeight: normal
   static final fontSize11Style = TextStyle(
     fontSize: 11,

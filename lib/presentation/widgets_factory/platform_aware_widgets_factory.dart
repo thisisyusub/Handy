@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import './alert_dialog/platform_alert_dialog.dart';
 
-/// handles create of [Platform Aware Widgets]
+/// handles renders of [Platform Aware Widgets]
 abstract class PlatformAwareWidgetsFactory {
   PlatformAwareWidgetsFactory._();
 
