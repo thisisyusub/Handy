@@ -16,7 +16,15 @@ class _AssetsFonts {
 class _AssetsIcons {
   const _AssetsIcons._();
 
+  final String calorie = 'assets/icons/calorie.svg';
   final String illustration = 'assets/icons/illustration.svg';
+  final String medicine = 'assets/icons/medicine.svg';
+  final String moon = 'assets/icons/moon.svg';
+  final String path = 'assets/icons/path.svg';
+  final String profileSelected = 'assets/icons/profile_selected.svg';
+  final String profileUnselected = 'assets/icons/profile_unselected.svg';
+  final String waterDrop = 'assets/icons/water_drop.svg';
+  final String weight = 'assets/icons/weight.svg';
 }
 
 class _AssetsImages {

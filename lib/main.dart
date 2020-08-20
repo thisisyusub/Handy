@@ -17,7 +17,7 @@ void main() async {
     SystemUiOverlayStyle(
       systemNavigationBarColor: AppColors.appBackgroundColor,
       // navigation bar color
-      statusBarColor: AppColors.appBackgroundColor,
+      statusBarColor: AppColors.primaryColor,
       // status bar color
       statusBarIconBrightness: Brightness.dark,
       // status bar icons' color

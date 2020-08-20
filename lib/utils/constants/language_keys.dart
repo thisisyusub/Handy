@@ -1,7 +1,6 @@
 /// provides keys of [Langauge Jsons]
 class LanguageKeys {
   const LanguageKeys._();
-
   ///  EN: loading
   /// ! AZ: [Null]
   static const String loading = 'loading';

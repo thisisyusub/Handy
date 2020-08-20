@@ -18,4 +18,7 @@ class AppColors {
 
   /// background color of pages
   static const Color appBackgroundColor = Color.fromRGBO(252, 252, 252, 1);
+
+  /// shadow color for home list item
+  static const Color homeListItemShadowColor = Color(0xFFC2D8FF);
 }
