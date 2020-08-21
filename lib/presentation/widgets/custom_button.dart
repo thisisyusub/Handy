@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../utils/extensions/translator.dart';
 
 /// Class to create custom button of [Handy]
 class CustomButton extends StatelessWidget {
@@ -17,11 +18,15 @@ class CustomButton extends StatelessWidget {
   /// padding for [title] of [CustomButton]
   final EdgeInsets padding;
 
+  /// [VoidCallback] for button
+  final VoidCallback onTap;
+
   /// Constructor to assign values of [CustomButton]
   CustomButton({
     @required this.widthFactor,
     @required this.title,
     @required this.padding,
+    this.onTap,
     this.margin,
     this.disabled,
   });
@@ -34,7 +39,7 @@ class CustomButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(18),
         color: Theme.of(context).primaryColor,
         child: InkWell(
-          onTap: () {},
+          onTap: onTap,
           borderRadius: BorderRadius.circular(18),
           splashColor: Theme.of(context).primaryColorLight,
           child: FractionallySizedBox(
@@ -47,7 +52,7 @@ class CustomButton extends StatelessWidget {
                   style: Theme.of(context).textTheme.button,
                   overflow: TextOverflow.fade,
                   textAlign: TextAlign.center,
-                ),
+                ).tr(),
               ),
             ),
           ),

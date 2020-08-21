@@ -14,3 +14,6 @@ class AppStarted extends AuthEvent {}
 
 /// triggers [AuthBloc] to log out current user
 class LogOut extends AuthEvent {}
+
+/// triggers [AuthBloc] to sign in with [GoogleSignIn]
+class GoogleSignInRequested extends AuthEvent {}

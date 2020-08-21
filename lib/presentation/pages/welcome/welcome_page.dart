@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../blocs/auth_bloc/auth_bloc.dart';
 import '../../../utils/constants/assets.dart';
 import '../../../utils/extensions/translator.dart';
 import '../../shared/app_colors.dart';
@@ -24,9 +26,9 @@ class WelcomePage extends StatelessWidget {
                 top: 50,
               ),
               child: Text(
-                'handy'.translate(context),
+                'handy',
                 style: Theme.of(context).textTheme.headline4,
-              ),
+              ).tr(),
             ),
             Expanded(
               child: Padding(
@@ -47,24 +49,26 @@ class WelcomePage extends StatelessWidget {
                 children: [
                   CustomButton(
                     widthFactor: 0.7,
-                    title: 'continue_with_email'.translate(context),
+                    title: 'continue_with_email',
                     margin: const EdgeInsets.only(bottom: 10),
                     padding: const EdgeInsets.symmetric(vertical: 20),
                   ),
                   CustomButton(
                     widthFactor: 0.7,
-                    title: 'continue_with_google'.translate(context),
+                    title: 'continue_with_google',
                     margin: const EdgeInsets.only(bottom: 10),
                     padding: const EdgeInsets.symmetric(vertical: 20),
+                    onTap: () => BlocProvider.of<AuthBloc>(context)
+                        .add(GoogleSignInRequested()),
                   ),
                   RichText(
                     overflow: TextOverflow.clip,
                     text: TextSpan(
-                      text: "${'by_continuing_you_accept'.translate(context)} ",
+                      text: 'by_continuing_you_accept'.tr(),
                       style: Theme.of(context).textTheme.caption,
                       children: [
                         TextSpan(
-                          text: 'terms_of_use'.translate(context),
+                          text: ' ${'terms_of_use'.tr()}',
                           style: Theme.of(context).textTheme.caption.copyWith(
                                 fontWeight: FontWeight.bold,
                               ),

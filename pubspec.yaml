@@ -16,9 +16,12 @@ dependencies:
   connectivity: ^0.4.9
   flutter_svg: ^0.18.0
   toast: ^0.1.5
-  firebase_auth: ^0.16.1
+  firebase_core: ^0.5.0
+  firebase_auth: ^0.18.0
+  cloud_firestore: ^0.14.0
   google_sign_in: ^4.5.1
   effective_dart: ^1.2.4
+
 
   cupertino_icons: ^0.1.2
 
@@ -45,13 +48,20 @@ flutter:
       fonts:
         - asset: assets/fonts/Rubik-Black.ttf
         - asset: assets/fonts/Rubik-BlackItalic.ttf
+          style: italic
         - asset: assets/fonts/Rubik-Bold.ttf
+          weight: 900
         - asset: assets/fonts/Rubik-BoldItalic.ttf
+          style: italic
+          weight: 900
         - asset: assets/fonts/Rubik-Italic.ttf
+          style: italic
         - asset: assets/fonts/Rubik-Light.ttf
         - asset: assets/fonts/Rubik-LightItalic.ttf
+          style: italic
         - asset: assets/fonts/Rubik-Medium.ttf
         - asset: assets/fonts/Rubik-MediumItalic.ttf
+          style: italic
         - asset: assets/fonts/Rubik-Regular.ttf
           style: normal
           weight: 900
