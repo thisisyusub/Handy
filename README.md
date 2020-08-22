@@ -8,7 +8,7 @@
 
 # Handy
 
-<img src="design/run.jpeg"/>
+<img src="art/run.jpeg"/>
 
 -------
 
