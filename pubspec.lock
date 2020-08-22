@@ -435,12 +435,12 @@ packages:
     source: hosted
     version: "0.1.4"
   pedantic:
-    dependency: "direct dev"
+    dependency: transitive
     description:
       name: pedantic
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.10.0-nullsafety"
+    version: "1.9.0"
   petitparser:
     dependency: transitive
     description:
