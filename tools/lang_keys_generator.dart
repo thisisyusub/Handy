@@ -19,7 +19,7 @@ extension on String {
 
 extension on FileSystemEntity {
   String get languageCode =>
-      uri.toString().split("langs/").last.split(".").first;
+      uri.toString().split('langs/').last.split('.').first;
 }
 
 void _generateFile() async {
@@ -93,7 +93,7 @@ void _generateFile() async {
 
         final message = isCurrentLangFileContainsCurentKey
             ? languageKeysWithJsonValues[langCode][currentKey]
-            : "[Null]";
+            : '[Null]';
 
         sb.writeln(
           '  /// ${isCurrentLangFileContainsCurentKey ? '' : '!'}'
@@ -114,6 +114,6 @@ void _generateFile() async {
     var file = File(output);
     var writer = file.openWrite();
     await writer.write(sb.toString());
-    writer.close();
+    await writer.close();
   }
 }
