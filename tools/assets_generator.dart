@@ -107,14 +107,10 @@ void main(List<String> args) async {
   var output = argsResults['output'] as String;
 
   /// check if the [input] is given or not
-  if (assets == null) {
-    assets = join(projectDirectory, 'assets');
-  }
+  assets ??= join(projectDirectory, 'assets');
 
   /// check if the [output] is given or not
-  if (output == null) {
-    output = join(projectDirectory, 'lib/utils/constants/assets.dart');
-  }
+  output ??= join(projectDirectory, 'lib/utils/constants/assets.dart');
 
   /// to concatenate Strings efficiently
   final sb = StringBuffer();

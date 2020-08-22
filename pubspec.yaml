@@ -20,11 +20,12 @@ dependencies:
   firebase_auth: ^0.18.0
   cloud_firestore: ^0.14.0
   google_sign_in: ^4.5.1
-  effective_dart: ^1.2.4
 
 
   cupertino_icons: ^0.1.2
 
+dependency_overrides:
+  pedantic: ^1.9.1
 
 dev_dependencies:
   flutter_test:
@@ -32,6 +33,7 @@ dev_dependencies:
   recase: ^3.0.0
   args: ^1.6.0
   bloc_test: ^7.0.0
+  pedantic: ^1.9.2
 
 
 flutter:

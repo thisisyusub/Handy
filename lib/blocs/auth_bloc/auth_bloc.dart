@@ -53,7 +53,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   Stream<AuthState> _mapGoogleSignInRequestedToState() async* {
     try {
       yield AuthInProgress();
-      authRepository.signInWithGoogle();
+      await authRepository.signInWithGoogle();
     } on FirebaseAuthException catch (e) {
       yield AuthFailure(e.message);
     } on Exception {
