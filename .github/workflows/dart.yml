@@ -43,4 +43,10 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: release-apk
-        path: build/app/outputs/apk/release/app-release.apk
+        path: build/app/outputs/apk/release/app-release.apk:
+    - uses: actions/checkout@v2
+    - uses: axel-op/dart-package-analyzer@stable
+      with:
+        relativePath: packages/${{ matrix.package }}
+        githubToken: ${{ secrets.GITHUB_TOKEN }}
+        minAnnotationLevel: info
