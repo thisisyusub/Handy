@@ -1,14 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import '../../shared/app_colors.dart';
 
+/// home items of [HomePage]
+/// defines difference progress values
+/// and welcome message
 class HomeListItem extends StatelessWidget {
+  /// path of icon
   final String iconPath;
+
+  /// item title
   final String title;
+
+  /// widget that locates in the top right of item
   final Widget rightTopWidget;
+
+  /// widget that locates in the left bottom of item
   final Widget leftBottomWidget;
+
+  /// widget that locates in the right bottom of item
   final Widget rightBottomWidget;
 
+  /// provides instance of [HomeListItem]
   HomeListItem({
     this.iconPath,
     this.title,

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:handy/presentation/pages/home/custom_raised_button.dart';
-import '../../../utils/constants/assets.dart';
-import '../../shared/app_colors.dart';
+
 import './custom_drawer.dart';
 import './custom_progress_indicator.dart';
 import './custom_progress_value.dart';
+import './custom_raised_button.dart';
 import './home_list_item.dart';
+import '../../../utils/constants/assets.dart';
+import '../../shared/app_colors.dart';
 
 /// build [HomePage] of [Handy]
 class HomePage extends StatefulWidget {
@@ -22,7 +23,7 @@ class _HomePageState extends State<HomePage> {
 
   bool _isExpanded = true;
 
-  List<Widget> _items = [
+  final List<Widget> _items = [
     HomeListItem(
       title: 'Calorie',
       iconPath: Assets.icons.calorie,

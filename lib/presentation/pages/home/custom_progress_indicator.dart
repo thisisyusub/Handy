@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:handy/presentation/shared/app_colors.dart';
 
+import '../../shared/app_colors.dart';
+
+/// progress indicator of home items
 class CustomProgressIndicator extends StatelessWidget {
+  /// providers instance of [CustomProgressIndicator]
   CustomProgressIndicator(this.progressFactor) : assert(progressFactor <= 1.0);
 
+  /// defines complete part of progress
   final double progressFactor;
 
   @override
