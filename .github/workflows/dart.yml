@@ -44,5 +44,4 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: release-apk
-        path: build/app/outputs/apk/release/app-release.apk:
-    - uses: actions/checkout@v2
+        path: build/app/outputs/apk/release/app-release.apk
