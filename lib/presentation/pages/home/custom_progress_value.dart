@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// text indicator of progress
 class CustomProgressValue extends StatelessWidget {
+  /// provides instance of [CustomProgressIndicator]
   CustomProgressValue({
     @required this.title,
     @required this.totalPart,
@@ -12,8 +14,13 @@ class CustomProgressValue extends StatelessWidget {
               completedPart <= totalPart,
         );
 
+  /// count of completed parts
   final int completedPart;
+
+  /// count of total parts
   final int totalPart;
+
+  /// task title
   final String title;
 
   @override

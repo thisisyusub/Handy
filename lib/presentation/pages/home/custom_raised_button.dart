@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:handy/presentation/shared/app_colors.dart';
 
+import '../../shared/app_colors.dart';
+
+/// custom button for home items
 class CustomRaisedButton extends StatelessWidget {
+  /// provides instance of [CustomRaisedButton]
   CustomRaisedButton({
     @required this.title,
     this.onTap,
   });
 
+  /// title of button
   final String title;
+
+  /// callback for button's tap
   final VoidCallback onTap;
 
   @override
