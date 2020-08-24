@@ -1,3 +1,0 @@
-/*
-Repositories will be here
- */

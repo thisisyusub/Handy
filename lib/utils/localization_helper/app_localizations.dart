@@ -1,13 +1,15 @@
 import 'dart:convert';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+/// Class to handle localization
 class AppLocalizations {
-  final Locale locale;
+  static AppLocalizations _instance;
 
-  AppLocalizations(this.locale);
+  /// provides singleton instance of [AppLocalizations]
+  static AppLocalizations get instance =>
+      _instance ?? (_instance = AppLocalizations());
 
   /// Helper method to keep the code in the widgets concise
   /// Localizations are accessed using an InheritedWidget "of" syntax
@@ -19,12 +21,13 @@ class AppLocalizations {
   static const LocalizationsDelegate<AppLocalizations> delegate =
       _AppLocalizationsDelegate();
 
-  Map<String, String> _localizedStrings;
+  Map<String, String> _localizedStrings = <String, String>{};
 
-  Future<bool> load() async {
-    String jsonString =
+  /// method that loads [*.json] file according to selected [Locale]
+  Future<bool> load(Locale locale) async {
+    final jsonString =
         await rootBundle.loadString('assets/langs/${locale.languageCode}.json');
-    Map<String, dynamic> jsonMap = json.decode(jsonString);
+    final jsonMap = json.decode(jsonString) as Map<String, dynamic>;
 
     _localizedStrings = jsonMap.map((key, value) {
       return MapEntry(key, value.toString());
@@ -33,6 +36,7 @@ class AppLocalizations {
     return true;
   }
 
+  /// method translates current string according to json key
   String translate(String key) {
     return _localizedStrings[key];
   }
@@ -45,14 +49,14 @@ class _AppLocalizationsDelegate
   // add all languages code here
   @override
   bool isSupported(Locale locale) {
-    return ['en', 'az', 'ru'].contains(locale.languageCode);
+    return ['en'].contains(locale.languageCode);
   }
 
   // load all localization files
   @override
   Future<AppLocalizations> load(Locale locale) async {
-    AppLocalizations localizations = new AppLocalizations(locale);
-    await localizations.load();
+    final localizations = AppLocalizations.instance;
+    await localizations.load(locale);
     return localizations;
   }
 

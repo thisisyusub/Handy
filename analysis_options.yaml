@@ -1,0 +1,11 @@
+include: package:pedantic/analysis_options.yaml
+
+linter:
+  rules:
+    # DOCUMENTATION
+    - slash_for_doc_comments
+    - package_api_docs # prefer
+    - public_member_api_docs # prefer
+    #- comment_references # Unused
+
+

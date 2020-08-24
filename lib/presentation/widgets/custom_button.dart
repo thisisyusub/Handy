@@ -1,40 +1,61 @@
 import 'package:flutter/material.dart';
+import '../../utils/extensions/translator.dart';
 
-import '../shared/app_colors.dart';
-import '../shared/app_text_styles.dart';
-import '../../utils/size_config.dart';
-
+/// Class to create custom button of [Handy]
 class CustomButton extends StatelessWidget {
-  final double width;
-  final double height;
+  /// value to size width of button
+  final double widthFactor;
+
+  /// text of button
   final String title;
+
+  /// margin for button
   final EdgeInsets margin;
+
+  /// value to get the button is enabled or not
   final bool disabled;
 
+  /// padding for [title] of [CustomButton]
+  final EdgeInsets padding;
+
+  /// [VoidCallback] for button
+  final VoidCallback onTap;
+
+  /// Constructor to assign values of [CustomButton]
   CustomButton({
-    @required this.width,
-    @required this.height,
+    @required this.widthFactor,
     @required this.title,
-    @required this.margin,
-    this.disabled = false,
+    @required this.padding,
+    this.onTap,
+    this.margin,
+    this.disabled,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width * (SizeConfig.textScaleFactor),
-      height: height * SizeConfig.textScaleFactor,
-      margin: margin,
-      decoration: BoxDecoration(
-        color: disabled ? Colors.grey : AppColors.primaryColor,
-        borderRadius: BorderRadius.circular(
-          SizeConfig.widthMultiplier * 5 * SizeConfig.textScaleFactor,
-        ),
-      ),
-      child: Center(
-        child: Text(
-          title,
-          style: AppTextStyles.fontSize14MediumStyle,
+    return Padding(
+      padding: margin,
+      child: Material(
+        borderRadius: BorderRadius.circular(18),
+        color: Theme.of(context).primaryColor,
+        child: InkWell(
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(18),
+          splashColor: Theme.of(context).primaryColorLight,
+          child: FractionallySizedBox(
+            widthFactor: widthFactor,
+            child: Center(
+              child: Padding(
+                padding: padding,
+                child: Text(
+                  title,
+                  style: Theme.of(context).textTheme.button,
+                  overflow: TextOverflow.fade,
+                  textAlign: TextAlign.center,
+                ).tr(),
+              ),
+            ),
+          ),
         ),
       ),
     );

@@ -1,63 +1,50 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import './utils/constants/keys.dart';
-import './presentation/pages/home_page.dart';
-import './presentation/pages/welcome_page.dart';
-import './presentation/router.dart';
-import './presentation/shared/app_colors.dart';
-import './bloc/login_and_register_bloc/login_or_register_bloc.dart';
-import './bloc/on_boarding_bloc/on_boarding_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
-class MyApp extends StatelessWidget {
+import './blocs/auth_bloc/auth_bloc.dart';
+import './data/repositories/auth_repository.dart';
+import './presentation/pages/auth/auth_page.dart';
+import './presentation/router.dart';
+import './presentation/shared/app_themes.dart';
+import './presentation/shared/supported_locales.dart';
+import './utils/localization_helper/app_localizations.dart';
+
+/// starting point of app
+/// defines [Global Blocs], [Repositories], [Theme],
+///  [Locales], [OnGenerateRoute] off app
+class HandyApp extends StatelessWidget {
+  /// provides instance of [HandyApp]
+  const HandyApp();
+
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<LoginOrRegisterBloc>(
-          create: (_) => LoginOrRegisterBloc(),
+    return RepositoryProvider<AuthRepository>(
+      create: (_) => AuthRepository(
+        firebaseAuth: FirebaseAuth.instance,
+        googleSignIn: GoogleSignIn(),
+      ),
+      child: BlocProvider<AuthBloc>(
+        create: (context) =>
+            AuthBloc(context.repository<AuthRepository>())..add(AppStarted()),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Handy',
+          theme: lightTheme,
+          locale: Locale('en', 'US'),
+          supportedLocales: supportedLocales,
+          localizationsDelegates: [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          home: const AuthPage(),
+          onGenerateRoute: Router.onGenerateRoute,
         ),
-        BlocProvider<OnBoardingBloc>(
-          create: (_) => OnBoardingBloc(),
-        ),
-      ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Handy',
-        themeMode: ThemeMode.light,
-        theme: ThemeData(
-          primaryColor: AppColors.primaryColor,
-          accentColor: AppColors.primaryColor,
-          scaffoldBackgroundColor: AppColors.appBackgroundColor,
-          fontFamily: 'Rubik',
-        ),
-        home: FutureBuilder(
-          future: isUserLoggedBefore(),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(
-                child: CircularProgressIndicator(),
-              );
-            }
-
-            if (snapshot.data == true) {
-              return HomePage();
-            }
-
-            return WelcomePage();
-          },
-        ),
-        onGenerateRoute: Router.generateRoute,
       ),
     );
-  }
-
-  Future<bool> isUserLoggedBefore() async {
-    final sharedPref = await SharedPreferences.getInstance();
-    if (sharedPref.containsKey(Keys.isUserLogged)) {
-      return sharedPref.getBool(Keys.isUserLogged);
-    }
-
-    return false;
   }
 }
